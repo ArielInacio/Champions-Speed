@@ -1,0 +1,1606 @@
+{
+  "last_updated": "2026-04-13T16:15:27.957325",
+  "count": 320,
+  "pokemon": [
+    {
+      "ndex": 3,
+      "name": "Venusaur",
+      "form": null
+    },
+    {
+      "ndex": 3,
+      "name": "Venusaur",
+      "form": "Mega"
+    },
+    {
+      "ndex": 6,
+      "name": "Charizard",
+      "form": null
+    },
+    {
+      "ndex": 6,
+      "name": "Charizard",
+      "form": "Mega X"
+    },
+    {
+      "ndex": 6,
+      "name": "Charizard",
+      "form": "Mega Y"
+    },
+    {
+      "ndex": 9,
+      "name": "Blastoise",
+      "form": null
+    },
+    {
+      "ndex": 9,
+      "name": "Blastoise",
+      "form": "Mega"
+    },
+    {
+      "ndex": 15,
+      "name": "Beedrill",
+      "form": null
+    },
+    {
+      "ndex": 15,
+      "name": "Beedrill",
+      "form": "Mega"
+    },
+    {
+      "ndex": 18,
+      "name": "Pidgeot",
+      "form": null
+    },
+    {
+      "ndex": 18,
+      "name": "Pidgeot",
+      "form": "Mega"
+    },
+    {
+      "ndex": 24,
+      "name": "Arbok",
+      "form": null
+    },
+    {
+      "ndex": 25,
+      "name": "Pikachu",
+      "form": null
+    },
+    {
+      "ndex": 26,
+      "name": "Raichu",
+      "form": null
+    },
+    {
+      "ndex": 26,
+      "name": "Raichu",
+      "form": "Alola"
+    },
+    {
+      "ndex": 36,
+      "name": "Clefable",
+      "form": null
+    },
+    {
+      "ndex": 36,
+      "name": "Clefable",
+      "form": "Mega"
+    },
+    {
+      "ndex": 38,
+      "name": "Ninetales",
+      "form": null
+    },
+    {
+      "ndex": 38,
+      "name": "Ninetales",
+      "form": "Alola"
+    },
+    {
+      "ndex": 59,
+      "name": "Arcanine",
+      "form": null
+    },
+    {
+      "ndex": 59,
+      "name": "Arcanine",
+      "form": "Hisui"
+    },
+    {
+      "ndex": 65,
+      "name": "Alakazam",
+      "form": null
+    },
+    {
+      "ndex": 65,
+      "name": "Alakazam",
+      "form": "Mega"
+    },
+    {
+      "ndex": 68,
+      "name": "Machamp",
+      "form": null
+    },
+    {
+      "ndex": 71,
+      "name": "Victreebel",
+      "form": null
+    },
+    {
+      "ndex": 71,
+      "name": "Victreebel",
+      "form": "Mega"
+    },
+    {
+      "ndex": 80,
+      "name": "Slowbro",
+      "form": null
+    },
+    {
+      "ndex": 80,
+      "name": "Slowbro",
+      "form": "Galar"
+    },
+    {
+      "ndex": 80,
+      "name": "Slowbro",
+      "form": "Mega"
+    },
+    {
+      "ndex": 94,
+      "name": "Gengar",
+      "form": null
+    },
+    {
+      "ndex": 94,
+      "name": "Gengar",
+      "form": "Mega"
+    },
+    {
+      "ndex": 115,
+      "name": "Kangaskhan",
+      "form": null
+    },
+    {
+      "ndex": 115,
+      "name": "Kangaskhan",
+      "form": "Mega"
+    },
+    {
+      "ndex": 121,
+      "name": "Starmie",
+      "form": null
+    },
+    {
+      "ndex": 121,
+      "name": "Starmie",
+      "form": "Mega"
+    },
+    {
+      "ndex": 127,
+      "name": "Pinsir",
+      "form": null
+    },
+    {
+      "ndex": 127,
+      "name": "Pinsir",
+      "form": "Mega"
+    },
+    {
+      "ndex": 128,
+      "name": "Tauros",
+      "form": null
+    },
+    {
+      "ndex": 128,
+      "name": "Tauros",
+      "form": "Paldea Aqua"
+    },
+    {
+      "ndex": 128,
+      "name": "Tauros",
+      "form": "Paldea Blaze"
+    },
+    {
+      "ndex": 128,
+      "name": "Tauros",
+      "form": "Paldea Combat"
+    },
+    {
+      "ndex": 130,
+      "name": "Gyarados",
+      "form": null
+    },
+    {
+      "ndex": 130,
+      "name": "Gyarados",
+      "form": "Mega"
+    },
+    {
+      "ndex": 132,
+      "name": "Ditto",
+      "form": null
+    },
+    {
+      "ndex": 134,
+      "name": "Vaporeon",
+      "form": null
+    },
+    {
+      "ndex": 135,
+      "name": "Jolteon",
+      "form": null
+    },
+    {
+      "ndex": 136,
+      "name": "Flareon",
+      "form": null
+    },
+    {
+      "ndex": 142,
+      "name": "Aerodactyl",
+      "form": null
+    },
+    {
+      "ndex": 142,
+      "name": "Aerodactyl",
+      "form": "Mega"
+    },
+    {
+      "ndex": 143,
+      "name": "Snorlax",
+      "form": null
+    },
+    {
+      "ndex": 149,
+      "name": "Dragonite",
+      "form": null
+    },
+    {
+      "ndex": 149,
+      "name": "Dragonite",
+      "form": "Mega"
+    },
+    {
+      "ndex": 154,
+      "name": "Meganium",
+      "form": null
+    },
+    {
+      "ndex": 154,
+      "name": "Meganium",
+      "form": "Mega"
+    },
+    {
+      "ndex": 157,
+      "name": "Typhlosion",
+      "form": null
+    },
+    {
+      "ndex": 157,
+      "name": "Typhlosion",
+      "form": "Hisui"
+    },
+    {
+      "ndex": 160,
+      "name": "Feraligatr",
+      "form": null
+    },
+    {
+      "ndex": 160,
+      "name": "Feraligatr",
+      "form": "Mega"
+    },
+    {
+      "ndex": 168,
+      "name": "Ariados",
+      "form": null
+    },
+    {
+      "ndex": 181,
+      "name": "Ampharos",
+      "form": null
+    },
+    {
+      "ndex": 181,
+      "name": "Ampharos",
+      "form": "Mega"
+    },
+    {
+      "ndex": 184,
+      "name": "Azumarill",
+      "form": null
+    },
+    {
+      "ndex": 186,
+      "name": "Politoed",
+      "form": null
+    },
+    {
+      "ndex": 196,
+      "name": "Espeon",
+      "form": null
+    },
+    {
+      "ndex": 197,
+      "name": "Umbreon",
+      "form": null
+    },
+    {
+      "ndex": 199,
+      "name": "Slowking",
+      "form": null
+    },
+    {
+      "ndex": 199,
+      "name": "Slowking",
+      "form": "Galar"
+    },
+    {
+      "ndex": 205,
+      "name": "Forretress",
+      "form": null
+    },
+    {
+      "ndex": 208,
+      "name": "Steelix",
+      "form": null
+    },
+    {
+      "ndex": 208,
+      "name": "Steelix",
+      "form": "Mega"
+    },
+    {
+      "ndex": 212,
+      "name": "Scizor",
+      "form": null
+    },
+    {
+      "ndex": 212,
+      "name": "Scizor",
+      "form": "Mega"
+    },
+    {
+      "ndex": 214,
+      "name": "Heracross",
+      "form": null
+    },
+    {
+      "ndex": 214,
+      "name": "Heracross",
+      "form": "Mega"
+    },
+    {
+      "ndex": 227,
+      "name": "Skarmory",
+      "form": null
+    },
+    {
+      "ndex": 227,
+      "name": "Skarmory",
+      "form": "Mega"
+    },
+    {
+      "ndex": 229,
+      "name": "Houndoom",
+      "form": null
+    },
+    {
+      "ndex": 229,
+      "name": "Houndoom",
+      "form": "Mega"
+    },
+    {
+      "ndex": 248,
+      "name": "Tyranitar",
+      "form": null
+    },
+    {
+      "ndex": 248,
+      "name": "Tyranitar",
+      "form": "Mega"
+    },
+    {
+      "ndex": 279,
+      "name": "Pelipper",
+      "form": null
+    },
+    {
+      "ndex": 282,
+      "name": "Gardevoir",
+      "form": null
+    },
+    {
+      "ndex": 282,
+      "name": "Gardevoir",
+      "form": "Mega"
+    },
+    {
+      "ndex": 302,
+      "name": "Sableye",
+      "form": null
+    },
+    {
+      "ndex": 302,
+      "name": "Sableye",
+      "form": "Mega"
+    },
+    {
+      "ndex": 306,
+      "name": "Aggron",
+      "form": null
+    },
+    {
+      "ndex": 306,
+      "name": "Aggron",
+      "form": "Mega"
+    },
+    {
+      "ndex": 308,
+      "name": "Medicham",
+      "form": null
+    },
+    {
+      "ndex": 308,
+      "name": "Medicham",
+      "form": "Mega"
+    },
+    {
+      "ndex": 310,
+      "name": "Manectric",
+      "form": null
+    },
+    {
+      "ndex": 310,
+      "name": "Manectric",
+      "form": "Mega"
+    },
+    {
+      "ndex": 319,
+      "name": "Sharpedo",
+      "form": null
+    },
+    {
+      "ndex": 319,
+      "name": "Sharpedo",
+      "form": "Mega"
+    },
+    {
+      "ndex": 323,
+      "name": "Camerupt",
+      "form": null
+    },
+    {
+      "ndex": 323,
+      "name": "Camerupt",
+      "form": "Mega"
+    },
+    {
+      "ndex": 324,
+      "name": "Torkoal",
+      "form": null
+    },
+    {
+      "ndex": 334,
+      "name": "Altaria",
+      "form": null
+    },
+    {
+      "ndex": 334,
+      "name": "Altaria",
+      "form": "Mega"
+    },
+    {
+      "ndex": 350,
+      "name": "Milotic",
+      "form": null
+    },
+    {
+      "ndex": 351,
+      "name": "Castform",
+      "form": null
+    },
+    {
+      "ndex": 351,
+      "name": "Castform",
+      "form": "Rainy"
+    },
+    {
+      "ndex": 351,
+      "name": "Castform",
+      "form": "Snowy"
+    },
+    {
+      "ndex": 351,
+      "name": "Castform",
+      "form": "Sunny"
+    },
+    {
+      "ndex": 354,
+      "name": "Banette",
+      "form": null
+    },
+    {
+      "ndex": 354,
+      "name": "Banette",
+      "form": "Mega"
+    },
+    {
+      "ndex": 358,
+      "name": "Chimecho",
+      "form": null
+    },
+    {
+      "ndex": 358,
+      "name": "Chimecho",
+      "form": "Mega"
+    },
+    {
+      "ndex": 359,
+      "name": "Absol",
+      "form": null
+    },
+    {
+      "ndex": 359,
+      "name": "Absol",
+      "form": "Mega"
+    },
+    {
+      "ndex": 362,
+      "name": "Glalie",
+      "form": null
+    },
+    {
+      "ndex": 362,
+      "name": "Glalie",
+      "form": "Mega"
+    },
+    {
+      "ndex": 389,
+      "name": "Torterra",
+      "form": null
+    },
+    {
+      "ndex": 392,
+      "name": "Infernape",
+      "form": null
+    },
+    {
+      "ndex": 395,
+      "name": "Empoleon",
+      "form": null
+    },
+    {
+      "ndex": 405,
+      "name": "Luxray",
+      "form": null
+    },
+    {
+      "ndex": 407,
+      "name": "Roserade",
+      "form": null
+    },
+    {
+      "ndex": 409,
+      "name": "Rampardos",
+      "form": null
+    },
+    {
+      "ndex": 411,
+      "name": "Bastiodon",
+      "form": null
+    },
+    {
+      "ndex": 428,
+      "name": "Lopunny",
+      "form": null
+    },
+    {
+      "ndex": 428,
+      "name": "Lopunny",
+      "form": "Mega"
+    },
+    {
+      "ndex": 442,
+      "name": "Spiritomb",
+      "form": null
+    },
+    {
+      "ndex": 445,
+      "name": "Garchomp",
+      "form": null
+    },
+    {
+      "ndex": 445,
+      "name": "Garchomp",
+      "form": "Mega"
+    },
+    {
+      "ndex": 448,
+      "name": "Lucario",
+      "form": null
+    },
+    {
+      "ndex": 448,
+      "name": "Lucario",
+      "form": "Mega"
+    },
+    {
+      "ndex": 450,
+      "name": "Hippowdon",
+      "form": null
+    },
+    {
+      "ndex": 454,
+      "name": "Toxicroak",
+      "form": null
+    },
+    {
+      "ndex": 460,
+      "name": "Abomasnow",
+      "form": null
+    },
+    {
+      "ndex": 460,
+      "name": "Abomasnow",
+      "form": "Mega"
+    },
+    {
+      "ndex": 461,
+      "name": "Weavile",
+      "form": null
+    },
+    {
+      "ndex": 464,
+      "name": "Rhyperior",
+      "form": null
+    },
+    {
+      "ndex": 470,
+      "name": "Leafeon",
+      "form": null
+    },
+    {
+      "ndex": 471,
+      "name": "Glaceon",
+      "form": null
+    },
+    {
+      "ndex": 472,
+      "name": "Gliscor",
+      "form": null
+    },
+    {
+      "ndex": 473,
+      "name": "Mamoswine",
+      "form": null
+    },
+    {
+      "ndex": 475,
+      "name": "Gallade",
+      "form": null
+    },
+    {
+      "ndex": 475,
+      "name": "Gallade",
+      "form": "Mega"
+    },
+    {
+      "ndex": 478,
+      "name": "Froslass",
+      "form": null
+    },
+    {
+      "ndex": 478,
+      "name": "Froslass",
+      "form": "Mega"
+    },
+    {
+      "ndex": 479,
+      "name": "Rotom",
+      "form": null
+    },
+    {
+      "ndex": 479,
+      "name": "Rotom",
+      "form": "Fan"
+    },
+    {
+      "ndex": 479,
+      "name": "Rotom",
+      "form": "Frost"
+    },
+    {
+      "ndex": 479,
+      "name": "Rotom",
+      "form": "Heat"
+    },
+    {
+      "ndex": 479,
+      "name": "Rotom",
+      "form": "Mow"
+    },
+    {
+      "ndex": 479,
+      "name": "Rotom",
+      "form": "Wash"
+    },
+    {
+      "ndex": 497,
+      "name": "Serperior",
+      "form": null
+    },
+    {
+      "ndex": 500,
+      "name": "Emboar",
+      "form": null
+    },
+    {
+      "ndex": 500,
+      "name": "Emboar",
+      "form": "Mega"
+    },
+    {
+      "ndex": 503,
+      "name": "Samurott",
+      "form": null
+    },
+    {
+      "ndex": 503,
+      "name": "Samurott",
+      "form": "Hisui"
+    },
+    {
+      "ndex": 505,
+      "name": "Watchog",
+      "form": null
+    },
+    {
+      "ndex": 510,
+      "name": "Liepard",
+      "form": null
+    },
+    {
+      "ndex": 512,
+      "name": "Simisage",
+      "form": null
+    },
+    {
+      "ndex": 514,
+      "name": "Simisear",
+      "form": null
+    },
+    {
+      "ndex": 516,
+      "name": "Simipour",
+      "form": null
+    },
+    {
+      "ndex": 530,
+      "name": "Excadrill",
+      "form": null
+    },
+    {
+      "ndex": 530,
+      "name": "Excadrill",
+      "form": "Mega"
+    },
+    {
+      "ndex": 531,
+      "name": "Audino",
+      "form": null
+    },
+    {
+      "ndex": 531,
+      "name": "Audino",
+      "form": "Mega"
+    },
+    {
+      "ndex": 534,
+      "name": "Conkeldurr",
+      "form": null
+    },
+    {
+      "ndex": 547,
+      "name": "Whimsicott",
+      "form": null
+    },
+    {
+      "ndex": 553,
+      "name": "Krookodile",
+      "form": null
+    },
+    {
+      "ndex": 563,
+      "name": "Cofagrigus",
+      "form": null
+    },
+    {
+      "ndex": 569,
+      "name": "Garbodor",
+      "form": null
+    },
+    {
+      "ndex": 571,
+      "name": "Zoroark",
+      "form": null
+    },
+    {
+      "ndex": 571,
+      "name": "Zoroark",
+      "form": "Hisui"
+    },
+    {
+      "ndex": 579,
+      "name": "Reuniclus",
+      "form": null
+    },
+    {
+      "ndex": 584,
+      "name": "Vanilluxe",
+      "form": null
+    },
+    {
+      "ndex": 587,
+      "name": "Emolga",
+      "form": null
+    },
+    {
+      "ndex": 609,
+      "name": "Chandelure",
+      "form": null
+    },
+    {
+      "ndex": 609,
+      "name": "Chandelure",
+      "form": "Mega"
+    },
+    {
+      "ndex": 614,
+      "name": "Beartic",
+      "form": null
+    },
+    {
+      "ndex": 618,
+      "name": "Stunfisk",
+      "form": null
+    },
+    {
+      "ndex": 618,
+      "name": "Stunfisk",
+      "form": "Galar"
+    },
+    {
+      "ndex": 623,
+      "name": "Golurk",
+      "form": null
+    },
+    {
+      "ndex": 623,
+      "name": "Golurk",
+      "form": "Mega"
+    },
+    {
+      "ndex": 635,
+      "name": "Hydreigon",
+      "form": null
+    },
+    {
+      "ndex": 637,
+      "name": "Volcarona",
+      "form": null
+    },
+    {
+      "ndex": 652,
+      "name": "Chesnaught",
+      "form": null
+    },
+    {
+      "ndex": 652,
+      "name": "Chesnaught",
+      "form": "Mega"
+    },
+    {
+      "ndex": 655,
+      "name": "Delphox",
+      "form": null
+    },
+    {
+      "ndex": 655,
+      "name": "Delphox",
+      "form": "Mega"
+    },
+    {
+      "ndex": 658,
+      "name": "Greninja",
+      "form": null
+    },
+    {
+      "ndex": 658,
+      "name": "Greninja",
+      "form": "Mega"
+    },
+    {
+      "ndex": 660,
+      "name": "Diggersby",
+      "form": null
+    },
+    {
+      "ndex": 663,
+      "name": "Talonflame",
+      "form": null
+    },
+    {
+      "ndex": 666,
+      "name": "Vivillon",
+      "form": null
+    },
+    {
+      "ndex": 666,
+      "name": "Vivillon",
+      "form": "Archipelago"
+    },
+    {
+      "ndex": 666,
+      "name": "Vivillon",
+      "form": "Continental"
+    },
+    {
+      "ndex": 666,
+      "name": "Vivillon",
+      "form": "Elegant"
+    },
+    {
+      "ndex": 666,
+      "name": "Vivillon",
+      "form": "Fancy"
+    },
+    {
+      "ndex": 666,
+      "name": "Vivillon",
+      "form": "Garden"
+    },
+    {
+      "ndex": 666,
+      "name": "Vivillon",
+      "form": "High Plains"
+    },
+    {
+      "ndex": 666,
+      "name": "Vivillon",
+      "form": "Icy Snow"
+    },
+    {
+      "ndex": 666,
+      "name": "Vivillon",
+      "form": "Jungle"
+    },
+    {
+      "ndex": 666,
+      "name": "Vivillon",
+      "form": "Marine"
+    },
+    {
+      "ndex": 666,
+      "name": "Vivillon",
+      "form": "Modern"
+    },
+    {
+      "ndex": 666,
+      "name": "Vivillon",
+      "form": "Monsoon"
+    },
+    {
+      "ndex": 666,
+      "name": "Vivillon",
+      "form": "Ocean"
+    },
+    {
+      "ndex": 666,
+      "name": "Vivillon",
+      "form": "Poké Ball"
+    },
+    {
+      "ndex": 666,
+      "name": "Vivillon",
+      "form": "Polar"
+    },
+    {
+      "ndex": 666,
+      "name": "Vivillon",
+      "form": "River"
+    },
+    {
+      "ndex": 666,
+      "name": "Vivillon",
+      "form": "Sandstorm"
+    },
+    {
+      "ndex": 666,
+      "name": "Vivillon",
+      "form": "Savanna"
+    },
+    {
+      "ndex": 666,
+      "name": "Vivillon",
+      "form": "Sun"
+    },
+    {
+      "ndex": 666,
+      "name": "Vivillon",
+      "form": "Tundra"
+    },
+    {
+      "ndex": 670,
+      "name": "Floette",
+      "form": "Eternal"
+    },
+    {
+      "ndex": 670,
+      "name": "Floette",
+      "form": "Mega"
+    },
+    {
+      "ndex": 671,
+      "name": "Florges",
+      "form": null
+    },
+    {
+      "ndex": 671,
+      "name": "Florges",
+      "form": "Blue"
+    },
+    {
+      "ndex": 671,
+      "name": "Florges",
+      "form": "Orange"
+    },
+    {
+      "ndex": 671,
+      "name": "Florges",
+      "form": "White"
+    },
+    {
+      "ndex": 671,
+      "name": "Florges",
+      "form": "Yellow"
+    },
+    {
+      "ndex": 675,
+      "name": "Pangoro",
+      "form": null
+    },
+    {
+      "ndex": 676,
+      "name": "Furfrou",
+      "form": null
+    },
+    {
+      "ndex": 676,
+      "name": "Furfrou",
+      "form": "Dandy"
+    },
+    {
+      "ndex": 676,
+      "name": "Furfrou",
+      "form": "Debutante"
+    },
+    {
+      "ndex": 676,
+      "name": "Furfrou",
+      "form": "Diamond"
+    },
+    {
+      "ndex": 676,
+      "name": "Furfrou",
+      "form": "Heart"
+    },
+    {
+      "ndex": 676,
+      "name": "Furfrou",
+      "form": "Kabuki"
+    },
+    {
+      "ndex": 676,
+      "name": "Furfrou",
+      "form": "La Reine"
+    },
+    {
+      "ndex": 676,
+      "name": "Furfrou",
+      "form": "Matron"
+    },
+    {
+      "ndex": 676,
+      "name": "Furfrou",
+      "form": "Pharaoh"
+    },
+    {
+      "ndex": 676,
+      "name": "Furfrou",
+      "form": "Star"
+    },
+    {
+      "ndex": 678,
+      "name": "Meowstic",
+      "form": null
+    },
+    {
+      "ndex": 678,
+      "name": "Meowstic",
+      "form": "Female"
+    },
+    {
+      "ndex": 678,
+      "name": "Meowstic",
+      "form": "Mega"
+    },
+    {
+      "ndex": 681,
+      "name": "Aegislash",
+      "form": null
+    },
+    {
+      "ndex": 681,
+      "name": "Aegislash",
+      "form": "Blade"
+    },
+    {
+      "ndex": 683,
+      "name": "Aromatisse",
+      "form": null
+    },
+    {
+      "ndex": 685,
+      "name": "Slurpuff",
+      "form": null
+    },
+    {
+      "ndex": 693,
+      "name": "Clawitzer",
+      "form": null
+    },
+    {
+      "ndex": 695,
+      "name": "Heliolisk",
+      "form": null
+    },
+    {
+      "ndex": 697,
+      "name": "Tyrantrum",
+      "form": null
+    },
+    {
+      "ndex": 699,
+      "name": "Aurorus",
+      "form": null
+    },
+    {
+      "ndex": 700,
+      "name": "Sylveon",
+      "form": null
+    },
+    {
+      "ndex": 701,
+      "name": "Hawlucha",
+      "form": null
+    },
+    {
+      "ndex": 701,
+      "name": "Hawlucha",
+      "form": "Mega"
+    },
+    {
+      "ndex": 702,
+      "name": "Dedenne",
+      "form": null
+    },
+    {
+      "ndex": 706,
+      "name": "Goodra",
+      "form": null
+    },
+    {
+      "ndex": 706,
+      "name": "Goodra",
+      "form": "Hisui"
+    },
+    {
+      "ndex": 707,
+      "name": "Klefki",
+      "form": null
+    },
+    {
+      "ndex": 709,
+      "name": "Trevenant",
+      "form": null
+    },
+    {
+      "ndex": 711,
+      "name": "Gourgeist",
+      "form": null
+    },
+    {
+      "ndex": 711,
+      "name": "Gourgeist",
+      "form": "Jumbo"
+    },
+    {
+      "ndex": 711,
+      "name": "Gourgeist",
+      "form": "Large"
+    },
+    {
+      "ndex": 711,
+      "name": "Gourgeist",
+      "form": "Small"
+    },
+    {
+      "ndex": 713,
+      "name": "Avalugg",
+      "form": null
+    },
+    {
+      "ndex": 713,
+      "name": "Avalugg",
+      "form": "Hisui"
+    },
+    {
+      "ndex": 715,
+      "name": "Noivern",
+      "form": null
+    },
+    {
+      "ndex": 724,
+      "name": "Decidueye",
+      "form": null
+    },
+    {
+      "ndex": 724,
+      "name": "Decidueye",
+      "form": "Hisui"
+    },
+    {
+      "ndex": 727,
+      "name": "Incineroar",
+      "form": null
+    },
+    {
+      "ndex": 730,
+      "name": "Primarina",
+      "form": null
+    },
+    {
+      "ndex": 733,
+      "name": "Toucannon",
+      "form": null
+    },
+    {
+      "ndex": 740,
+      "name": "Crabominable",
+      "form": null
+    },
+    {
+      "ndex": 740,
+      "name": "Crabominable",
+      "form": "Mega"
+    },
+    {
+      "ndex": 745,
+      "name": "Lycanroc",
+      "form": null
+    },
+    {
+      "ndex": 745,
+      "name": "Lycanroc",
+      "form": "Dusk"
+    },
+    {
+      "ndex": 745,
+      "name": "Lycanroc",
+      "form": "Midnight"
+    },
+    {
+      "ndex": 748,
+      "name": "Toxapex",
+      "form": null
+    },
+    {
+      "ndex": 750,
+      "name": "Mudsdale",
+      "form": null
+    },
+    {
+      "ndex": 752,
+      "name": "Araquanid",
+      "form": null
+    },
+    {
+      "ndex": 758,
+      "name": "Salazzle",
+      "form": null
+    },
+    {
+      "ndex": 763,
+      "name": "Tsareena",
+      "form": null
+    },
+    {
+      "ndex": 765,
+      "name": "Oranguru",
+      "form": null
+    },
+    {
+      "ndex": 766,
+      "name": "Passimian",
+      "form": null
+    },
+    {
+      "ndex": 778,
+      "name": "Mimikyu",
+      "form": null
+    },
+    {
+      "ndex": 780,
+      "name": "Drampa",
+      "form": null
+    },
+    {
+      "ndex": 780,
+      "name": "Drampa",
+      "form": "Mega"
+    },
+    {
+      "ndex": 784,
+      "name": "Kommo-o",
+      "form": null
+    },
+    {
+      "ndex": 823,
+      "name": "Corviknight",
+      "form": null
+    },
+    {
+      "ndex": 841,
+      "name": "Flapple",
+      "form": null
+    },
+    {
+      "ndex": 842,
+      "name": "Appletun",
+      "form": null
+    },
+    {
+      "ndex": 844,
+      "name": "Sandaconda",
+      "form": null
+    },
+    {
+      "ndex": 855,
+      "name": "Polteageist",
+      "form": null
+    },
+    {
+      "ndex": 858,
+      "name": "Hatterene",
+      "form": null
+    },
+    {
+      "ndex": 866,
+      "name": "Mr. Rime",
+      "form": null
+    },
+    {
+      "ndex": 867,
+      "name": "Runerigus",
+      "form": null
+    },
+    {
+      "ndex": 869,
+      "name": "Alcremie",
+      "form": null
+    },
+    {
+      "ndex": 869,
+      "name": "Alcremie",
+      "form": "Caramel Swirl"
+    },
+    {
+      "ndex": 869,
+      "name": "Alcremie",
+      "form": "Lemon Cream"
+    },
+    {
+      "ndex": 869,
+      "name": "Alcremie",
+      "form": "Matcha Cream"
+    },
+    {
+      "ndex": 869,
+      "name": "Alcremie",
+      "form": "Mint Cream"
+    },
+    {
+      "ndex": 869,
+      "name": "Alcremie",
+      "form": "Rainbow Swirl"
+    },
+    {
+      "ndex": 869,
+      "name": "Alcremie",
+      "form": "Ruby Cream"
+    },
+    {
+      "ndex": 869,
+      "name": "Alcremie",
+      "form": "Ruby Swirl"
+    },
+    {
+      "ndex": 869,
+      "name": "Alcremie",
+      "form": "Salted Cream"
+    },
+    {
+      "ndex": 877,
+      "name": "Morpeko",
+      "form": null
+    },
+    {
+      "ndex": 877,
+      "name": "Morpeko",
+      "form": "Hangry"
+    },
+    {
+      "ndex": 887,
+      "name": "Dragapult",
+      "form": null
+    },
+    {
+      "ndex": 899,
+      "name": "Wyrdeer",
+      "form": null
+    },
+    {
+      "ndex": 900,
+      "name": "Kleavor",
+      "form": null
+    },
+    {
+      "ndex": 902,
+      "name": "Basculegion",
+      "form": null
+    },
+    {
+      "ndex": 902,
+      "name": "Basculegion",
+      "form": "Female"
+    },
+    {
+      "ndex": 903,
+      "name": "Sneasler",
+      "form": null
+    },
+    {
+      "ndex": 908,
+      "name": "Meowscarada",
+      "form": null
+    },
+    {
+      "ndex": 911,
+      "name": "Skeledirge",
+      "form": null
+    },
+    {
+      "ndex": 914,
+      "name": "Quaquaval",
+      "form": null
+    },
+    {
+      "ndex": 923,
+      "name": "Pawmot",
+      "form": null
+    },
+    {
+      "ndex": 925,
+      "name": "Maushold",
+      "form": null
+    },
+    {
+      "ndex": 925,
+      "name": "Maushold",
+      "form": "Three"
+    },
+    {
+      "ndex": 934,
+      "name": "Garganacl",
+      "form": null
+    },
+    {
+      "ndex": 936,
+      "name": "Armarouge",
+      "form": null
+    },
+    {
+      "ndex": 937,
+      "name": "Ceruledge",
+      "form": null
+    },
+    {
+      "ndex": 939,
+      "name": "Bellibolt",
+      "form": null
+    },
+    {
+      "ndex": 952,
+      "name": "Scovillain",
+      "form": null
+    },
+    {
+      "ndex": 952,
+      "name": "Scovillain",
+      "form": "Mega"
+    },
+    {
+      "ndex": 956,
+      "name": "Espathra",
+      "form": null
+    },
+    {
+      "ndex": 959,
+      "name": "Tinkaton",
+      "form": null
+    },
+    {
+      "ndex": 964,
+      "name": "Palafin",
+      "form": null
+    },
+    {
+      "ndex": 964,
+      "name": "Palafin",
+      "form": "Hero"
+    },
+    {
+      "ndex": 968,
+      "name": "Orthworm",
+      "form": null
+    },
+    {
+      "ndex": 970,
+      "name": "Glimmora",
+      "form": null
+    },
+    {
+      "ndex": 970,
+      "name": "Glimmora",
+      "form": "Mega"
+    },
+    {
+      "ndex": 981,
+      "name": "Farigiraf",
+      "form": null
+    },
+    {
+      "ndex": 983,
+      "name": "Kingambit",
+      "form": null
+    },
+    {
+      "ndex": 1013,
+      "name": "Sinistcha",
+      "form": null
+    },
+    {
+      "ndex": 1018,
+      "name": "Archaludon",
+      "form": null
+    },
+    {
+      "ndex": 1019,
+      "name": "Hydrapple",
+      "form": null
+    }
+  ]
+}
