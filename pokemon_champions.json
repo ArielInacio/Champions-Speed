@@ -1,1606 +1,1311 @@
 {
-  "last_updated": "2026-04-13T16:15:27.957325",
-  "count": 320,
+  "last_updated": "2026-04-13T20:12:59.190474",
+  "count": 261,
   "pokemon": [
     {
       "ndex": 3,
       "name": "Venusaur",
-      "form": null
+      "ig": null
     },
     {
       "ndex": 3,
       "name": "Venusaur",
-      "form": "Mega"
+      "ig": "-Mega"
     },
     {
       "ndex": 6,
       "name": "Charizard",
-      "form": null
-    },
-    {
-      "ndex": 6,
-      "name": "Charizard",
-      "form": "Mega X"
-    },
-    {
-      "ndex": 6,
-      "name": "Charizard",
-      "form": "Mega Y"
+      "ig": null
     },
     {
       "ndex": 9,
       "name": "Blastoise",
-      "form": null
+      "ig": null
     },
     {
       "ndex": 9,
       "name": "Blastoise",
-      "form": "Mega"
+      "ig": "-Mega"
     },
     {
       "ndex": 15,
       "name": "Beedrill",
-      "form": null
+      "ig": null
     },
     {
       "ndex": 15,
       "name": "Beedrill",
-      "form": "Mega"
+      "ig": "-Mega"
     },
     {
       "ndex": 18,
       "name": "Pidgeot",
-      "form": null
+      "ig": null
     },
     {
       "ndex": 18,
       "name": "Pidgeot",
-      "form": "Mega"
+      "ig": "-Mega"
     },
     {
       "ndex": 24,
       "name": "Arbok",
-      "form": null
+      "ig": null
     },
     {
       "ndex": 25,
       "name": "Pikachu",
-      "form": null
+      "ig": null
     },
     {
       "ndex": 26,
       "name": "Raichu",
-      "form": null
+      "ig": null
     },
     {
       "ndex": 26,
       "name": "Raichu",
-      "form": "Alola"
+      "ig": "-Alola"
     },
     {
       "ndex": 36,
       "name": "Clefable",
-      "form": null
+      "ig": null
     },
     {
       "ndex": 36,
       "name": "Clefable",
-      "form": "Mega"
+      "ig": "-Mega"
     },
     {
       "ndex": 38,
       "name": "Ninetales",
-      "form": null
+      "ig": null
     },
     {
       "ndex": 38,
       "name": "Ninetales",
-      "form": "Alola"
+      "ig": "-Alola"
     },
     {
       "ndex": 59,
       "name": "Arcanine",
-      "form": null
+      "ig": null
     },
     {
       "ndex": 59,
       "name": "Arcanine",
-      "form": "Hisui"
+      "ig": "-Hisui"
     },
     {
       "ndex": 65,
       "name": "Alakazam",
-      "form": null
+      "ig": null
     },
     {
       "ndex": 65,
       "name": "Alakazam",
-      "form": "Mega"
+      "ig": "-Mega"
     },
     {
       "ndex": 68,
       "name": "Machamp",
-      "form": null
+      "ig": null
     },
     {
       "ndex": 71,
       "name": "Victreebel",
-      "form": null
+      "ig": null
     },
     {
       "ndex": 71,
       "name": "Victreebel",
-      "form": "Mega"
+      "ig": "-Mega"
     },
     {
       "ndex": 80,
       "name": "Slowbro",
-      "form": null
+      "ig": null
     },
     {
       "ndex": 80,
       "name": "Slowbro",
-      "form": "Galar"
+      "ig": "-Galar"
     },
     {
       "ndex": 80,
       "name": "Slowbro",
-      "form": "Mega"
+      "ig": "-Mega"
     },
     {
       "ndex": 94,
       "name": "Gengar",
-      "form": null
+      "ig": null
     },
     {
       "ndex": 94,
       "name": "Gengar",
-      "form": "Mega"
+      "ig": "-Mega"
     },
     {
       "ndex": 115,
       "name": "Kangaskhan",
-      "form": null
+      "ig": null
     },
     {
       "ndex": 115,
       "name": "Kangaskhan",
-      "form": "Mega"
+      "ig": "-Mega"
     },
     {
       "ndex": 121,
       "name": "Starmie",
-      "form": null
+      "ig": null
     },
     {
       "ndex": 121,
       "name": "Starmie",
-      "form": "Mega"
+      "ig": "-Mega"
     },
     {
       "ndex": 127,
       "name": "Pinsir",
-      "form": null
+      "ig": null
     },
     {
       "ndex": 127,
       "name": "Pinsir",
-      "form": "Mega"
+      "ig": "-Mega"
     },
     {
       "ndex": 128,
       "name": "Tauros",
-      "form": null
+      "ig": null
     },
     {
       "ndex": 128,
       "name": "Tauros",
-      "form": "Paldea Aqua"
+      "ig": "-Paldea-Aqua"
     },
     {
       "ndex": 128,
       "name": "Tauros",
-      "form": "Paldea Blaze"
+      "ig": "-Paldea-Blaze"
     },
     {
       "ndex": 128,
       "name": "Tauros",
-      "form": "Paldea Combat"
+      "ig": "-Paldea-Combat"
     },
     {
       "ndex": 130,
       "name": "Gyarados",
-      "form": null
+      "ig": null
     },
     {
       "ndex": 130,
       "name": "Gyarados",
-      "form": "Mega"
+      "ig": "-Mega"
     },
     {
       "ndex": 132,
       "name": "Ditto",
-      "form": null
+      "ig": null
     },
     {
       "ndex": 134,
       "name": "Vaporeon",
-      "form": null
+      "ig": null
     },
     {
       "ndex": 135,
       "name": "Jolteon",
-      "form": null
+      "ig": null
     },
     {
       "ndex": 136,
       "name": "Flareon",
-      "form": null
+      "ig": null
     },
     {
       "ndex": 142,
       "name": "Aerodactyl",
-      "form": null
+      "ig": null
     },
     {
       "ndex": 142,
       "name": "Aerodactyl",
-      "form": "Mega"
+      "ig": "-Mega"
     },
     {
       "ndex": 143,
       "name": "Snorlax",
-      "form": null
+      "ig": null
     },
     {
       "ndex": 149,
       "name": "Dragonite",
-      "form": null
+      "ig": null
     },
     {
       "ndex": 149,
       "name": "Dragonite",
-      "form": "Mega"
+      "ig": "-Mega"
     },
     {
       "ndex": 154,
       "name": "Meganium",
-      "form": null
+      "ig": null
     },
     {
       "ndex": 154,
       "name": "Meganium",
-      "form": "Mega"
+      "ig": "-Mega"
     },
     {
       "ndex": 157,
       "name": "Typhlosion",
-      "form": null
+      "ig": null
     },
     {
       "ndex": 157,
       "name": "Typhlosion",
-      "form": "Hisui"
+      "ig": "-Hisui"
     },
     {
       "ndex": 160,
       "name": "Feraligatr",
-      "form": null
+      "ig": null
     },
     {
       "ndex": 160,
       "name": "Feraligatr",
-      "form": "Mega"
+      "ig": "-Mega"
     },
     {
       "ndex": 168,
       "name": "Ariados",
-      "form": null
+      "ig": null
     },
     {
       "ndex": 181,
       "name": "Ampharos",
-      "form": null
+      "ig": null
     },
     {
       "ndex": 181,
       "name": "Ampharos",
-      "form": "Mega"
+      "ig": "-Mega"
     },
     {
       "ndex": 184,
       "name": "Azumarill",
-      "form": null
+      "ig": null
     },
     {
       "ndex": 186,
       "name": "Politoed",
-      "form": null
+      "ig": null
     },
     {
       "ndex": 196,
       "name": "Espeon",
-      "form": null
+      "ig": null
     },
     {
       "ndex": 197,
       "name": "Umbreon",
-      "form": null
+      "ig": null
     },
     {
       "ndex": 199,
       "name": "Slowking",
-      "form": null
+      "ig": null
     },
     {
       "ndex": 199,
       "name": "Slowking",
-      "form": "Galar"
+      "ig": "-Galar"
     },
     {
       "ndex": 205,
       "name": "Forretress",
-      "form": null
+      "ig": null
     },
     {
       "ndex": 208,
       "name": "Steelix",
-      "form": null
+      "ig": null
     },
     {
       "ndex": 208,
       "name": "Steelix",
-      "form": "Mega"
+      "ig": "-Mega"
     },
     {
       "ndex": 212,
       "name": "Scizor",
-      "form": null
+      "ig": null
     },
     {
       "ndex": 212,
       "name": "Scizor",
-      "form": "Mega"
+      "ig": "-Mega"
     },
     {
       "ndex": 214,
       "name": "Heracross",
-      "form": null
+      "ig": null
     },
     {
       "ndex": 214,
       "name": "Heracross",
-      "form": "Mega"
+      "ig": "-Mega"
     },
     {
       "ndex": 227,
       "name": "Skarmory",
-      "form": null
+      "ig": null
     },
     {
       "ndex": 227,
       "name": "Skarmory",
-      "form": "Mega"
+      "ig": "-Mega"
     },
     {
       "ndex": 229,
       "name": "Houndoom",
-      "form": null
+      "ig": null
     },
     {
       "ndex": 229,
       "name": "Houndoom",
-      "form": "Mega"
+      "ig": "-Mega"
     },
     {
       "ndex": 248,
       "name": "Tyranitar",
-      "form": null
+      "ig": null
     },
     {
       "ndex": 248,
       "name": "Tyranitar",
-      "form": "Mega"
+      "ig": "-Mega"
     },
     {
       "ndex": 279,
       "name": "Pelipper",
-      "form": null
+      "ig": null
     },
     {
       "ndex": 282,
       "name": "Gardevoir",
-      "form": null
+      "ig": null
     },
     {
       "ndex": 282,
       "name": "Gardevoir",
-      "form": "Mega"
+      "ig": "-Mega"
     },
     {
       "ndex": 302,
       "name": "Sableye",
-      "form": null
+      "ig": null
     },
     {
       "ndex": 302,
       "name": "Sableye",
-      "form": "Mega"
+      "ig": "-Mega"
     },
     {
       "ndex": 306,
       "name": "Aggron",
-      "form": null
+      "ig": null
     },
     {
       "ndex": 306,
       "name": "Aggron",
-      "form": "Mega"
+      "ig": "-Mega"
     },
     {
       "ndex": 308,
       "name": "Medicham",
-      "form": null
+      "ig": null
     },
     {
       "ndex": 308,
       "name": "Medicham",
-      "form": "Mega"
+      "ig": "-Mega"
     },
     {
       "ndex": 310,
       "name": "Manectric",
-      "form": null
+      "ig": null
     },
     {
       "ndex": 310,
       "name": "Manectric",
-      "form": "Mega"
+      "ig": "-Mega"
     },
     {
       "ndex": 319,
       "name": "Sharpedo",
-      "form": null
+      "ig": null
     },
     {
       "ndex": 319,
       "name": "Sharpedo",
-      "form": "Mega"
+      "ig": "-Mega"
     },
     {
       "ndex": 323,
       "name": "Camerupt",
-      "form": null
+      "ig": null
     },
     {
       "ndex": 323,
       "name": "Camerupt",
-      "form": "Mega"
+      "ig": "-Mega"
     },
     {
       "ndex": 324,
       "name": "Torkoal",
-      "form": null
+      "ig": null
     },
     {
       "ndex": 334,
       "name": "Altaria",
-      "form": null
+      "ig": null
     },
     {
       "ndex": 334,
       "name": "Altaria",
-      "form": "Mega"
+      "ig": "-Mega"
     },
     {
       "ndex": 350,
       "name": "Milotic",
-      "form": null
+      "ig": null
     },
     {
       "ndex": 351,
       "name": "Castform",
-      "form": null
-    },
-    {
-      "ndex": 351,
-      "name": "Castform",
-      "form": "Rainy"
-    },
-    {
-      "ndex": 351,
-      "name": "Castform",
-      "form": "Snowy"
-    },
-    {
-      "ndex": 351,
-      "name": "Castform",
-      "form": "Sunny"
+      "ig": null
     },
     {
       "ndex": 354,
       "name": "Banette",
-      "form": null
+      "ig": null
     },
     {
       "ndex": 354,
       "name": "Banette",
-      "form": "Mega"
+      "ig": "-Mega"
     },
     {
       "ndex": 358,
       "name": "Chimecho",
-      "form": null
+      "ig": null
     },
     {
       "ndex": 358,
       "name": "Chimecho",
-      "form": "Mega"
+      "ig": "-Mega"
     },
     {
       "ndex": 359,
       "name": "Absol",
-      "form": null
+      "ig": null
     },
     {
       "ndex": 359,
       "name": "Absol",
-      "form": "Mega"
+      "ig": "-Mega"
     },
     {
       "ndex": 362,
       "name": "Glalie",
-      "form": null
+      "ig": null
     },
     {
       "ndex": 362,
       "name": "Glalie",
-      "form": "Mega"
+      "ig": "-Mega"
     },
     {
       "ndex": 389,
       "name": "Torterra",
-      "form": null
+      "ig": null
     },
     {
       "ndex": 392,
       "name": "Infernape",
-      "form": null
+      "ig": null
     },
     {
       "ndex": 395,
       "name": "Empoleon",
-      "form": null
+      "ig": null
     },
     {
       "ndex": 405,
       "name": "Luxray",
-      "form": null
+      "ig": null
     },
     {
       "ndex": 407,
       "name": "Roserade",
-      "form": null
+      "ig": null
     },
     {
       "ndex": 409,
       "name": "Rampardos",
-      "form": null
+      "ig": null
     },
     {
       "ndex": 411,
       "name": "Bastiodon",
-      "form": null
+      "ig": null
     },
     {
       "ndex": 428,
       "name": "Lopunny",
-      "form": null
+      "ig": null
     },
     {
       "ndex": 428,
       "name": "Lopunny",
-      "form": "Mega"
+      "ig": "-Mega"
     },
     {
       "ndex": 442,
       "name": "Spiritomb",
-      "form": null
+      "ig": null
     },
     {
       "ndex": 445,
       "name": "Garchomp",
-      "form": null
+      "ig": null
     },
     {
       "ndex": 445,
       "name": "Garchomp",
-      "form": "Mega"
+      "ig": "-Mega"
     },
     {
       "ndex": 448,
       "name": "Lucario",
-      "form": null
+      "ig": null
     },
     {
       "ndex": 448,
       "name": "Lucario",
-      "form": "Mega"
+      "ig": "-Mega"
     },
     {
       "ndex": 450,
       "name": "Hippowdon",
-      "form": null
+      "ig": null
     },
     {
       "ndex": 454,
       "name": "Toxicroak",
-      "form": null
+      "ig": null
     },
     {
       "ndex": 460,
       "name": "Abomasnow",
-      "form": null
+      "ig": null
     },
     {
       "ndex": 460,
       "name": "Abomasnow",
-      "form": "Mega"
+      "ig": "-Mega"
     },
     {
       "ndex": 461,
       "name": "Weavile",
-      "form": null
+      "ig": null
     },
     {
       "ndex": 464,
       "name": "Rhyperior",
-      "form": null
+      "ig": null
     },
     {
       "ndex": 470,
       "name": "Leafeon",
-      "form": null
+      "ig": null
     },
     {
       "ndex": 471,
       "name": "Glaceon",
-      "form": null
+      "ig": null
     },
     {
       "ndex": 472,
       "name": "Gliscor",
-      "form": null
+      "ig": null
     },
     {
       "ndex": 473,
       "name": "Mamoswine",
-      "form": null
+      "ig": null
     },
     {
       "ndex": 475,
       "name": "Gallade",
-      "form": null
+      "ig": null
     },
     {
       "ndex": 475,
       "name": "Gallade",
-      "form": "Mega"
+      "ig": "-Mega"
     },
     {
       "ndex": 478,
       "name": "Froslass",
-      "form": null
+      "ig": null
     },
     {
       "ndex": 478,
       "name": "Froslass",
-      "form": "Mega"
+      "ig": "-Mega"
     },
     {
       "ndex": 479,
       "name": "Rotom",
-      "form": null
-    },
-    {
-      "ndex": 479,
-      "name": "Rotom",
-      "form": "Fan"
-    },
-    {
-      "ndex": 479,
-      "name": "Rotom",
-      "form": "Frost"
-    },
-    {
-      "ndex": 479,
-      "name": "Rotom",
-      "form": "Heat"
-    },
-    {
-      "ndex": 479,
-      "name": "Rotom",
-      "form": "Mow"
-    },
-    {
-      "ndex": 479,
-      "name": "Rotom",
-      "form": "Wash"
+      "ig": null
     },
     {
       "ndex": 497,
       "name": "Serperior",
-      "form": null
+      "ig": null
     },
     {
       "ndex": 500,
       "name": "Emboar",
-      "form": null
+      "ig": null
     },
     {
       "ndex": 500,
       "name": "Emboar",
-      "form": "Mega"
+      "ig": "-Mega"
     },
     {
       "ndex": 503,
       "name": "Samurott",
-      "form": null
+      "ig": null
     },
     {
       "ndex": 503,
       "name": "Samurott",
-      "form": "Hisui"
+      "ig": "-Hisui"
     },
     {
       "ndex": 505,
       "name": "Watchog",
-      "form": null
+      "ig": null
     },
     {
       "ndex": 510,
       "name": "Liepard",
-      "form": null
+      "ig": null
     },
     {
       "ndex": 512,
       "name": "Simisage",
-      "form": null
+      "ig": null
     },
     {
       "ndex": 514,
       "name": "Simisear",
-      "form": null
+      "ig": null
     },
     {
       "ndex": 516,
       "name": "Simipour",
-      "form": null
+      "ig": null
     },
     {
       "ndex": 530,
       "name": "Excadrill",
-      "form": null
+      "ig": null
     },
     {
       "ndex": 530,
       "name": "Excadrill",
-      "form": "Mega"
+      "ig": "-Mega"
     },
     {
       "ndex": 531,
       "name": "Audino",
-      "form": null
+      "ig": null
     },
     {
       "ndex": 531,
       "name": "Audino",
-      "form": "Mega"
+      "ig": "-Mega"
     },
     {
       "ndex": 534,
       "name": "Conkeldurr",
-      "form": null
+      "ig": null
     },
     {
       "ndex": 547,
       "name": "Whimsicott",
-      "form": null
+      "ig": null
     },
     {
       "ndex": 553,
       "name": "Krookodile",
-      "form": null
+      "ig": null
     },
     {
       "ndex": 563,
       "name": "Cofagrigus",
-      "form": null
+      "ig": null
     },
     {
       "ndex": 569,
       "name": "Garbodor",
-      "form": null
+      "ig": null
     },
     {
       "ndex": 571,
       "name": "Zoroark",
-      "form": null
+      "ig": null
     },
     {
       "ndex": 571,
       "name": "Zoroark",
-      "form": "Hisui"
+      "ig": "-Hisui"
     },
     {
       "ndex": 579,
       "name": "Reuniclus",
-      "form": null
+      "ig": null
     },
     {
       "ndex": 584,
       "name": "Vanilluxe",
-      "form": null
+      "ig": null
     },
     {
       "ndex": 587,
       "name": "Emolga",
-      "form": null
+      "ig": null
     },
     {
       "ndex": 609,
       "name": "Chandelure",
-      "form": null
+      "ig": null
     },
     {
       "ndex": 609,
       "name": "Chandelure",
-      "form": "Mega"
+      "ig": "-Mega"
     },
     {
       "ndex": 614,
       "name": "Beartic",
-      "form": null
+      "ig": null
     },
     {
       "ndex": 618,
       "name": "Stunfisk",
-      "form": null
+      "ig": null
     },
     {
       "ndex": 618,
       "name": "Stunfisk",
-      "form": "Galar"
+      "ig": "-Galar"
     },
     {
       "ndex": 623,
       "name": "Golurk",
-      "form": null
+      "ig": null
     },
     {
       "ndex": 623,
       "name": "Golurk",
-      "form": "Mega"
+      "ig": "-Mega"
     },
     {
       "ndex": 635,
       "name": "Hydreigon",
-      "form": null
+      "ig": null
     },
     {
       "ndex": 637,
       "name": "Volcarona",
-      "form": null
+      "ig": null
     },
     {
       "ndex": 652,
       "name": "Chesnaught",
-      "form": null
+      "ig": null
     },
     {
       "ndex": 652,
       "name": "Chesnaught",
-      "form": "Mega"
+      "ig": "-Mega"
     },
     {
       "ndex": 655,
       "name": "Delphox",
-      "form": null
+      "ig": null
     },
     {
       "ndex": 655,
       "name": "Delphox",
-      "form": "Mega"
+      "ig": "-Mega"
     },
     {
       "ndex": 658,
       "name": "Greninja",
-      "form": null
+      "ig": null
     },
     {
       "ndex": 658,
       "name": "Greninja",
-      "form": "Mega"
+      "ig": "-Mega"
     },
     {
       "ndex": 660,
       "name": "Diggersby",
-      "form": null
+      "ig": null
     },
     {
       "ndex": 663,
       "name": "Talonflame",
-      "form": null
+      "ig": null
     },
     {
       "ndex": 666,
       "name": "Vivillon",
-      "form": null
-    },
-    {
-      "ndex": 666,
-      "name": "Vivillon",
-      "form": "Archipelago"
-    },
-    {
-      "ndex": 666,
-      "name": "Vivillon",
-      "form": "Continental"
-    },
-    {
-      "ndex": 666,
-      "name": "Vivillon",
-      "form": "Elegant"
-    },
-    {
-      "ndex": 666,
-      "name": "Vivillon",
-      "form": "Fancy"
-    },
-    {
-      "ndex": 666,
-      "name": "Vivillon",
-      "form": "Garden"
-    },
-    {
-      "ndex": 666,
-      "name": "Vivillon",
-      "form": "High Plains"
-    },
-    {
-      "ndex": 666,
-      "name": "Vivillon",
-      "form": "Icy Snow"
-    },
-    {
-      "ndex": 666,
-      "name": "Vivillon",
-      "form": "Jungle"
-    },
-    {
-      "ndex": 666,
-      "name": "Vivillon",
-      "form": "Marine"
-    },
-    {
-      "ndex": 666,
-      "name": "Vivillon",
-      "form": "Modern"
-    },
-    {
-      "ndex": 666,
-      "name": "Vivillon",
-      "form": "Monsoon"
-    },
-    {
-      "ndex": 666,
-      "name": "Vivillon",
-      "form": "Ocean"
-    },
-    {
-      "ndex": 666,
-      "name": "Vivillon",
-      "form": "Poké Ball"
-    },
-    {
-      "ndex": 666,
-      "name": "Vivillon",
-      "form": "Polar"
-    },
-    {
-      "ndex": 666,
-      "name": "Vivillon",
-      "form": "River"
-    },
-    {
-      "ndex": 666,
-      "name": "Vivillon",
-      "form": "Sandstorm"
-    },
-    {
-      "ndex": 666,
-      "name": "Vivillon",
-      "form": "Savanna"
-    },
-    {
-      "ndex": 666,
-      "name": "Vivillon",
-      "form": "Sun"
-    },
-    {
-      "ndex": 666,
-      "name": "Vivillon",
-      "form": "Tundra"
+      "ig": null
     },
     {
       "ndex": 670,
       "name": "Floette",
-      "form": "Eternal"
+      "ig": null
     },
     {
       "ndex": 670,
       "name": "Floette",
-      "form": "Mega"
+      "ig": "-Mega"
     },
     {
       "ndex": 671,
       "name": "Florges",
-      "form": null
-    },
-    {
-      "ndex": 671,
-      "name": "Florges",
-      "form": "Blue"
-    },
-    {
-      "ndex": 671,
-      "name": "Florges",
-      "form": "Orange"
-    },
-    {
-      "ndex": 671,
-      "name": "Florges",
-      "form": "White"
-    },
-    {
-      "ndex": 671,
-      "name": "Florges",
-      "form": "Yellow"
+      "ig": null
     },
     {
       "ndex": 675,
       "name": "Pangoro",
-      "form": null
+      "ig": null
     },
     {
       "ndex": 676,
       "name": "Furfrou",
-      "form": null
-    },
-    {
-      "ndex": 676,
-      "name": "Furfrou",
-      "form": "Dandy"
-    },
-    {
-      "ndex": 676,
-      "name": "Furfrou",
-      "form": "Debutante"
-    },
-    {
-      "ndex": 676,
-      "name": "Furfrou",
-      "form": "Diamond"
-    },
-    {
-      "ndex": 676,
-      "name": "Furfrou",
-      "form": "Heart"
-    },
-    {
-      "ndex": 676,
-      "name": "Furfrou",
-      "form": "Kabuki"
-    },
-    {
-      "ndex": 676,
-      "name": "Furfrou",
-      "form": "La Reine"
-    },
-    {
-      "ndex": 676,
-      "name": "Furfrou",
-      "form": "Matron"
-    },
-    {
-      "ndex": 676,
-      "name": "Furfrou",
-      "form": "Pharaoh"
-    },
-    {
-      "ndex": 676,
-      "name": "Furfrou",
-      "form": "Star"
+      "ig": null
     },
     {
       "ndex": 678,
       "name": "Meowstic",
-      "form": null
+      "ig": null
     },
     {
       "ndex": 678,
       "name": "Meowstic",
-      "form": "Female"
+      "ig": "-Female"
     },
     {
       "ndex": 678,
       "name": "Meowstic",
-      "form": "Mega"
+      "ig": "-Mega"
     },
     {
       "ndex": 681,
       "name": "Aegislash",
-      "form": null
-    },
-    {
-      "ndex": 681,
-      "name": "Aegislash",
-      "form": "Blade"
+      "ig": null
     },
     {
       "ndex": 683,
       "name": "Aromatisse",
-      "form": null
+      "ig": null
     },
     {
       "ndex": 685,
       "name": "Slurpuff",
-      "form": null
+      "ig": null
     },
     {
       "ndex": 693,
       "name": "Clawitzer",
-      "form": null
+      "ig": null
     },
     {
       "ndex": 695,
       "name": "Heliolisk",
-      "form": null
+      "ig": null
     },
     {
       "ndex": 697,
       "name": "Tyrantrum",
-      "form": null
+      "ig": null
     },
     {
       "ndex": 699,
       "name": "Aurorus",
-      "form": null
+      "ig": null
     },
     {
       "ndex": 700,
       "name": "Sylveon",
-      "form": null
+      "ig": null
     },
     {
       "ndex": 701,
       "name": "Hawlucha",
-      "form": null
+      "ig": null
     },
     {
       "ndex": 701,
       "name": "Hawlucha",
-      "form": "Mega"
+      "ig": "-Mega"
     },
     {
       "ndex": 702,
       "name": "Dedenne",
-      "form": null
+      "ig": null
     },
     {
       "ndex": 706,
       "name": "Goodra",
-      "form": null
+      "ig": null
     },
     {
       "ndex": 706,
       "name": "Goodra",
-      "form": "Hisui"
+      "ig": "-Hisui"
     },
     {
       "ndex": 707,
       "name": "Klefki",
-      "form": null
+      "ig": null
     },
     {
       "ndex": 709,
       "name": "Trevenant",
-      "form": null
+      "ig": null
     },
     {
       "ndex": 711,
       "name": "Gourgeist",
-      "form": null
-    },
-    {
-      "ndex": 711,
-      "name": "Gourgeist",
-      "form": "Jumbo"
-    },
-    {
-      "ndex": 711,
-      "name": "Gourgeist",
-      "form": "Large"
-    },
-    {
-      "ndex": 711,
-      "name": "Gourgeist",
-      "form": "Small"
+      "ig": null
     },
     {
       "ndex": 713,
       "name": "Avalugg",
-      "form": null
+      "ig": null
     },
     {
       "ndex": 713,
       "name": "Avalugg",
-      "form": "Hisui"
+      "ig": "-Hisui"
     },
     {
       "ndex": 715,
       "name": "Noivern",
-      "form": null
+      "ig": null
     },
     {
       "ndex": 724,
       "name": "Decidueye",
-      "form": null
+      "ig": null
     },
     {
       "ndex": 724,
       "name": "Decidueye",
-      "form": "Hisui"
+      "ig": "-Hisui"
     },
     {
       "ndex": 727,
       "name": "Incineroar",
-      "form": null
+      "ig": null
     },
     {
       "ndex": 730,
       "name": "Primarina",
-      "form": null
+      "ig": null
     },
     {
       "ndex": 733,
       "name": "Toucannon",
-      "form": null
+      "ig": null
     },
     {
       "ndex": 740,
       "name": "Crabominable",
-      "form": null
+      "ig": null
     },
     {
       "ndex": 740,
       "name": "Crabominable",
-      "form": "Mega"
+      "ig": "-Mega"
     },
     {
       "ndex": 745,
       "name": "Lycanroc",
-      "form": null
-    },
-    {
-      "ndex": 745,
-      "name": "Lycanroc",
-      "form": "Dusk"
-    },
-    {
-      "ndex": 745,
-      "name": "Lycanroc",
-      "form": "Midnight"
+      "ig": null
     },
     {
       "ndex": 748,
       "name": "Toxapex",
-      "form": null
+      "ig": null
     },
     {
       "ndex": 750,
       "name": "Mudsdale",
-      "form": null
+      "ig": null
     },
     {
       "ndex": 752,
       "name": "Araquanid",
-      "form": null
+      "ig": null
     },
     {
       "ndex": 758,
       "name": "Salazzle",
-      "form": null
+      "ig": null
     },
     {
       "ndex": 763,
       "name": "Tsareena",
-      "form": null
+      "ig": null
     },
     {
       "ndex": 765,
       "name": "Oranguru",
-      "form": null
+      "ig": null
     },
     {
       "ndex": 766,
       "name": "Passimian",
-      "form": null
+      "ig": null
     },
     {
       "ndex": 778,
       "name": "Mimikyu",
-      "form": null
+      "ig": null
     },
     {
       "ndex": 780,
       "name": "Drampa",
-      "form": null
+      "ig": null
     },
     {
       "ndex": 780,
       "name": "Drampa",
-      "form": "Mega"
+      "ig": "-Mega"
     },
     {
       "ndex": 784,
       "name": "Kommo-o",
-      "form": null
+      "ig": null
     },
     {
       "ndex": 823,
       "name": "Corviknight",
-      "form": null
+      "ig": null
     },
     {
       "ndex": 841,
       "name": "Flapple",
-      "form": null
+      "ig": null
     },
     {
       "ndex": 842,
       "name": "Appletun",
-      "form": null
+      "ig": null
     },
     {
       "ndex": 844,
       "name": "Sandaconda",
-      "form": null
+      "ig": null
     },
     {
       "ndex": 855,
       "name": "Polteageist",
-      "form": null
+      "ig": null
     },
     {
       "ndex": 858,
       "name": "Hatterene",
-      "form": null
+      "ig": null
     },
     {
       "ndex": 866,
       "name": "Mr. Rime",
-      "form": null
+      "ig": null
     },
     {
       "ndex": 867,
       "name": "Runerigus",
-      "form": null
+      "ig": null
     },
     {
       "ndex": 869,
       "name": "Alcremie",
-      "form": null
-    },
-    {
-      "ndex": 869,
-      "name": "Alcremie",
-      "form": "Caramel Swirl"
-    },
-    {
-      "ndex": 869,
-      "name": "Alcremie",
-      "form": "Lemon Cream"
-    },
-    {
-      "ndex": 869,
-      "name": "Alcremie",
-      "form": "Matcha Cream"
-    },
-    {
-      "ndex": 869,
-      "name": "Alcremie",
-      "form": "Mint Cream"
-    },
-    {
-      "ndex": 869,
-      "name": "Alcremie",
-      "form": "Rainbow Swirl"
-    },
-    {
-      "ndex": 869,
-      "name": "Alcremie",
-      "form": "Ruby Cream"
-    },
-    {
-      "ndex": 869,
-      "name": "Alcremie",
-      "form": "Ruby Swirl"
-    },
-    {
-      "ndex": 869,
-      "name": "Alcremie",
-      "form": "Salted Cream"
+      "ig": null
     },
     {
       "ndex": 877,
       "name": "Morpeko",
-      "form": null
-    },
-    {
-      "ndex": 877,
-      "name": "Morpeko",
-      "form": "Hangry"
+      "ig": null
     },
     {
       "ndex": 887,
       "name": "Dragapult",
-      "form": null
+      "ig": null
     },
     {
       "ndex": 899,
       "name": "Wyrdeer",
-      "form": null
+      "ig": null
     },
     {
       "ndex": 900,
       "name": "Kleavor",
-      "form": null
+      "ig": null
     },
     {
       "ndex": 902,
       "name": "Basculegion",
-      "form": null
+      "ig": null
     },
     {
       "ndex": 902,
       "name": "Basculegion",
-      "form": "Female"
+      "ig": "-Female"
     },
     {
       "ndex": 903,
       "name": "Sneasler",
-      "form": null
+      "ig": null
     },
     {
       "ndex": 908,
       "name": "Meowscarada",
-      "form": null
+      "ig": null
     },
     {
       "ndex": 911,
       "name": "Skeledirge",
-      "form": null
+      "ig": null
     },
     {
       "ndex": 914,
       "name": "Quaquaval",
-      "form": null
+      "ig": null
     },
     {
       "ndex": 923,
       "name": "Pawmot",
-      "form": null
+      "ig": null
     },
     {
       "ndex": 925,
       "name": "Maushold",
-      "form": null
-    },
-    {
-      "ndex": 925,
-      "name": "Maushold",
-      "form": "Three"
+      "ig": null
     },
     {
       "ndex": 934,
       "name": "Garganacl",
-      "form": null
+      "ig": null
     },
     {
       "ndex": 936,
       "name": "Armarouge",
-      "form": null
+      "ig": null
     },
     {
       "ndex": 937,
       "name": "Ceruledge",
-      "form": null
+      "ig": null
     },
     {
       "ndex": 939,
       "name": "Bellibolt",
-      "form": null
+      "ig": null
     },
     {
       "ndex": 952,
       "name": "Scovillain",
-      "form": null
+      "ig": null
     },
     {
       "ndex": 952,
       "name": "Scovillain",
-      "form": "Mega"
+      "ig": "-Mega"
     },
     {
       "ndex": 956,
       "name": "Espathra",
-      "form": null
+      "ig": null
     },
     {
       "ndex": 959,
       "name": "Tinkaton",
-      "form": null
+      "ig": null
     },
     {
       "ndex": 964,
       "name": "Palafin",
-      "form": null
-    },
-    {
-      "ndex": 964,
-      "name": "Palafin",
-      "form": "Hero"
+      "ig": null
     },
     {
       "ndex": 968,
       "name": "Orthworm",
-      "form": null
+      "ig": null
     },
     {
       "ndex": 970,
       "name": "Glimmora",
-      "form": null
+      "ig": null
     },
     {
       "ndex": 970,
       "name": "Glimmora",
-      "form": "Mega"
+      "ig": "-Mega"
     },
     {
       "ndex": 981,
       "name": "Farigiraf",
-      "form": null
+      "ig": null
     },
     {
       "ndex": 983,
       "name": "Kingambit",
-      "form": null
+      "ig": null
     },
     {
       "ndex": 1013,
       "name": "Sinistcha",
-      "form": null
+      "ig": null
     },
     {
       "ndex": 1018,
       "name": "Archaludon",
-      "form": null
+      "ig": null
     },
     {
       "ndex": 1019,
       "name": "Hydrapple",
-      "form": null
+      "ig": null
     }
   ]
 }

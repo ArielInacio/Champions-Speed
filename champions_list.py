@@ -47,11 +47,10 @@ def scrape():
     for template in wikicode.filter_templates():
         name = template.name.strip().lower()
 
-        if not name.startswith("gdex/champs"):
+        if not (name.startswith("gdex/champs") or name.startswith("msp/champs")) :
             continue
 
         params = template.params
-
         if len(params) < 2:
             continue
 
@@ -60,33 +59,33 @@ def scrape():
 
         ndex = int(ndex_raw.lstrip("0"))
 
-        region = None
-        form = None
+        ig = None
 
         for p in params:
             pname = str(p.name).strip()
             pvalue = str(p.value).strip()
 
             if pname == "ig":
-                # "-Alola" → "Alola"
-                region = pvalue.lstrip("-")
-            elif pname == "form":
-                form = pvalue
-
-        # fallback if ig missing
-        if not region and form:
-            region = normalize_form_to_region(form)
+                # "Mega X" -> "Mega-X"
+                if any(item in pvalue for  item in ["Mega" ]):
+                    ig = pvalue.replace(" ", "-")
+            if pname == "form":
+                # "Mega X" -> "Mega-X"
+                if any(item in pvalue for  item in [ "-Alola", "-Galar", "-Hisui", "-Paldea", "-Female", "-Male" ]):
+                    ig = pvalue.replace(" ", "-")        
+            #elif pname == "form":
+            #    form = pvalue
 
         results.append({
             "ndex": ndex,
             "name": base_name,
-            "form": region  # None for base forms
+            "ig": ig 
         })
 
     # dedupe + sort
-    unique = {(p["ndex"], p["name"], p["form"]): p for p in results}
+    unique = {(p["ndex"], p["name"], p["ig"]): p for p in results}
     final = list(unique.values())
-    final.sort(key=lambda x: (x["ndex"], x["name"], x["form"] or ""))
+    final.sort(key=lambda x: (x["ndex"], x["name"], x["ig"] or ""))
 
     #sanity check
     if len(final) < 50:
@@ -126,7 +125,7 @@ def diff_and_save(data, path="pokemon_champions.json"):
     
     
 def format_name(p):
-    return f"{p['name']}-{p['form']}" if p["form"] else p["name"]
+    return f"{p['name']}{p['ig']}" if p["ig"] else p["name"]
 
 
 def read_champions_json_to_list(path="pokemon_champions.json"):
@@ -145,4 +144,11 @@ def read_champions_json_to_list(path="pokemon_champions.json"):
 if __name__ == "__main__":
     data = scrape()
     diff_and_save(data)
-    print(f"Saved {len(data)} Pokémon")    
+    print(f"Saved {len(data)} Pokémon")
+    #print(fetch_wikitext()[:5000])
+
+
+
+    
+
+
