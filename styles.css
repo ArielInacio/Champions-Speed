@@ -30,9 +30,11 @@ body {
 
 .left-column {
   display: grid;
+  grid-template-rows: auto auto 1fr;
   gap: 1rem;
   align-content: start;
   min-width: 0;
+  height: 100%;
 }
 
 .app-header {
@@ -71,6 +73,18 @@ body {
 
 .panel-header h2 {
   margin: 0;
+}
+
+.entries-search-wrap {
+  display: grid;
+  gap: 0.25rem;
+  font-size: 0.82rem;
+  margin-bottom: 0.5rem;
+}
+
+.entries-search-wrap input {
+  padding: 0.4rem 0.5rem;
+  font-size: 0.85rem;
 }
 
 .panel-muted {
@@ -155,18 +169,26 @@ button.danger {
 
 .entries-list {
   display: grid;
-  gap: 0.8rem;
-  max-height: 48vh;
+  gap: 0.45rem;
+  max-height: none;
+  flex: 1;
+  min-height: 0;
   overflow: auto;
-  padding-right: 0.3rem;
+  padding-right: 0.2rem;
+}
+
+.selected-panel {
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
 }
 
 .entry-card {
   border: 1px solid var(--line);
   border-radius: 10px;
-  padding: 0.75rem;
+  padding: 0.45rem 0.5rem;
   display: grid;
-  gap: 0.65rem;
+  gap: 0.35rem;
 }
 
 .entry-head {
@@ -174,35 +196,85 @@ button.danger {
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
+  flex-wrap: nowrap;
+  min-width: 0;
+}
+
+.entry-head > div:first-child {
+  min-width: 0;
 }
 
 .entry-title {
   margin: 0;
-  font-size: 0.9rem;
+  font-size: 0.82rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .entry-subtitle {
-  margin: 0.2rem 0 0;
+  margin: 0.1rem 0 0;
   color: var(--muted);
-  font-size: 0.8rem;
+  font-size: 0.73rem;
 }
 
 .entry-controls {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 0.55rem;
+  grid-template-columns: minmax(0, 1fr) minmax(70px, 0.7fr) minmax(64px, 0.64fr);
+  gap: 0.32rem;
   align-items: end;
 }
 
 .entry-controls label {
   display: grid;
-  gap: 0.35rem;
-  font-size: 0.86rem;
+  gap: 0.2rem;
+  font-size: 0.72rem;
+}
+
+.entry-head-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  flex-shrink: 0;
+}
+
+.entry-visible {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.2rem;
+  font-size: 0.72rem;
+}
+
+.entry-visible input {
+  margin: 0;
 }
 
 .entry-actions {
   display: flex;
-  gap: 0.4rem;
+  gap: 0.2rem;
+}
+
+.entry-actions button.mini {
+  padding: 0.2rem 0.36rem;
+  font-size: 0.68rem;
+  border-radius: 6px;
+}
+
+.entry-actions .icon-button {
+  width: 22px;
+  height: 22px;
+  padding: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.72rem;
+  line-height: 1;
+}
+
+.entry-actions .icon-delete {
+  background: #dc2626;
+  color: #ffffff;
+  border-color: #dc2626;
 }
 
 .speed-chart {
@@ -338,8 +410,17 @@ button.danger {
     grid-template-columns: 1fr;
   }
 
+  .left-column {
+    grid-template-rows: auto auto auto;
+    height: auto;
+  }
+
+  .selected-panel {
+    min-height: auto;
+  }
+
   .entries-list {
-    max-height: 36vh;
+    max-height: 40vh;
   }
 }
 
@@ -347,6 +428,16 @@ button.danger {
   .entry-form,
   .entry-controls {
     grid-template-columns: 1fr;
+  }
+
+  .entry-head {
+    flex-direction: row;
+    align-items: start;
+    gap: 0.4rem;
+  }
+
+  .entry-head-actions {
+    margin-left: auto;
   }
 }
 

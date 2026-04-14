@@ -8,6 +8,7 @@ const store = createStore({
   pokemonRows: [],
   entries: [],
   defaultConfigEntries: [],
+  entriesSearchQuery: "",
 });
 
 const STAGE_MIN = -6;
@@ -27,6 +28,7 @@ const els = {
   feedback: document.getElementById("form-feedback"),
   emptyState: document.getElementById("entries-empty"),
   entriesList: document.getElementById("entries-list"),
+  entriesSearch: document.getElementById("entries-search"),
   chartRoot: document.getElementById("speed-chart"),
   chartSummary: document.getElementById("chart-summary"),
   resetDefaults: document.getElementById("reset-defaults"),
@@ -140,17 +142,42 @@ function findPokemonByInput(value, rows) {
   return rows.find((pokemon) => pokemon.displayName.toLowerCase() === value.trim().toLowerCase());
 }
 
+function normalizeSearchText(value) {
+  return String(value ?? "")
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, " ")
+    .trim();
+}
+
+function matchesEntrySearch(entry, rawQuery) {
+  const query = normalizeSearchText(rawQuery);
+  if (!query) {
+    return true;
+  }
+
+  const haystack = normalizeSearchText(
+    `${entry.displayName} ${entry.baseSpeed} ${entry.finalSpeed} ${entry.nature} ${entry.speedPoints} ${entry.stage}`,
+  );
+  return haystack.includes(query);
+}
+
 function renderEntries(state) {
-  const pokemonMap = byKey(state.pokemonRows);
   const computedEntries = buildComputedEntries(state);
-  const computedById = new Map(computedEntries.map((item) => [item.id, item]));
+  const filteredEntries = computedEntries.filter((entry) => matchesEntrySearch(entry, state.entriesSearchQuery));
 
   els.entriesList.innerHTML = "";
 
-  els.emptyState.style.display = state.entries.length ? "none" : "block";
+  if (!state.entries.length) {
+    els.emptyState.style.display = "block";
+    els.emptyState.textContent = "No Pokemon selected yet.";
+  } else if (!filteredEntries.length) {
+    els.emptyState.style.display = "block";
+    els.emptyState.textContent = "No selected Pokemon matches your search.";
+  } else {
+    els.emptyState.style.display = "none";
+  }
 
-  for (const entry of state.entries) {
-    const pokemon = pokemonMap.get(entry.pokemonKey);
+  for (const entry of filteredEntries) {
     const card = document.createElement("article");
     card.className = "entry-card";
     card.dataset.entryId = String(entry.id);
@@ -161,19 +188,20 @@ function renderEntries(state) {
     const titleWrap = document.createElement("div");
     const title = document.createElement("h3");
     title.className = "entry-title";
-    title.textContent = pokemon ? pokemon.displayName : "Unknown Pokemon";
+    title.textContent = entry.displayName;
     titleWrap.appendChild(title);
 
     const subtitle = document.createElement("p");
     subtitle.className = "entry-subtitle";
-    const computed = computedById.get(entry.id);
-    subtitle.textContent = pokemon && computed
-      ? `Base Speed: ${pokemon.speed} | Final Speed: ${computed.finalSpeed}`
-      : "Missing pokemon data";
+    subtitle.textContent = `Base ${entry.baseSpeed} | Final ${entry.finalSpeed}`;
     titleWrap.appendChild(subtitle);
     head.appendChild(titleWrap);
 
+    const headActions = document.createElement("div");
+    headActions.className = "entry-head-actions";
+
     const visibilityLabel = document.createElement("label");
+    visibilityLabel.className = "entry-visible";
     visibilityLabel.textContent = "Visible";
     const visibility = document.createElement("input");
     visibility.type = "checkbox";
@@ -182,7 +210,28 @@ function renderEntries(state) {
       updateEntry(entry.id, () => ({ visible: visibility.checked }));
     });
     visibilityLabel.prepend(visibility);
-    head.appendChild(visibilityLabel);
+    headActions.appendChild(visibilityLabel);
+
+    const actions = document.createElement("div");
+    actions.className = "entry-actions";
+    const cloneBtn = document.createElement("button");
+    cloneBtn.type = "button";
+    cloneBtn.className = "secondary mini icon-button";
+    cloneBtn.textContent = "⧉";
+    cloneBtn.title = "Clone entry";
+    cloneBtn.setAttribute("aria-label", "Clone entry");
+    cloneBtn.addEventListener("click", () => cloneEntry(entry.id));
+
+    const removeBtn = document.createElement("button");
+    removeBtn.type = "button";
+    removeBtn.className = "danger mini icon-button icon-delete";
+    removeBtn.textContent = "🗑";
+    removeBtn.title = "Remove entry";
+    removeBtn.setAttribute("aria-label", "Remove entry");
+    removeBtn.addEventListener("click", () => removeEntry(entry.id));
+    actions.append(cloneBtn, removeBtn);
+    headActions.appendChild(actions);
+    head.appendChild(headActions);
     card.appendChild(head);
 
     const controls = document.createElement("div");
@@ -203,7 +252,7 @@ function renderEntries(state) {
     natureWrap.appendChild(natureSelect);
 
     const spWrap = document.createElement("label");
-    spWrap.textContent = "Speed Points";
+    spWrap.textContent = "SP";
     const spInput = document.createElement("input");
     spInput.type = "number";
     spInput.min = String(SP_MIN);
@@ -232,22 +281,7 @@ function renderEntries(state) {
     });
     stageWrap.appendChild(stageInput);
 
-    const actions = document.createElement("div");
-    actions.className = "entry-actions";
-    const cloneBtn = document.createElement("button");
-    cloneBtn.type = "button";
-    cloneBtn.className = "secondary";
-    cloneBtn.textContent = "Clone";
-    cloneBtn.addEventListener("click", () => cloneEntry(entry.id));
-
-    const removeBtn = document.createElement("button");
-    removeBtn.type = "button";
-    removeBtn.className = "danger";
-    removeBtn.textContent = "Remove";
-    removeBtn.addEventListener("click", () => removeEntry(entry.id));
-    actions.append(cloneBtn, removeBtn);
-
-    controls.append(natureWrap, spWrap, stageWrap, actions);
+    controls.append(natureWrap, spWrap, stageWrap);
     card.appendChild(controls);
     els.entriesList.appendChild(card);
   }
@@ -301,9 +335,28 @@ function bindResetDefaults() {
   });
 }
 
+function bindEntriesSearch() {
+  if (!els.entriesSearch) {
+    return;
+  }
+
+  const applySearch = () => {
+    const value = els.entriesSearch.value ?? "";
+    store.setState((prev) => ({
+      ...prev,
+      entriesSearchQuery: value,
+    }));
+  };
+
+  els.entriesSearch.addEventListener("input", applySearch);
+  els.entriesSearch.addEventListener("search", applySearch);
+  els.entriesSearch.addEventListener("keyup", applySearch);
+}
+
 async function init() {
   bindForm();
   bindResetDefaults();
+  bindEntriesSearch();
 
   try {
     const [pokemonRows, defaultConfigEntries] = await Promise.all([

@@ -11,11 +11,11 @@
     <aside class="left-column">
       <header class="app-header panel">
         <h1>Champions Speed Explorer</h1>
-        <p>Build speed scenarios by Pokemon, nature, Speed Points, and stage.</p>
+        <p>Build speed scenarios by Pokemon, Nature, SP and Stages.</p>
       </header>
 
       <section class="panel">
-        <h2>Add Pokemon Configuration</h2>
+        <h2>Add Pokemon</h2>
         <form id="add-entry-form" class="entry-form">
           <label>
             Pokemon
@@ -26,19 +26,19 @@
           <label>
             Nature
             <select id="nature-input" name="nature">
-              <option value="neutral">Neutral (1.0)</option>
-              <option value="positive">Positive (1.1)</option>
-              <option value="negative">Negative (0.9)</option>
+              <option value="neutral">Neutral</option>
+              <option value="positive">Positive</option>
+              <option value="negative">Negative</option>
             </select>
           </label>
 
           <label>
-            Speed Points
+            SP
             <input id="sp-input" name="speedPoints" type="number" min="0" max="32" step="1" value="0">
           </label>
 
           <label>
-            Stage
+            Stages
             <input id="stage-input" name="stage" type="number" min="-6" max="6" step="1" value="0">
           </label>
 
@@ -47,11 +47,15 @@
         <p id="form-feedback" class="feedback" aria-live="polite"></p>
       </section>
 
-      <section class="panel">
+      <section class="panel selected-panel">
         <div class="panel-header">
-          <h2>Selected Configurations</h2>
+          <h2>Selected Pokemon</h2>
           <button type="button" id="reset-defaults" class="secondary">Reset To Defaults</button>
         </div>
+        <label class="entries-search-wrap">
+          Search
+          <input id="entries-search" type="search" placeholder="Find selected entries...">
+        </label>
         <div id="entries-empty">No Pokemon selected yet.</div>
         <div id="entries-list" class="entries-list"></div>
       </section>
