@@ -39,6 +39,12 @@ const els = {
   chartSummary: document.getElementById("chart-summary"),
   resetDefaults: document.getElementById("reset-defaults"),
   clearSaved: document.getElementById("clear-saved"),
+  importConfig: document.getElementById("import-config"),
+  importDialog: document.getElementById("import-dialog"),
+  importText: document.getElementById("import-text"),
+  importAppend: document.getElementById("import-append"),
+  importReplace: document.getElementById("import-replace"),
+  importCancel: document.getElementById("import-cancel"),
 };
 
 function loadSavedEntriesFromStorage() {
@@ -281,6 +287,109 @@ function findPokemonByInput(value, rows) {
   return rows.find((pokemon) => pokemon.displayName.toLowerCase() === value.trim().toLowerCase());
 }
 
+function resolvePokemonKeyFromToken(token, pokemonRows) {
+  const clean = String(token ?? "").trim();
+  const normalized = clean.replace(/^\d+:/, "");
+  if (!normalized) {
+    return null;
+  }
+
+  const byKeyLower = new Map();
+  const byDisplayLower = new Map();
+  for (const pokemon of pokemonRows) {
+    byKeyLower.set(pokemon.pokemonKey.toLowerCase(), pokemon.pokemonKey);
+    byDisplayLower.set(pokemon.displayName.toLowerCase(), pokemon.pokemonKey);
+  }
+
+  const direct = byKeyLower.get(normalized.toLowerCase());
+  if (direct) {
+    return direct;
+  }
+
+  const byDisplay = byDisplayLower.get(normalized.toLowerCase());
+  if (byDisplay) {
+    return byDisplay;
+  }
+
+  if (!normalized.includes(":")) {
+    const maybeBase = byKeyLower.get(`${normalized.toLowerCase()}:base`);
+    if (maybeBase) {
+      return maybeBase;
+    }
+  }
+
+  return null;
+}
+
+function parseVisibleValue(raw) {
+  if (raw === undefined) {
+    return true;
+  }
+  const normalized = String(raw).trim().toLowerCase();
+  if (["true", "1", "yes", "y", "on"].includes(normalized)) {
+    return true;
+  }
+  if (["false", "0", "no", "n", "off"].includes(normalized)) {
+    return false;
+  }
+  return null;
+}
+
+function parseImportEntriesFromText(text, pokemonRows) {
+  const lines = String(text ?? "").split(/\r?\n/);
+  const parsedEntries = [];
+  const errors = [];
+
+  lines.forEach((lineRaw, index) => {
+    const line = lineRaw.trim();
+    const lineNumber = index + 1;
+    if (!line || line.startsWith("#") || line.startsWith("//")) {
+      return;
+    }
+
+    const parts = line.split(",").map((part) => part.trim());
+    if (parts.length < 4) {
+      errors.push(`Line ${lineNumber}: expected at least 4 fields.`);
+      return;
+    }
+
+    const pokemonKey = resolvePokemonKeyFromToken(parts[0], pokemonRows);
+    if (!pokemonKey) {
+      errors.push(`Line ${lineNumber}: unknown Pokemon '${parts[0]}'.`);
+      return;
+    }
+
+    const nature = parts[1].toLowerCase();
+    if (!["neutral", "positive", "negative"].includes(nature)) {
+      errors.push(`Line ${lineNumber}: nature must be neutral/positive/negative.`);
+      return;
+    }
+
+    const sp = Number.parseInt(parts[2], 10);
+    const stage = Number.parseInt(parts[3], 10);
+    if (Number.isNaN(sp) || Number.isNaN(stage)) {
+      errors.push(`Line ${lineNumber}: SP and Stage must be integers.`);
+      return;
+    }
+
+    const visible = parseVisibleValue(parts[4]);
+    if (visible === null) {
+      errors.push(`Line ${lineNumber}: visible must be true/false (or 1/0).`);
+      return;
+    }
+
+    parsedEntries.push({
+      pokemonKey,
+      nature,
+      speedPoints: clampInteger(sp, SP_MIN, SP_MAX),
+      stage: clampInteger(stage, STAGE_MIN, STAGE_MAX),
+      visible,
+    });
+  });
+
+  return { parsedEntries, errors };
+}
+
 function normalizeSearchText(value) {
   return String(value ?? "")
     .toLowerCase()
@@ -515,12 +624,62 @@ function bindEntriesSearch() {
   els.entriesSearch.addEventListener("keyup", applySearch);
 }
 
+function applyImportedEntries(mode) {
+  const state = store.getState();
+  const text = els.importText?.value ?? "";
+  const { parsedEntries, errors } = parseImportEntriesFromText(text, state.pokemonRows);
+
+  if (!parsedEntries.length) {
+    const errorText = errors.length ? `\n\n${errors.slice(0, 8).join("\n")}` : "";
+    alert(`No valid entries were imported.${errorText}`);
+    return;
+  }
+
+  const imported = parsedEntries.map((entry) => createEntry(entry));
+  const mergedEntries = mode === "replace"
+    ? imported
+    : [...state.entries, ...imported];
+  const sorted = sortRawEntriesByComputedSpeed(mergedEntries, state.pokemonRows);
+
+  store.setState((prev) => ({
+    ...prev,
+    entries: sorted,
+  }));
+
+  if (els.importDialog?.open) {
+    els.importDialog.close();
+  }
+
+  const message = `Imported ${parsedEntries.length} entries.` + (errors.length
+    ? `\nSkipped ${errors.length} lines:\n${errors.slice(0, 8).join("\n")}`
+    : "");
+  alert(message);
+}
+
+function bindImportConfig() {
+  if (!els.importConfig || !els.importDialog || !els.importText) {
+    return;
+  }
+
+  els.importConfig.addEventListener("click", () => {
+    els.importDialog.showModal();
+    els.importText.focus();
+  });
+
+  els.importAppend?.addEventListener("click", () => applyImportedEntries("append"));
+  els.importReplace?.addEventListener("click", () => applyImportedEntries("replace"));
+  els.importCancel?.addEventListener("click", () => {
+    els.importDialog.close();
+  });
+}
+
 async function init() {
   registerServiceWorker();
   bindForm();
   bindResetDefaults();
   bindClearSaved();
   bindEntriesSearch();
+  bindImportConfig();
 
   try {
     const [pokemonRows, defaultConfigEntries] = await Promise.all([

@@ -81,6 +81,10 @@ body {
   gap: 0.35rem;
 }
 
+.panel-actions button {
+  white-space: nowrap;
+}
+
 .entries-search-wrap {
   display: grid;
   gap: 0.25rem;
@@ -424,6 +428,47 @@ button.danger {
 
 .chart-column {
   min-width: 0;
+}
+
+.import-dialog {
+  border: 1px solid #cbd5e1;
+  border-radius: 12px;
+  padding: 0;
+  width: min(680px, 92vw);
+}
+
+.import-dialog::backdrop {
+  background: rgba(15, 23, 42, 0.35);
+}
+
+.import-dialog-content {
+  margin: 0;
+  padding: 1rem;
+  display: grid;
+  gap: 0.65rem;
+}
+
+.import-dialog-content h3 {
+  margin: 0;
+}
+
+.import-hint {
+  margin: 0;
+  font-size: 0.84rem;
+  color: #334155;
+}
+
+#import-text {
+  width: 100%;
+  font-family: Consolas, Monaco, "Courier New", monospace;
+  font-size: 0.84rem;
+  resize: vertical;
+}
+
+.import-actions {
+  display: flex;
+  gap: 0.4rem;
+  justify-content: end;
 }
 
 @media (max-width: 1080px) {

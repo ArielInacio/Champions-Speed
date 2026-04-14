@@ -95,11 +95,11 @@
 - [x] Add reset semantics for persistence:
   - `Reset To Defaults` should overwrite saved local state
   - optionally add “Clear Saved State” action (if user wants true fresh start)
-- [ ] Implement text import button for configurations:
+- [x] Implement text import button for configurations:
   - add `Import Text` action in selected section header
   - parse a compact line-based format (e.g. `Pokemon:form,nature,sp,stage,visible`)
   - support comments/blank lines and validate per-line with clear success+error counts
-- [ ] Import behavior decisions:
+- [x] Import behavior decisions:
   - choose default mode: replace current entries vs append
   - define duplicate handling strategy
   - ensure imported entries are sorted with current ordering rules
