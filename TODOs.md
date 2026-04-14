@@ -79,6 +79,31 @@
 - [x] Increase horizontal offset from axis and avoid overlap within same speed tier.
 - [x] Add collision-aware column placement so close speed tiers do not overlap vertically.
 
+### 8) Offline cache + persistent state + import UX
+- [ ] Add local asset caching strategy:
+  - use browser Cache API via Service Worker for app shell + `processed_pokemon.json` + sprite URLs
+  - version cache names and clear old caches on activation
+  - keep graceful fallback if Service Worker is unavailable
+- [ ] Cache validation and staleness policy:
+  - prefer cache-first for sprite images
+  - stale-while-revalidate for local JSON/config assets
+  - define explicit cache version bump workflow when data schema changes
+- [ ] Persist selected entries locally between sessions:
+  - save current entries to `localStorage` on state updates
+  - restore saved entries on startup before falling back to defaults
+  - keep compatibility with legacy `pokemonKey` formats
+- [ ] Add reset semantics for persistence:
+  - `Reset To Defaults` should overwrite saved local state
+  - optionally add “Clear Saved State” action (if user wants true fresh start)
+- [ ] Implement text import button for configurations:
+  - add `Import Text` action in selected section header
+  - parse a compact line-based format (e.g. `Pokemon:form,nature,sp,stage,visible`)
+  - support comments/blank lines and validate per-line with clear success+error counts
+- [ ] Import behavior decisions:
+  - choose default mode: replace current entries vs append
+  - define duplicate handling strategy
+  - ensure imported entries are sorted with current ordering rules
+
 ### 4) Sprite variation module (pending detailed rules)
 - [x] Create `src/sprites/resolveSpriteForConfig.js`.
 - [x] Implement visual overlays on top of `front_default`:

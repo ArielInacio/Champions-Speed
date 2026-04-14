@@ -135,8 +135,18 @@ function createEntry({ pokemonKey, nature, speedPoints, stage, visible = true })
 
 function hydrateEntriesFromConfig(configEntries, pokemonRows) {
   const validKeys = new Set(pokemonRows.map((row) => row.pokemonKey));
+  const normalizeLegacyKey = (key) => String(key ?? "").replace(/^\d+:/, "");
   return configEntries
-    .filter((item) => item && validKeys.has(item.pokemonKey))
+    .map((item) => {
+      if (!item) {
+        return null;
+      }
+      const normalizedKey = normalizeLegacyKey(item.pokemonKey);
+      return validKeys.has(normalizedKey)
+        ? { ...item, pokemonKey: normalizedKey }
+        : null;
+    })
+    .filter(Boolean)
     .map((item) => createEntry(item));
 }
 

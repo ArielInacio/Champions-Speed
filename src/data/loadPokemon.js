@@ -1,6 +1,6 @@
 function buildPokemonKey(pokemon) {
   const form = pokemon.ig ?? "base";
-  return `${pokemon.ndex}:${pokemon.name}:${form}`;
+  return `${pokemon.name}:${form}`;
 }
 
 function buildDisplayName(pokemon) {
@@ -22,4 +22,3 @@ export async function loadPokemonData() {
     }))
     .sort((a, b) => a.displayName.localeCompare(b.displayName));
 }
-
