@@ -261,8 +261,8 @@ button.danger {
 }
 
 .entry-actions .icon-button {
-  width: 22px;
-  height: 22px;
+  width: 25px;
+  height: 25px;
   padding: 0;
   display: inline-flex;
   align-items: center;
@@ -309,6 +309,7 @@ button.danger {
   top: -0.45rem;
   left: 0.72rem;
   font-size: 0.78rem;
+  font-weight:bold;
   color: var(--muted);
   background: rgba(255, 255, 255, 0.9);
   padding: 0 0.2rem;
@@ -323,15 +324,15 @@ button.danger {
 }
 
 .speed-marker-sprite {
-  width: 40px;
-  height: 40px;
+  width: 65px;
+  height: 65px;
   image-rendering: pixelated;
 }
 
 .speed-marker-sprite-wrap {
   position: relative;
-  width: 40px;
-  height: 40px;
+  width: 65px;
+  height: 65px;
 }
 
 .sprite-overlay {
@@ -339,7 +340,7 @@ button.danger {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  line-height: 1;
+  line-height: 0;
   pointer-events: none;
   user-select: none;
 }
@@ -367,6 +368,9 @@ button.danger {
   border: 1px solid #cbd5e1;
   font-size: 0.58rem;
   font-weight: 800;
+  display: flex;
+  justify-content: center;
+  align-items: top;
 }
 
 .sprite-overlay-nature.nature-positive {

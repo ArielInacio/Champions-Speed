@@ -1,32 +1,139 @@
 {
   "entries": [
-    {
-      "pokemonKey": "6:Charizard:base",
-      "nature": "neutral",
-      "speedPoints": 0,
-      "stage": 0,
-      "visible": true
-    },
-    {
-      "pokemonKey": "6:Charizard:base",
-      "nature": "positive",
-      "speedPoints": 32,
-      "stage": 0,
-      "visible": true
-    },
-    {
-      "pokemonKey": "25:Pikachu:base",
-      "nature": "positive",
-      "speedPoints": 32,
-      "stage": 1,
-      "visible": true
-    },
-    {
-      "pokemonKey": "9:Blastoise:base",
-      "nature": "negative",
-      "speedPoints": 0,
-      "stage": -1,
-      "visible": false
-    }
+    { "pokemonKey": "530:Excadrill:base", "nature": "neutral", "speedPoints": 32, "stage": 2, "visible": true },
+    { "pokemonKey": "530:Excadrill:base", "nature": "positive", "speedPoints": 32, "stage": 2, "visible": true },
+    { "pokemonKey": "530:Excadrill:base", "nature": "positive", "speedPoints": 32, "stage": 0, "visible": true },
+    { "pokemonKey": "530:Excadrill:base", "nature": "neutral", "speedPoints": 32, "stage": 0, "visible": true },
+
+
+    { "pokemonKey": "3:Venusaur:base", "nature": "positive", "speedPoints": 32, "stage": 2, "visible": true },
+    { "pokemonKey": "3:Venusaur:base", "nature": "neutral", "speedPoints": 32, "stage": 2, "visible": true },
+    { "pokemonKey": "3:Venusaur:base", "nature": "positive", "speedPoints": 32, "stage": 0, "visible": true },
+    { "pokemonKey": "3:Venusaur:base", "nature": "neutral", "speedPoints": 32, "stage": 0, "visible": true },
+
+    { "pokemonKey": "149:Dragonite:base", "nature": "neutral", "speedPoints": 32, "stage": 0, "visible": true },
+
+    { "pokemonKey": "154:Meganium:-Mega", "nature": "neutral", "speedPoints": 32, "stage": 0, "visible": true },
+
+    { "pokemonKey": "902:Basculegion:base", "nature": "neutral", "speedPoints": 32, "stage": 0, "visible": true },
+    { "pokemonKey": "902:Basculegion:base", "nature": "positive", "speedPoints": 32, "stage": 0, "visible": true },
+    { "pokemonKey": "902:Basculegion:base", "nature": "neutral", "speedPoints": 32, "stage": 1, "visible": true },
+    { "pokemonKey": "902:Basculegion:base", "nature": "positive", "speedPoints": 32, "stage": 1, "visible": true },
+    { "pokemonKey": "902:Basculegion:base", "nature": "neutral", "speedPoints": 32, "stage": 2, "visible": true },
+    { "pokemonKey": "902:Basculegion:base", "nature": "positive", "speedPoints": 32, "stage": 2, "visible": true },    
+
+
+    { "pokemonKey": "9:Blastoise:-Mega", "nature": "neutral", "speedPoints": 32, "stage": 0, "visible": true },
+    { "pokemonKey": "9:Blastoise:-Mega", "nature": "neutral", "speedPoints": 32, "stage": 2, "visible": true },
+
+    { "pokemonKey": "279:Pelipper:base", "nature": "positive", "speedPoints": 32, "stage": 0, "visible": true },
+    { "pokemonKey": "279:Pelipper:base", "nature": "positive", "speedPoints": 32, "stage": 2, "visible": true },
+    { "pokemonKey": "279:Pelipper:base", "nature": "positive", "speedPoints": 32, "stage": 0, "visible": true },
+    { "pokemonKey": "279:Pelipper:base", "nature": "neutral", "speedPoints": 0, "stage": 0, "visible": true },
+
+
+
+    { "pokemonKey": "212:Scizor:-Mega", "nature": "neutral", "speedPoints": 32, "stage": 0, "visible": true },
+    { "pokemonKey": "212:Scizor:-Mega", "nature": "neutral", "speedPoints": 0, "stage": 0, "visible": true },
+
+
+    { "pokemonKey": "6:Charizard:-Mega-Y", "nature": "positive", "speedPoints": 32, "stage": 0, "visible": true },
+    { "pokemonKey": "6:Charizard:-Mega-Y", "nature": "neutral", "speedPoints": 32, "stage": 0, "visible": true },
+    { "pokemonKey": "6:Charizard:-Mega-X", "nature": "neutral", "speedPoints": 32, "stage": 0, "visible": true },
+    { "pokemonKey": "6:Charizard:-Mega-X", "nature": "neutral", "speedPoints": 32, "stage": 1, "visible": true },
+
+    { "pokemonKey": "637:Volcarona:base", "nature": "neutral", "speedPoints": 32, "stage": 0, "visible": true },
+    { "pokemonKey": "637:Volcarona:base", "nature": "positive", "speedPoints": 32, "stage": 1, "visible": true },
+    { "pokemonKey": "637:Volcarona:base", "nature": "neutral", "speedPoints": 32, "stage": 1, "visible": true },
+    { "pokemonKey": "637:Volcarona:base", "nature": "positive", "speedPoints": 32, "stage": 0, "visible": true },
+
+
+    { "pokemonKey": "94:Gengar:base", "nature": "positive", "speedPoints": 32, "stage": 0, "visible": true },
+    { "pokemonKey": "94:Gengar:Mega", "nature": "positive", "speedPoints": 32, "stage": 0, "visible": true },
+
+    { "pokemonKey": "157:Typhlosion:-Hisui", "nature": "neutral", "speedPoints": 32, "stage": 0, "visible": true },
+    { "pokemonKey": "157:Typhlosion:-Hisui", "nature": "positive", "speedPoints": 32, "stage": 0, "visible": true },
+    { "pokemonKey": "157:Typhlosion:-Hisui", "nature": "neutral", "speedPoints": 32, "stage": 1, "visible": true },
+
+
+    { "pokemonKey": "59:Arcanine:-Hisui", "nature": "neutral", "speedPoints": 32, "stage": 0, "visible": true },
+
+    { "pokemonKey": "730:Primarina:base", "nature": "neutral", "speedPoints": 32, "stage": 0, "visible": true },
+    { "pokemonKey": "730:Primarina:base", "nature": "neutral", "speedPoints": 0, "stage": 0, "visible": true },
+
+    { "pokemonKey": "727:Incineroar:base", "nature": "neutral", "speedPoints": 32, "stage": 0, "visible": true },
+    { "pokemonKey": "727:Incineroar:base", "nature": "positive", "speedPoints": 32, "stage": 0, "visible": true },
+    { "pokemonKey": "727:Incineroar:base", "nature": "neutral", "speedPoints": 0, "stage": 0, "visible": true },
+
+
+    { "pokemonKey": "681:Aegislash:base", "nature": "neutral", "speedPoints": 32, "stage": 0, "visible": true },
+    { "pokemonKey": "681:Aegislash:base", "nature": "neutral", "speedPoints": 0, "stage": 0, "visible": true },
+
+    { "pokemonKey": "700:Sylveon:base", "nature": "neutral", "speedPoints": 32, "stage": 0, "visible": true },
+    { "pokemonKey": "700:Sylveon:base", "nature": "positive", "speedPoints": 32, "stage": 0, "visible": true },
+    { "pokemonKey": "700:Sylveon:base", "nature": "neutral", "speedPoints": 0, "stage": 0, "visible": true },
+
+    { "pokemonKey": "445:Garchomp:base", "nature": "positive", "speedPoints": 32, "stage": 0, "visible": true },
+    { "pokemonKey": "445:Garchomp:base", "nature": "neutral", "speedPoints": 32, "stage": 1, "visible": true },
+    { "pokemonKey": "445:Garchomp:base", "nature": "positive", "speedPoints": 32, "stage": 1, "visible": true },
+    
+
+    { "pokemonKey": "142:Aerodactyl:-Mega", "nature": "positive", "speedPoints": 32, "stage": 0, "visible": true },
+    { "pokemonKey": "142:Aerodactyl:base", "nature": "positive", "speedPoints": 32, "stage": 0, "visible": true },
+
+    { "pokemonKey": "65:Alakazam:-Mega", "nature": "positive", "speedPoints": 32, "stage": 0, "visible": true },
+    { "pokemonKey": "65:Alakazam:base", "nature": "positive", "speedPoints": 32, "stage": 0, "visible": true },
+
+
+    { "pokemonKey": "130:Gyarados:base", "nature": "neutral", "speedPoints": 32, "stage": 0, "visible": true },
+    { "pokemonKey": "130:Gyarados:base", "nature": "neutral", "speedPoints": 32, "stage": 1, "visible": true },
+
+    { "pokemonKey": "160:Feraligatr:-Mega", "nature": "neutral", "speedPoints": 32, "stage": 0, "visible": true },
+    { "pokemonKey": "160:Feraligatr:-Mega", "nature": "positive", "speedPoints": 32, "stage": 0, "visible": true },
+
+    { "pokemonKey": "887:Dragapult:base", "nature": "positive", "speedPoints": 32, "stage": 0, "visible": true },
+
+    { "pokemonKey": "658:Greninja:base", "nature": "positive", "speedPoints": 32, "stage": 0, "visible": true },
+
+    { "pokemonKey": "1018:Archaludon:base", "nature": "neutral", "speedPoints": 32, "stage": 0, "visible": true },
+    { "pokemonKey": "1018:Archaludon:base", "nature": "neutral", "speedPoints": 0, "stage": 0, "visible": true },
+
+
+    { "pokemonKey": "428:Lopunny:-Mega", "nature": "positive", "speedPoints": 32, "stage": 0, "visible": true },
+
+    { "pokemonKey": "784:Kommo-o:base", "nature": "positive", "speedPoints": 32, "stage": 0, "visible": true },
+    { "pokemonKey": "784:Kommo-o:base", "nature": "positive", "speedPoints": 32, "stage": 1, "visible": true },
+
+    { "pokemonKey": "655:Delphox:-Mega", "nature": "positive", "speedPoints": 32, "stage": 0, "visible": true },
+
+    { "pokemonKey": "248:Tyranitar:base", "nature": "neutral", "speedPoints": 32, "stage": 0, "visible": true },
+    { "pokemonKey": "248:Tyranitar:base", "nature": "neutral", "speedPoints": 0, "stage": 0, "visible": true },
+
+    { "pokemonKey": "334:Altaria:base", "nature": "neutral", "speedPoints": 32, "stage": 0, "visible": true },
+    { "pokemonKey": "475:Gallade:base", "nature": "neutral", "speedPoints": 32, "stage": 0, "visible": true },
+
+    { "pokemonKey": "609:Chandelure:-Mega", "nature": "positive", "speedPoints": 32, "stage": 0, "visible": true },
+
+
+    { "pokemonKey": "663:Talonflame:base", "nature": "positive", "speedPoints": 32, "stage": 0, "visible": true },
+
+    { "pokemonKey": "461:Weavile:base", "nature": "positive", "speedPoints": 32, "stage": 0, "visible": true },
+
+    { "pokemonKey": "678:Meowstic:-Mega", "nature": "positive", "speedPoints": 32, "stage": 0, "visible": true },
+
+    { "pokemonKey": "908:Meowscarada:base", "nature": "neutral", "speedPoints": 32, "stage": 0, "visible": true },
+
+    { "pokemonKey": "903:Sneasler:base", "nature": "positive", "speedPoints": 32, "stage": 0, "visible": true },
+    { "pokemonKey": "903:Sneasler:base", "nature": "positive", "speedPoints": 32, "stage": 2, "visible": true },
+    { "pokemonKey": "903:Sneasler:base", "nature": "neutral", "speedPoints": 32, "stage": 0, "visible": true },
+    { "pokemonKey": "903:Sneasler:base", "nature": "neutral", "speedPoints": 32, "stage": 2, "visible": true },
+
+    { "pokemonKey": "478:Froslass:-Mega", "nature": "positive", "speedPoints": 32, "stage": 0, "visible": true },
+
+    { "pokemonKey": "121:Starmie:-Mega", "nature": "positive", "speedPoints": 32, "stage": 0, "visible": true },
+
+    { "pokemonKey": "701:Hawlucha:-Mega", "nature": "positive", "speedPoints": 32, "stage": 0, "visible": true },
+
+    { "pokemonKey": "38:Ninetales:-Alola", "nature": "positive", "speedPoints": 32, "stage": 0, "visible": true }
   ]
 }
