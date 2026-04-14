@@ -2,7 +2,7 @@ import { applySpriteConfigOverlays } from "../sprites/resolveSpriteForConfig.js"
 
 const MIN_POSITION_PERCENT = 7;
 const MAX_POSITION_PERCENT = 93;
-const MARKER_LEFT_OFFSET_PX = 22;
+const MARKER_LEFT_OFFSET_PX = 34;
 const MARKER_SIZE_PX = 40;
 const MARKER_GAP_PX = 1;
 
