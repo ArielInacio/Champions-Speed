@@ -73,6 +73,12 @@
 - [x] Place axis line on the left and markers to the right of it.
 - [x] Use speed ticks on the axis as labels (deduplicated by speed), reducing repeated text.
 
+### 7) Chart readability fixes
+- [x] Fix vertical orientation so faster Pokemon render higher and slower lower.
+- [x] Ensure speed number labels are shown on the axis for each speed tier that has entries.
+- [x] Increase horizontal offset from axis and avoid overlap within same speed tier.
+- [x] Add collision-aware column placement so close speed tiers do not overlap vertically.
+
 ### 4) Sprite variation module (pending detailed rules)
 - [x] Create `src/sprites/resolveSpriteForConfig.js`.
 - [x] Implement visual overlays on top of `front_default`:

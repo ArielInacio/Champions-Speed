@@ -2,8 +2,9 @@ import { applySpriteConfigOverlays } from "../sprites/resolveSpriteForConfig.js"
 
 const MIN_POSITION_PERCENT = 7;
 const MAX_POSITION_PERCENT = 93;
-const MARKER_LEFT_OFFSET_PX = 14;
-const OVERLAP_SPACING_PX = 20;
+const MARKER_LEFT_OFFSET_PX = 22;
+const MARKER_SIZE_PX = 40;
+const MARKER_GAP_PX = 1;
 
 function clearNode(node) {
   while (node.firstChild) {
@@ -24,15 +25,11 @@ function createTick(value, topPercent) {
   return tick;
 }
 
-function createMarker(entry, indexInGroup, groupSize, topPercent, chartWidth, laneLeftPx) {
+function createMarker(entry, topPercent, markerLeftPx) {
   const marker = document.createElement("div");
   marker.className = "speed-marker";
   marker.style.top = `${topPercent}%`;
-
-  const offsetByGroup = groupSize > 1 ? indexInGroup * OVERLAP_SPACING_PX : 0;
-  const maxLeft = Math.max(100, chartWidth - 45);
-  const markerLeft = Math.min(maxLeft, laneLeftPx + MARKER_LEFT_OFFSET_PX + offsetByGroup);
-  marker.style.left = `${markerLeft}px`;
+  marker.style.left = `${markerLeftPx}px`;
 
   const sprite = document.createElement("img");
   sprite.className = "speed-marker-sprite";
@@ -61,7 +58,24 @@ function speedToTopPercent(speed, minSpeed, range, hasSpread) {
     return 50;
   }
   const normalized = (speed - minSpeed) / range;
-  return MIN_POSITION_PERCENT + normalized * (MAX_POSITION_PERCENT - MIN_POSITION_PERCENT);
+  return MAX_POSITION_PERCENT - normalized * (MAX_POSITION_PERCENT - MIN_POSITION_PERCENT);
+}
+
+function assignColumnsByVerticalCollisions(items) {
+  const minVerticalDistance = MARKER_SIZE_PX + MARKER_GAP_PX;
+  const lastYByColumn = [];
+
+  for (const item of items) {
+    let column = 0;
+    while (column < lastYByColumn.length) {
+      if (Math.abs(item.topPx - lastYByColumn[column]) >= minVerticalDistance) {
+        break;
+      }
+      column += 1;
+    }
+    item.column = column;
+    lastYByColumn[column] = item.topPx;
+  }
 }
 
 export function renderSpeedChart({ chartRoot, summaryNode, entries }) {
@@ -77,6 +91,7 @@ export function renderSpeedChart({ chartRoot, summaryNode, entries }) {
   const hasSpread = maxSpeed > minSpeed;
   const range = hasSpread ? maxSpeed - minSpeed : 1;
   const chartWidth = chartRoot.clientWidth || 800;
+  const chartHeight = chartRoot.clientHeight || 760;
   const laneLeftPx = Number.parseInt(
     getComputedStyle(chartRoot).getPropertyValue("--lane-left"),
     10,
@@ -89,36 +104,32 @@ export function renderSpeedChart({ chartRoot, summaryNode, entries }) {
   chartRoot.appendChild(lane);
 
   const uniqueSpeeds = Array.from(new Set(entries.map((entry) => entry.finalSpeed))).sort((a, b) => a - b);
-  const maxTicks = 45;
-  const ticksToRender = [];
-  if (uniqueSpeeds.length <= maxTicks) {
-    ticksToRender.push(...uniqueSpeeds);
-  } else {
-    const targetTickCount = 25;
-    const step = (uniqueSpeeds.length - 1) / (targetTickCount - 1);
-    for (let i = 0; i < targetTickCount; i += 1) {
-      ticksToRender.push(uniqueSpeeds[Math.round(i * step)]);
-    }
-  }
-
-  for (const tickValue of Array.from(new Set(ticksToRender))) {
+  for (const tickValue of uniqueSpeeds) {
     const topPercent = speedToTopPercent(tickValue, minSpeed, range, hasSpread);
     chartRoot.appendChild(createTick(tickValue, topPercent));
   }
 
-  const grouped = new Map();
-  for (const entry of entries) {
-    const key = String(entry.finalSpeed);
-    if (!grouped.has(key)) {
-      grouped.set(key, []);
-    }
-    grouped.get(key).push(entry);
-  }
+  const placementItems = entries
+    .map((entry) => {
+      const topPercent = speedToTopPercent(entry.finalSpeed, minSpeed, range, hasSpread);
+      return {
+        entry,
+        topPercent,
+        topPx: (topPercent / 100) * chartHeight,
+        column: 0,
+      };
+    })
+    .sort((a, b) => a.topPx - b.topPx);
 
-  for (const [speed, group] of grouped) {
-    const topPercent = speedToTopPercent(Number(speed), minSpeed, range, hasSpread);
-    group.forEach((entry, index) => {
-      chartRoot.appendChild(createMarker(entry, index, group.length, topPercent, chartWidth, laneLeftPx));
-    });
+  assignColumnsByVerticalCollisions(placementItems);
+
+  const columnWidth = MARKER_SIZE_PX + MARKER_GAP_PX;
+  for (const item of placementItems) {
+    const maxLeft = Math.max(laneLeftPx + MARKER_LEFT_OFFSET_PX, chartWidth - MARKER_SIZE_PX - 2);
+    const markerLeftPx = Math.min(
+      maxLeft,
+      laneLeftPx + MARKER_LEFT_OFFSET_PX + item.column * columnWidth,
+    );
+    chartRoot.appendChild(createMarker(item.entry, item.topPercent, markerLeftPx));
   }
 }
