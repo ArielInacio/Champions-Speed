@@ -280,7 +280,8 @@ button.danger {
 .speed-chart {
   --lane-left: 68px;
   position: relative;
-  min-height: 760px;
+  min-height: 420px;
+  height: 420px;
   border: 1px solid var(--line);
   border-radius: 12px;
   background: linear-gradient(180deg, #eff6ff 0%, #ffffff 40%, #f8fafc 100%);
@@ -448,7 +449,7 @@ button.danger {
 @media (max-width: 560px) {
   .speed-chart {
     --lane-left: 52px;
-    min-height: 620px;
+    min-height: 360px;
   }
 
   .speed-marker-sprite {

@@ -5,6 +5,8 @@ const MAX_POSITION_PERCENT = 93;
 const MARKER_LEFT_OFFSET_PX = 34;
 const MARKER_SIZE_PX = 65;
 const MARKER_GAP_PX = 1;
+const BASE_CHART_HEIGHT_PX = 420;
+const CHART_VERTICAL_MARGINS_PX = 128;
 
 function clearNode(node) {
   while (node.firstChild) {
@@ -78,10 +80,16 @@ function assignColumnsByVerticalCollisions(items) {
   }
 }
 
+function computeChartHeightPx(range) {
+  const byRange = range * 5 + CHART_VERTICAL_MARGINS_PX;
+  return Math.max(BASE_CHART_HEIGHT_PX, byRange);
+}
+
 export function renderSpeedChart({ chartRoot, summaryNode, entries }) {
   clearNode(chartRoot);
 
   if (!entries.length) {
+    chartRoot.style.height = `${BASE_CHART_HEIGHT_PX}px`;
     summaryNode.textContent = "Add visible entries to populate the chart.";
     return;
   }
@@ -90,8 +98,11 @@ export function renderSpeedChart({ chartRoot, summaryNode, entries }) {
   const maxSpeed = Math.max(...entries.map((entry) => entry.finalSpeed));
   const hasSpread = maxSpeed > minSpeed;
   const range = hasSpread ? maxSpeed - minSpeed : 1;
+  const dynamicChartHeight = computeChartHeightPx(range);
+  chartRoot.style.height = `${dynamicChartHeight}px`;
+
   const chartWidth = chartRoot.clientWidth || 800;
-  const chartHeight = chartRoot.clientHeight || 760;
+  const chartHeight = chartRoot.clientHeight || dynamicChartHeight;
   const laneLeftPx = Number.parseInt(
     getComputedStyle(chartRoot).getPropertyValue("--lane-left"),
     10,
