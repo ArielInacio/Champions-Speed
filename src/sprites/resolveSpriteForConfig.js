@@ -47,6 +47,16 @@ function createSpeedPointsIndicator(speedPoints) {
   return node;
 }
 
+function createFinalSpeedIndicator(finalSpeed){
+  if (finalSpeed < 0){
+    return null;
+  }
+  const node = document.createElement("span")
+  node.className = "sprite-overlay sprite-overlay-final-speed"
+  node.textContent = String(finalSpeed);
+  return node
+}
+
 function createStageIndicator(stage) {
   const safeStage = clampStage(stage);
   if (safeStage === 0) {
@@ -66,7 +76,10 @@ function createStageIndicator(stage) {
   return node;
 }
 
-export function applySpriteConfigOverlays(container, { nature, speedPoints, stage }) {
+export function applySpriteConfigOverlays(container, {finalSpeed, nature, speedPoints, stage }) {
+  const final = createFinalSpeedIndicator(finalSpeed)
+  container.appendChild(final)
+
   const sp = createSpeedPointsIndicator(speedPoints);
   if (sp) {
     container.appendChild(sp);

@@ -411,23 +411,37 @@ button.danger {
 }
 
 .sprite-overlay-stage {
-  right: 0;
-  top: 0;
+  right: 2%;
+  top: 2%;
   max-width: 38px;
   border-radius: 5px;
   font-size: 0.5rem;
   font-weight: 800;
   letter-spacing: -0.05em;
-  padding: 1px 2px;
+  padding: 4px 4px;
   background: rgba(255, 255, 255, 0.94);
 }
 
+.sprite-overlay-final-speed {
+  left: 2%;
+  top: 2%;
+  max-width: 38px;
+  border-radius: 5px;
+  font-size: 0.68rem;
+  letter-spacing: -0.05em;
+  padding: 4px 4px;
+  color: #ffffff;
+  background: rgba(4, 166, 241, 0.94);
+}
+
 .sprite-overlay-stage.stage-positive {
-  color: #dc2626;
+  color: #ffffff;
+  background-color: #dc2626;
 }
 
 .sprite-overlay-stage.stage-negative {
-  color: #2563eb;
+  color: #ffffff;
+  background-color: #2563eb;
 }
 
 .chart-column {

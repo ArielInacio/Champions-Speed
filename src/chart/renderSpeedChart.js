@@ -46,6 +46,7 @@ function createMarker(entry, topPercent, markerLeftPx) {
   spriteWrap.className = "speed-marker-sprite-wrap";
   spriteWrap.appendChild(sprite);
   applySpriteConfigOverlays(spriteWrap, {
+    finalSpeed: entry.finalSpeed,
     nature: entry.nature,
     speedPoints: entry.speedPoints,
     stage: entry.stage,
