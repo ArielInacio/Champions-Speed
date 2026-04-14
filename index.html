@@ -8,54 +8,56 @@
 </head>
 <body>
   <main class="app-shell">
-    <header class="app-header">
-      <h1>Champions Speed Explorer</h1>
-      <p>Build speed scenarios by Pokemon, nature, Speed Points, and stage.</p>
-    </header>
+    <aside class="left-column">
+      <header class="app-header panel">
+        <h1>Champions Speed Explorer</h1>
+        <p>Build speed scenarios by Pokemon, nature, Speed Points, and stage.</p>
+      </header>
 
-    <section class="panel">
-      <h2>Add Pokemon Configuration</h2>
-      <form id="add-entry-form" class="entry-form">
-        <label>
-          Pokemon
-          <input id="pokemon-input" name="pokemon" list="pokemon-list" placeholder="Type to search..." required>
-        </label>
-        <datalist id="pokemon-list"></datalist>
+      <section class="panel">
+        <h2>Add Pokemon Configuration</h2>
+        <form id="add-entry-form" class="entry-form">
+          <label>
+            Pokemon
+            <input id="pokemon-input" name="pokemon" list="pokemon-list" placeholder="Type to search..." required>
+          </label>
+          <datalist id="pokemon-list"></datalist>
 
-        <label>
-          Nature
-          <select id="nature-input" name="nature">
-            <option value="neutral">Neutral (1.0)</option>
-            <option value="positive">Positive (1.1)</option>
-            <option value="negative">Negative (0.9)</option>
-          </select>
-        </label>
+          <label>
+            Nature
+            <select id="nature-input" name="nature">
+              <option value="neutral">Neutral (1.0)</option>
+              <option value="positive">Positive (1.1)</option>
+              <option value="negative">Negative (0.9)</option>
+            </select>
+          </label>
 
-        <label>
-          Speed Points
-          <input id="sp-input" name="speedPoints" type="number" min="0" max="32" step="1" value="0">
-        </label>
+          <label>
+            Speed Points
+            <input id="sp-input" name="speedPoints" type="number" min="0" max="32" step="1" value="0">
+          </label>
 
-        <label>
-          Stage
-          <input id="stage-input" name="stage" type="number" min="-6" max="6" step="1" value="0">
-        </label>
+          <label>
+            Stage
+            <input id="stage-input" name="stage" type="number" min="-6" max="6" step="1" value="0">
+          </label>
 
-        <button type="submit">Add</button>
-      </form>
-      <p id="form-feedback" class="feedback" aria-live="polite"></p>
-    </section>
+          <button type="submit">Add</button>
+        </form>
+        <p id="form-feedback" class="feedback" aria-live="polite"></p>
+      </section>
 
-    <section class="panel">
-      <div class="panel-header">
-        <h2>Selected Configurations</h2>
-        <button type="button" id="reset-defaults" class="secondary">Reset To Defaults</button>
-      </div>
-      <div id="entries-empty">No Pokemon selected yet.</div>
-      <div id="entries-list" class="entries-list"></div>
-    </section>
+      <section class="panel">
+        <div class="panel-header">
+          <h2>Selected Configurations</h2>
+          <button type="button" id="reset-defaults" class="secondary">Reset To Defaults</button>
+        </div>
+        <div id="entries-empty">No Pokemon selected yet.</div>
+        <div id="entries-list" class="entries-list"></div>
+      </section>
+    </aside>
 
-    <section class="panel">
+    <section class="panel chart-column">
       <h2>Speed Chart</h2>
       <p class="chart-summary" id="chart-summary">Add visible entries to populate the chart.</p>
       <div id="speed-chart" class="speed-chart" role="img" aria-label="Final speed chart for selected Pokemon"></div>

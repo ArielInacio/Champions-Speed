@@ -33,7 +33,7 @@
   - min/max SP
   - min/max stage
   - duplicate Pokémon with distinct configs.
-- [ ] Confirm with user whether stage `-1` should be `2/3` (recommended) or `2/6` exactly as doc.
+- [x] Confirm with user whether stage `-1` should be `2/3` (recommended) or `2/6` exactly as doc.
 
 ### 2) Web app base (selection + controls)
 - [x] Create minimal app scaffold:
@@ -57,10 +57,21 @@
 ### 3) Chart visualization
 - [x] Create `src/chart/renderSpeedChart.js`.
 - [x] Render vertical speed lane from min to max final speed among visible entries.
-- [x] Place each Pokémon sprite at computed y-position, with label and final speed value.
+- [x] Place each Pokémon sprite at computed y-position.
 - [x] Handle overlaps for equal speeds (stack/jitter horizontally).
 - [x] Add axis ticks and min/max markers.
 - [x] Re-render on any config change (nature/SP/stage/visibility).
+
+### 6) High-volume chart scalability pass
+- [x] Move app to split layout:
+  - left column with title/subtitle/add/select config controls
+  - right column dedicated to chart
+- [x] Set left column to at most ~1/3 width on desktop and stack on small screens.
+- [x] Increase chart top/bottom safety margins to avoid clipping min/max sprites.
+- [x] Reduce sprite + overlay footprint for dense charts.
+- [x] Remove per-sprite name labels below markers.
+- [x] Place axis line on the left and markers to the right of it.
+- [x] Use speed ticks on the axis as labels (deduplicated by speed), reducing repeated text.
 
 ### 4) Sprite variation module (pending detailed rules)
 - [x] Create `src/sprites/resolveSpriteForConfig.js`.
