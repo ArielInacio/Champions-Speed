@@ -76,6 +76,11 @@ body {
   margin: 0;
 }
 
+.panel-actions {
+  display: flex;
+  gap: 0.35rem;
+}
+
 .entries-search-wrap {
   display: grid;
   gap: 0.25rem;

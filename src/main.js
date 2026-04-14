@@ -15,6 +15,7 @@ const STAGE_MIN = -6;
 const STAGE_MAX = 6;
 const SP_MIN = 0;
 const SP_MAX = 32;
+const ENTRIES_STORAGE_KEY = "champions-speed.entries.v1";
 
 let nextEntryId = 1;
 
@@ -37,7 +38,37 @@ const els = {
   chartRoot: document.getElementById("speed-chart"),
   chartSummary: document.getElementById("chart-summary"),
   resetDefaults: document.getElementById("reset-defaults"),
+  clearSaved: document.getElementById("clear-saved"),
 };
+
+function loadSavedEntriesFromStorage() {
+  try {
+    const raw = localStorage.getItem(ENTRIES_STORAGE_KEY);
+    if (!raw) {
+      return null;
+    }
+    const parsed = JSON.parse(raw);
+    return Array.isArray(parsed) ? parsed : null;
+  } catch {
+    return null;
+  }
+}
+
+function saveEntriesToStorage(entries) {
+  try {
+    localStorage.setItem(ENTRIES_STORAGE_KEY, JSON.stringify(entries));
+  } catch {
+    // Ignore storage failures silently (private mode/quota/full).
+  }
+}
+
+function clearSavedEntriesFromStorage() {
+  try {
+    localStorage.removeItem(ENTRIES_STORAGE_KEY);
+  } catch {
+    // Ignore storage failures silently.
+  }
+}
 
 async function registerServiceWorker() {
   if (!("serviceWorker" in navigator)) {
@@ -456,6 +487,16 @@ function bindResetDefaults() {
   });
 }
 
+function bindClearSaved() {
+  if (!els.clearSaved) {
+    return;
+  }
+
+  els.clearSaved.addEventListener("click", () => {
+    clearSavedEntriesFromStorage();
+  });
+}
+
 function bindEntriesSearch() {
   if (!els.entriesSearch) {
     return;
@@ -478,6 +519,7 @@ async function init() {
   registerServiceWorker();
   bindForm();
   bindResetDefaults();
+  bindClearSaved();
   bindEntriesSearch();
 
   try {
@@ -485,10 +527,15 @@ async function init() {
       loadPokemonData(),
       loadDefaultConfig(),
     ]);
-    const entries = sortRawEntriesByComputedSpeed(
+    const defaultEntries = sortRawEntriesByComputedSpeed(
       hydrateEntriesFromConfig(defaultConfigEntries, pokemonRows),
       pokemonRows,
     );
+    const savedEntriesRaw = loadSavedEntriesFromStorage();
+    const savedEntries = savedEntriesRaw
+      ? sortRawEntriesByComputedSpeed(hydrateEntriesFromConfig(savedEntriesRaw, pokemonRows), pokemonRows)
+      : null;
+    const entries = savedEntries && savedEntries.length ? savedEntries : defaultEntries;
     buildPokemonOptions(pokemonRows);
     store.setState((state) => ({
       ...state,
@@ -500,7 +547,10 @@ async function init() {
     els.feedback.textContent = error.message;
   }
 
-  store.subscribe(renderEntries);
+  store.subscribe((state) => {
+    renderEntries(state);
+    saveEntriesToStorage(state.entries);
+  });
   renderEntries(store.getState());
   window.addEventListener("resize", syncLeftColumnHeight);
   requestAnimationFrame(syncLeftColumnHeight);

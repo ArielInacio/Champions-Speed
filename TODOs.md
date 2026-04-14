@@ -88,11 +88,11 @@
   - prefer cache-first for sprite images
   - stale-while-revalidate for local JSON/config assets
   - define explicit cache version bump workflow when data schema changes
-- [ ] Persist selected entries locally between sessions:
+- [x] Persist selected entries locally between sessions:
   - save current entries to `localStorage` on state updates
   - restore saved entries on startup before falling back to defaults
   - keep compatibility with legacy `pokemonKey` formats
-- [ ] Add reset semantics for persistence:
+- [x] Add reset semantics for persistence:
   - `Reset To Defaults` should overwrite saved local state
   - optionally add “Clear Saved State” action (if user wants true fresh start)
 - [ ] Implement text import button for configurations:
