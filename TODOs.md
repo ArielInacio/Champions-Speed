@@ -80,11 +80,11 @@
 - [x] Add collision-aware column placement so close speed tiers do not overlap vertically.
 
 ### 8) Offline cache + persistent state + import UX
-- [ ] Add local asset caching strategy:
+- [x] Add local asset caching strategy:
   - use browser Cache API via Service Worker for app shell + `processed_pokemon.json` + sprite URLs
   - version cache names and clear old caches on activation
   - keep graceful fallback if Service Worker is unavailable
-- [ ] Cache validation and staleness policy:
+- [x] Cache validation and staleness policy:
   - prefer cache-first for sprite images
   - stale-while-revalidate for local JSON/config assets
   - define explicit cache version bump workflow when data schema changes

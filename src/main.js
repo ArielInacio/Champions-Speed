@@ -39,6 +39,18 @@ const els = {
   resetDefaults: document.getElementById("reset-defaults"),
 };
 
+async function registerServiceWorker() {
+  if (!("serviceWorker" in navigator)) {
+    return;
+  }
+
+  try {
+    await navigator.serviceWorker.register("./sw.js");
+  } catch {
+    // Graceful fallback: app works normally without SW.
+  }
+}
+
 function syncLeftColumnHeight() {
   if (!els.selectedPanel || !els.entriesList) {
     return;
@@ -463,6 +475,7 @@ function bindEntriesSearch() {
 }
 
 async function init() {
+  registerServiceWorker();
   bindForm();
   bindResetDefaults();
   bindEntriesSearch();
