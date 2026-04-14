@@ -55,35 +55,34 @@
   - toggle visibility on/off per entry.
 
 ### 3) Chart visualization
-- [ ] Create `src/chart/renderSpeedChart.js`.
-- [ ] Render vertical speed lane from min to max final speed among visible entries.
-- [ ] Place each Pokémon sprite at computed y-position, with label and final speed value.
-- [ ] Handle overlaps for equal speeds (stack/jitter horizontally).
-- [ ] Add axis ticks and min/max markers.
-- [ ] Re-render on any config change (nature/SP/stage/visibility).
+- [x] Create `src/chart/renderSpeedChart.js`.
+- [x] Render vertical speed lane from min to max final speed among visible entries.
+- [x] Place each Pokémon sprite at computed y-position, with label and final speed value.
+- [x] Handle overlaps for equal speeds (stack/jitter horizontally).
+- [x] Add axis ticks and min/max markers.
+- [x] Re-render on any config change (nature/SP/stage/visibility).
 
 ### 4) Sprite variation module (pending detailed rules)
-- [ ] Create `src/sprites/resolveSpriteForConfig.js`.
-- [ ] Initial placeholder behavior:
-  - default to `front_default`.
-  - expose a mapping layer for future variant rules.
-- [ ] Define requested behavior with user before full implementation:
-  - whether sprite changes are visual badges/overlays vs alternate artwork URLs
-  - exact mapping from nature/SP/stage to sprite variant
-  - fallback behavior when variant is unavailable.
+- [x] Create `src/sprites/resolveSpriteForConfig.js`.
+- [x] Implement visual overlays on top of `front_default`:
+  - SP number at bottom-left (hidden when `SP=0`)
+  - nature indicator at bottom-right (`+`, `-`, `o`)
+  - stage arrows at top-right (stacked by absolute stage value)
+- [x] Define requested behavior with user before full implementation:
+  - rules captured in `sprite_overlay_spec.md`
 
 ### 5) Default configuration support
-- [ ] Add `default_chart_config.json` containing initial chart entries:
+- [x] Add `default_chart_config.json` containing initial chart entries:
   - each entry includes `pokemonKey`, `nature`, `speedPoints`, `stage`, `visible`.
   - supports repeated `pokemonKey` with different configs.
-- [ ] Load defaults on app start; merge with current data source.
-- [ ] Add reset-to-default action in UI.
+- [x] Load defaults on app start; merge with current data source.
+- [x] Add reset-to-default action in UI.
 
 ## Suggested delivery order
 - [x] Milestone A: steps 1 + 2 (compute engine + interactive controls)
-- [ ] Milestone B: step 3 (chart rendering)
-- [ ] Milestone C: step 5 (default config persistence/loading)
-- [ ] Milestone D: step 4 (sprite variation rules after clarification)
+- [x] Milestone B: step 3 (chart rendering)
+- [x] Milestone C: step 5 (default config persistence/loading)
+- [x] Milestone D: step 4 (sprite variation rules after clarification)
 
 ## Definition of done
 - [ ] User can add multiple entries for same Pokémon with different settings.

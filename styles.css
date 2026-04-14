@@ -47,8 +47,25 @@ body {
   margin: 0 0 0.85rem;
 }
 
+.panel-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 0.85rem;
+}
+
+.panel-header h2 {
+  margin: 0;
+}
+
 .panel-muted {
   background: #f1f5f9;
+}
+
+.chart-summary {
+  margin: 0 0 0.8rem;
+  color: var(--muted);
 }
 
 .entry-form {
@@ -151,6 +168,144 @@ button.danger {
   gap: 0.4rem;
 }
 
+.speed-chart {
+  position: relative;
+  min-height: 520px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: linear-gradient(180deg, #eff6ff 0%, #ffffff 40%, #f8fafc 100%);
+  overflow: hidden;
+}
+
+.speed-lane {
+  position: absolute;
+  left: 50%;
+  bottom: 1.5rem;
+  transform: translateX(-50%);
+  width: 4px;
+  height: calc(100% - 3rem);
+  background: #94a3b8;
+  border-radius: 999px;
+}
+
+.chart-tick {
+  position: absolute;
+  left: calc(50% + 1rem);
+  transform: translateY(50%);
+  width: 140px;
+  border-top: 1px dashed #cbd5e1;
+}
+
+.chart-tick-label {
+  position: absolute;
+  top: -0.7rem;
+  left: 0.2rem;
+  font-size: 0.82rem;
+  color: var(--muted);
+  background: rgba(255, 255, 255, 0.9);
+  padding: 0 0.25rem;
+  border-radius: 4px;
+}
+
+.speed-marker {
+  position: absolute;
+  transform: translate(-50%, 50%);
+  display: grid;
+  justify-items: center;
+  gap: 0.2rem;
+}
+
+.speed-marker-sprite {
+  width: 72px;
+  height: 72px;
+  image-rendering: pixelated;
+}
+
+.speed-marker-sprite-wrap {
+  position: relative;
+  width: 72px;
+  height: 72px;
+}
+
+.sprite-overlay {
+  position: absolute;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  pointer-events: none;
+  user-select: none;
+}
+
+.sprite-overlay-sp {
+  left: 2px;
+  bottom: 1px;
+  min-width: 18px;
+  min-height: 16px;
+  border-radius: 999px;
+  background: rgba(15, 23, 42, 0.88);
+  color: #ffffff;
+  font-size: 0.62rem;
+  font-weight: 700;
+  padding: 0 4px;
+}
+
+.sprite-overlay-nature {
+  right: 1px;
+  bottom: 1px;
+  width: 17px;
+  height: 17px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.96);
+  border: 1px solid #cbd5e1;
+  font-size: 0.78rem;
+  font-weight: 800;
+}
+
+.sprite-overlay-nature.nature-positive {
+  color: #dc2626;
+}
+
+.sprite-overlay-nature.nature-negative {
+  color: #2563eb;
+}
+
+.sprite-overlay-nature.nature-neutral {
+  color: #64748b;
+}
+
+.sprite-overlay-stage {
+  right: 1px;
+  top: 1px;
+  max-width: 66px;
+  border-radius: 5px;
+  font-size: 0.74rem;
+  font-weight: 800;
+  letter-spacing: -0.05em;
+  padding: 1px 3px;
+  background: rgba(255, 255, 255, 0.94);
+}
+
+.sprite-overlay-stage.stage-positive {
+  color: #dc2626;
+}
+
+.sprite-overlay-stage.stage-negative {
+  color: #2563eb;
+}
+
+.speed-marker-label {
+  font-size: 0.74rem;
+  line-height: 1.1;
+  color: #0b1324;
+  text-align: center;
+  max-width: 120px;
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid #dbeafe;
+  border-radius: 6px;
+  padding: 0.15rem 0.25rem;
+}
+
 @media (max-width: 900px) {
   .entry-form,
   .entry-controls {
@@ -162,5 +317,24 @@ button.danger {
   .entry-form,
   .entry-controls {
     grid-template-columns: 1fr;
+  }
+
+  .speed-marker-sprite {
+    width: 56px;
+    height: 56px;
+  }
+
+  .speed-marker-sprite-wrap {
+    width: 56px;
+    height: 56px;
+  }
+
+  .speed-marker-label {
+    max-width: 86px;
+  }
+
+  .sprite-overlay-stage {
+    max-width: 52px;
+    font-size: 0.65rem;
   }
 }

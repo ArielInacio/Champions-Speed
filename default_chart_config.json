@@ -1,0 +1,32 @@
+{
+  "entries": [
+    {
+      "pokemonKey": "6:Charizard:base",
+      "nature": "neutral",
+      "speedPoints": 0,
+      "stage": 0,
+      "visible": true
+    },
+    {
+      "pokemonKey": "6:Charizard:base",
+      "nature": "positive",
+      "speedPoints": 32,
+      "stage": 0,
+      "visible": true
+    },
+    {
+      "pokemonKey": "25:Pikachu:base",
+      "nature": "positive",
+      "speedPoints": 32,
+      "stage": 1,
+      "visible": true
+    },
+    {
+      "pokemonKey": "9:Blastoise:base",
+      "nature": "negative",
+      "speedPoints": 0,
+      "stage": -1,
+      "visible": false
+    }
+  ]
+}

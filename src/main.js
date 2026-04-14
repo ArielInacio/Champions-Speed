@@ -1,10 +1,13 @@
 import { loadPokemonData } from "./data/loadPokemon.js";
+import { loadDefaultConfig } from "./data/loadDefaultConfig.js";
 import { createStore } from "./state.js";
 import { calculateFinalSpeed } from "./speed/calculateFinalSpeed.js";
+import { renderSpeedChart } from "./chart/renderSpeedChart.js";
 
 const store = createStore({
   pokemonRows: [],
   entries: [],
+  defaultConfigEntries: [],
 });
 
 const STAGE_MIN = -6;
@@ -24,6 +27,9 @@ const els = {
   feedback: document.getElementById("form-feedback"),
   emptyState: document.getElementById("entries-empty"),
   entriesList: document.getElementById("entries-list"),
+  chartRoot: document.getElementById("speed-chart"),
+  chartSummary: document.getElementById("chart-summary"),
+  resetDefaults: document.getElementById("reset-defaults"),
 };
 
 function clampInteger(value, min, max) {
@@ -42,31 +48,46 @@ function byKey(rows) {
   return map;
 }
 
-function formatSpeedLabel(entry, pokemonMap) {
-  const pokemon = pokemonMap.get(entry.pokemonKey);
-  if (!pokemon) {
-    return "Unknown Pokemon";
-  }
-
-  const finalSpeed = calculateFinalSpeed({
-    baseSpeed: pokemon.speed,
-    nature: entry.nature,
-    speedPoints: entry.speedPoints,
-    stage: entry.stage,
-  });
-
-  return `Final Speed: ${finalSpeed}`;
+function buildComputedEntries(state) {
+  const pokemonMap = byKey(state.pokemonRows);
+  return state.entries
+    .map((entry) => {
+      const pokemon = pokemonMap.get(entry.pokemonKey);
+      if (!pokemon) {
+        return null;
+      }
+      return {
+        ...entry,
+        displayName: pokemon.displayName,
+        baseSpeed: pokemon.speed,
+        frontDefault: pokemon.front_default,
+        finalSpeed: calculateFinalSpeed({
+          baseSpeed: pokemon.speed,
+          nature: entry.nature,
+          speedPoints: entry.speedPoints,
+          stage: entry.stage,
+        }),
+      };
+    })
+    .filter(Boolean);
 }
 
-function createEntry({ pokemonKey, nature, speedPoints, stage }) {
+function createEntry({ pokemonKey, nature, speedPoints, stage, visible = true }) {
   return {
     id: nextEntryId++,
     pokemonKey,
     nature: nature ?? "neutral",
     speedPoints: clampInteger(speedPoints, SP_MIN, SP_MAX),
     stage: clampInteger(stage, STAGE_MIN, STAGE_MAX),
-    visible: true,
+    visible: Boolean(visible),
   };
+}
+
+function hydrateEntriesFromConfig(configEntries, pokemonRows) {
+  const validKeys = new Set(pokemonRows.map((row) => row.pokemonKey));
+  return configEntries
+    .filter((item) => item && validKeys.has(item.pokemonKey))
+    .map((item) => createEntry(item));
 }
 
 function updateEntry(entryId, updater) {
@@ -121,6 +142,9 @@ function findPokemonByInput(value, rows) {
 
 function renderEntries(state) {
   const pokemonMap = byKey(state.pokemonRows);
+  const computedEntries = buildComputedEntries(state);
+  const computedById = new Map(computedEntries.map((item) => [item.id, item]));
+
   els.entriesList.innerHTML = "";
 
   els.emptyState.style.display = state.entries.length ? "none" : "block";
@@ -142,8 +166,9 @@ function renderEntries(state) {
 
     const subtitle = document.createElement("p");
     subtitle.className = "entry-subtitle";
-    subtitle.textContent = pokemon
-      ? `Base Speed: ${pokemon.speed} | ${formatSpeedLabel(entry, pokemonMap)}`
+    const computed = computedById.get(entry.id);
+    subtitle.textContent = pokemon && computed
+      ? `Base Speed: ${pokemon.speed} | Final Speed: ${computed.finalSpeed}`
       : "Missing pokemon data";
     titleWrap.appendChild(subtitle);
     head.appendChild(titleWrap);
@@ -226,6 +251,12 @@ function renderEntries(state) {
     card.appendChild(controls);
     els.entriesList.appendChild(card);
   }
+
+  renderSpeedChart({
+    chartRoot: els.chartRoot,
+    summaryNode: els.chartSummary,
+    entries: computedEntries.filter((entry) => entry.visible),
+  });
 }
 
 function bindForm() {
@@ -259,13 +290,34 @@ function bindForm() {
   });
 }
 
+function bindResetDefaults() {
+  els.resetDefaults.addEventListener("click", () => {
+    const state = store.getState();
+    const entries = hydrateEntriesFromConfig(state.defaultConfigEntries, state.pokemonRows);
+    store.setState((prev) => ({
+      ...prev,
+      entries,
+    }));
+  });
+}
+
 async function init() {
   bindForm();
+  bindResetDefaults();
 
   try {
-    const pokemonRows = await loadPokemonData();
+    const [pokemonRows, defaultConfigEntries] = await Promise.all([
+      loadPokemonData(),
+      loadDefaultConfig(),
+    ]);
+    const entries = hydrateEntriesFromConfig(defaultConfigEntries, pokemonRows);
     buildPokemonOptions(pokemonRows);
-    store.setState((state) => ({ ...state, pokemonRows }));
+    store.setState((state) => ({
+      ...state,
+      pokemonRows,
+      defaultConfigEntries,
+      entries,
+    }));
   } catch (error) {
     els.feedback.textContent = error.message;
   }
@@ -275,4 +327,3 @@ async function init() {
 }
 
 init();
-
