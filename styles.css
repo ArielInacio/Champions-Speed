@@ -282,10 +282,13 @@ button.danger {
   position: relative;
   min-height: 420px;
   height: 420px;
+  width: 100%;
+  min-width: 0;
   border: 1px solid var(--line);
   border-radius: 12px;
   background: linear-gradient(180deg, #eff6ff 0%, #ffffff 40%, #f8fafc 100%);
-  overflow: hidden;
+  overflow-x: auto;
+  overflow-y: hidden;
 }
 
 .speed-lane {
@@ -302,7 +305,9 @@ button.danger {
   position: absolute;
   left: var(--lane-left);
   width: 18px;
-  border-top: 1px dashed #cbd5e1;
+  border-top: 1px dashed #bfdbfe;
+  opacity: 0.9;
+  pointer-events: none;
 }
 
 .chart-tick-label {
@@ -334,6 +339,10 @@ button.danger {
   position: relative;
   width: 65px;
   height: 65px;
+  border: 1px solid rgba(15, 23, 42, 0.28);
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.92);
+  font-size: 0.50;
 }
 
 .sprite-overlay {
