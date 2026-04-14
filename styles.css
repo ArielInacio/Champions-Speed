@@ -269,6 +269,7 @@ button.danger {
 .entry-actions button.mini {
   padding: 0.2rem 0.36rem;
   font-size: 0.68rem;
+  font-weight: bold;
   border-radius: 6px;
 }
 
@@ -280,10 +281,12 @@ button.danger {
   align-items: center;
   justify-content: center;
   font-size: 0.72rem;
+  font-weight: bold;
   line-height: 1;
 }
 
 .entry-actions .icon-delete {
+  font-size: 0.9rem;
   background: #dc2626;
   color: #ffffff;
   border-color: #dc2626;

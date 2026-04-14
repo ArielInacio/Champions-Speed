@@ -94,7 +94,7 @@ function assignGroupBlocksByVerticalCollisions(groups) {
 }
 
 function computeChartHeightPx(range) {
-  const byRange = range * 5 + CHART_VERTICAL_MARGINS_PX;
+  const byRange = range * 10 + CHART_VERTICAL_MARGINS_PX;
   return Math.max(BASE_CHART_HEIGHT_PX, byRange);
 }
 

@@ -479,7 +479,7 @@ function renderEntries(state) {
     const removeBtn = document.createElement("button");
     removeBtn.type = "button";
     removeBtn.className = "danger mini icon-button icon-delete";
-    removeBtn.textContent = "🗑";
+    removeBtn.textContent = "⛔";
     removeBtn.title = "Remove entry";
     removeBtn.setAttribute("aria-label", "Remove entry");
     removeBtn.addEventListener("click", () => removeEntry(entry.id));

@@ -26,7 +26,7 @@
     { "pokemonKey": "Blastoise:-Mega", "nature": "neutral", "speedPoints": 32, "stage": 0, "visible": true },
     { "pokemonKey": "Blastoise:-Mega", "nature": "neutral", "speedPoints": 32, "stage": 2, "visible": true },
 
-    { "pokemonKey": "Pelipper:base", "nature": "positive", "speedPoints": 32, "stage": 0, "visible": true },
+    { "pokemonKey": "Pelipper:base", "nature": "positive", "speedPoints": 32, "stage": 2, "visible": true },
     { "pokemonKey": "Pelipper:base", "nature": "positive", "speedPoints": 32, "stage": 2, "visible": true },
     { "pokemonKey": "Pelipper:base", "nature": "positive", "speedPoints": 32, "stage": 0, "visible": true },
     { "pokemonKey": "Pelipper:base", "nature": "neutral", "speedPoints": 0, "stage": 0, "visible": true },
@@ -49,7 +49,7 @@
 
 
     { "pokemonKey": "Gengar:base", "nature": "positive", "speedPoints": 32, "stage": 0, "visible": true },
-    { "pokemonKey": "Gengar:Mega", "nature": "positive", "speedPoints": 32, "stage": 0, "visible": true },
+    { "pokemonKey": "Gengar:-Mega", "nature": "positive", "speedPoints": 32, "stage": 0, "visible": true },
 
     { "pokemonKey": "Typhlosion:-Hisui", "nature": "neutral", "speedPoints": 32, "stage": 0, "visible": true },
     { "pokemonKey": "Typhlosion:-Hisui", "nature": "positive", "speedPoints": 32, "stage": 0, "visible": true },

@@ -57,9 +57,10 @@ function createStageIndicator(stage) {
   node.className = "sprite-overlay sprite-overlay-stage";
 
   const isPositive = safeStage > 0;
-  const arrow = isPositive ? "↑" : "↓";
-  const count = Math.abs(safeStage);
-  node.textContent = arrow.repeat(count);
+  const stageIndicatorTextNegative = ["⯯⯯⯯", "⯯⯯↓", "⯯⯯", "⯯↓", "⯯", "↓"]
+  const stageIndicatorTextPositive = ["↑", "⯭", "⯭↑", "⯭⯭", "⯭⯭↑", "⯭⯭⯭"]
+  const arrow = isPositive ? stageIndicatorTextPositive[safeStage -1] : stageIndicatorTextNegative[safeStage + 6];
+  node.textContent = arrow;
   node.classList.add(isPositive ? "stage-positive" : "stage-negative");
 
   return node;
