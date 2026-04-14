@@ -116,7 +116,7 @@
         "name": "Clefable",
         "ig": "-Mega",
         "speed": 70,
-        "front_default": null
+        "front_default": "https://play.pokemonshowdown.com/sprites/dex/clefable-mega.png"
     },
     {
         "ndex": 38,
@@ -242,7 +242,7 @@
         "name": "Starmie",
         "ig": "-Mega",
         "speed": 120,
-        "front_default": null
+        "front_default": "https://play.pokemonshowdown.com/sprites/dex/starmie-mega.png"
     },
     {
         "ndex": 127,
@@ -375,7 +375,7 @@
         "name": "Meganium",
         "ig": "-Mega",
         "speed": 80,
-        "front_default": null
+        "front_default": "https://play.pokemonshowdown.com/sprites/dex/meganium-mega.png"
     },
     {
         "ndex": 157,
@@ -403,7 +403,7 @@
         "name": "Feraligatr",
         "ig": "-Mega",
         "speed": 78,
-        "front_default": null
+        "front_default": "https://play.pokemonshowdown.com/sprites/dex/feraligatr-mega.png"
     },
     {
         "ndex": 168,
@@ -529,7 +529,7 @@
         "name": "Skarmory",
         "ig": "-Mega",
         "speed": 110,
-        "front_default": null
+        "front_default": "https://play.pokemonshowdown.com/sprites/dex/skarmory-mega.png"
     },
     {
         "ndex": 229,
@@ -725,7 +725,7 @@
         "name": "Chimecho",
         "ig": "-Mega",
         "speed": 65,
-        "front_default": null
+        "front_default": "https://play.pokemonshowdown.com/sprites/dex/chimecho-mega.png"
     },
     {
         "ndex": 359,
@@ -949,7 +949,7 @@
         "name": "Froslass",
         "ig": "-Mega",
         "speed": 120,
-        "front_default": null
+        "front_default": "https://play.pokemonshowdown.com/sprites/dex/froslass-mega.png"
     },
     {
         "ndex": 479,
@@ -977,7 +977,7 @@
         "name": "Emboar",
         "ig": "-Mega",
         "speed": 75,
-        "front_default": null
+        "front_default": "https://play.pokemonshowdown.com/sprites/dex/emboar-mega.png"
     },
     {
         "ndex": 503,
@@ -1040,7 +1040,7 @@
         "name": "Excadrill",
         "ig": "-Mega",
         "speed": 103,
-        "front_default": null
+        "front_default": "https://play.pokemonshowdown.com/sprites/dex/excadrill-mega.png"
     },
     {
         "ndex": 531,
@@ -1138,7 +1138,7 @@
         "name": "Chandelure",
         "ig": "-Mega",
         "speed": 90,
-        "front_default": null
+        "front_default": "https://play.pokemonshowdown.com/sprites/dex/chandelure-mega.png"
     },
     {
         "ndex": 614,
@@ -1173,7 +1173,7 @@
         "name": "Golurk",
         "ig": "-Mega",
         "speed": 55,
-        "front_default": null
+        "front_default": "https://play.pokemonshowdown.com/sprites/dex/golurk-mega.png"
     },
     {
         "ndex": 635,
@@ -1201,7 +1201,7 @@
         "name": "Chesnaught",
         "ig": "-Mega",
         "speed": 44,
-        "front_default": null
+        "front_default": "https://play.pokemonshowdown.com/sprites/dex/chesnaught-mega.png"
     },
     {
         "ndex": 655,
@@ -1215,7 +1215,7 @@
         "name": "Delphox",
         "ig": "-Mega",
         "speed": 134,
-        "front_default": null
+        "front_default": "https://play.pokemonshowdown.com/sprites/dex/delphox-mega.png"
     },
     {
         "ndex": 658,
@@ -1229,7 +1229,7 @@
         "name": "Greninja",
         "ig": "-Mega",
         "speed": 142,
-        "front_default": null
+        "front_default": "https://play.pokemonshowdown.com/sprites/dex/greninja-mega.png"
     },
     {
         "ndex": 660,
@@ -1264,7 +1264,7 @@
         "name": "Floette",
         "ig": "-Mega",
         "speed": 102,
-        "front_default": null
+        "front_default": "https://play.pokemonshowdown.com/sprites/dex/floette-mega.png"
     },
     {
         "ndex": 671,
@@ -1306,7 +1306,7 @@
         "name": "Meowstic",
         "ig": "-Mega",
         "speed": 124,
-        "front_default": null
+        "front_default": "https://play.pokemonshowdown.com/sprites/dex/meowstic-mega.png"
     },
     {
         "ndex": 681,
@@ -1383,7 +1383,7 @@
         "name": "Hawlucha",
         "ig": "-Mega",
         "speed": 118,
-        "front_default": null
+        "front_default": "https://play.pokemonshowdown.com/sprites/dex/hawlucha-mega.png"
     },
     {
         "ndex": 702,
@@ -1495,7 +1495,7 @@
         "name": "Crabominable",
         "ig": "-Mega",
         "speed": 33,
-        "front_default": null
+        "front_default": "https://play.pokemonshowdown.com/sprites/dex/crabominable-mega.png"
     },
     {
         "ndex": 745,
@@ -1572,7 +1572,7 @@
         "name": "Drampa",
         "ig": "-Mega",
         "speed": 36,
-        "front_default": null
+        "front_default": "https://play.pokemonshowdown.com/sprites/dex/drampa-mega.png"
     },
     {
         "ndex": 784,
@@ -1782,7 +1782,7 @@
         "name": "Scovillain",
         "ig": "-Mega",
         "speed": 75,
-        "front_default": null
+        "front_default": "https://play.pokemonshowdown.com/sprites/dex/scovillain-mega.png"
     },
     {
         "ndex": 956,
@@ -1831,7 +1831,7 @@
         "name": "Glimmora",
         "ig": "-Mega",
         "speed": 101,
-        "front_default": null
+        "front_default": "https://play.pokemonshowdown.com/sprites/dex/glimmora-mega.png"
     },
     {
         "ndex": 981,
