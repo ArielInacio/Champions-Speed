@@ -109,9 +109,6 @@
     { "pokemonKey": "248:Tyranitar:base", "nature": "neutral", "speedPoints": 32, "stage": 0, "visible": true },
     { "pokemonKey": "248:Tyranitar:base", "nature": "neutral", "speedPoints": 0, "stage": 0, "visible": true },
 
-    { "pokemonKey": "334:Altaria:base", "nature": "neutral", "speedPoints": 32, "stage": 0, "visible": true },
-    { "pokemonKey": "475:Gallade:base", "nature": "neutral", "speedPoints": 32, "stage": 0, "visible": true },
-
     { "pokemonKey": "609:Chandelure:-Mega", "nature": "positive", "speedPoints": 32, "stage": 0, "visible": true },
 
 

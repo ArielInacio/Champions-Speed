@@ -92,6 +92,44 @@ function hydrateEntriesFromConfig(configEntries, pokemonRows) {
     .map((item) => createEntry(item));
 }
 
+function sortRawEntriesByComputedSpeed(entries, pokemonRows) {
+  const pokemonMap = byKey(pokemonRows);
+  return [...entries].sort((a, b) => {
+    const pokemonA = pokemonMap.get(a.pokemonKey);
+    const pokemonB = pokemonMap.get(b.pokemonKey);
+
+    const speedA = pokemonA
+      ? calculateFinalSpeed({
+        baseSpeed: pokemonA.speed,
+        nature: a.nature,
+        speedPoints: a.speedPoints,
+        stage: a.stage,
+      })
+      : -Infinity;
+
+    const speedB = pokemonB
+      ? calculateFinalSpeed({
+        baseSpeed: pokemonB.speed,
+        nature: b.nature,
+        speedPoints: b.speedPoints,
+        stage: b.stage,
+      })
+      : -Infinity;
+
+    if (speedB !== speedA) {
+      return speedB - speedA;
+    }
+
+    const nameA = pokemonA?.displayName ?? "";
+    const nameB = pokemonB?.displayName ?? "";
+    if (nameA !== nameB) {
+      return nameA.localeCompare(nameB);
+    }
+
+    return a.id - b.id;
+  });
+}
+
 function updateEntry(entryId, updater) {
   store.setState((state) => ({
     ...state,
@@ -162,7 +200,15 @@ function matchesEntrySearch(entry, rawQuery) {
 }
 
 function renderEntries(state) {
-  const computedEntries = buildComputedEntries(state);
+  const computedEntries = buildComputedEntries(state).sort((a, b) => {
+    if (b.finalSpeed !== a.finalSpeed) {
+      return b.finalSpeed - a.finalSpeed;
+    }
+    if (a.displayName !== b.displayName) {
+      return a.displayName.localeCompare(b.displayName);
+    }
+    return a.id - b.id;
+  });
   const filteredEntries = computedEntries.filter((entry) => matchesEntrySearch(entry, state.entriesSearchQuery));
 
   els.entriesList.innerHTML = "";
@@ -327,7 +373,10 @@ function bindForm() {
 function bindResetDefaults() {
   els.resetDefaults.addEventListener("click", () => {
     const state = store.getState();
-    const entries = hydrateEntriesFromConfig(state.defaultConfigEntries, state.pokemonRows);
+    const entries = sortRawEntriesByComputedSpeed(
+      hydrateEntriesFromConfig(state.defaultConfigEntries, state.pokemonRows),
+      state.pokemonRows,
+    );
     store.setState((prev) => ({
       ...prev,
       entries,
@@ -363,7 +412,10 @@ async function init() {
       loadPokemonData(),
       loadDefaultConfig(),
     ]);
-    const entries = hydrateEntriesFromConfig(defaultConfigEntries, pokemonRows);
+    const entries = sortRawEntriesByComputedSpeed(
+      hydrateEntriesFromConfig(defaultConfigEntries, pokemonRows),
+      pokemonRows,
+    );
     buildPokemonOptions(pokemonRows);
     store.setState((state) => ({
       ...state,
