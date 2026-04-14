@@ -19,6 +19,11 @@ const SP_MAX = 32;
 let nextEntryId = 1;
 
 const els = {
+  leftColumn: document.querySelector(".left-column"),
+  chartColumn: document.querySelector(".chart-column"),
+  titlePanel: document.getElementById("title-panel"),
+  addPanel: document.getElementById("add-panel"),
+  selectedPanel: document.getElementById("selected-panel"),
   form: document.getElementById("add-entry-form"),
   pokemonInput: document.getElementById("pokemon-input"),
   pokemonList: document.getElementById("pokemon-list"),
@@ -33,6 +38,49 @@ const els = {
   chartSummary: document.getElementById("chart-summary"),
   resetDefaults: document.getElementById("reset-defaults"),
 };
+
+function syncLeftColumnHeight() {
+  if (!els.selectedPanel || !els.entriesList) {
+    return;
+  }
+
+  if (window.matchMedia("(max-width: 1080px)").matches) {
+    els.selectedPanel.style.height = "";
+    els.selectedPanel.style.maxHeight = "";
+    els.entriesList.style.maxHeight = "";
+    return;
+  }
+
+  const panelStyles = getComputedStyle(els.selectedPanel);
+  const listStyles = getComputedStyle(els.entriesList);
+  const searchWrap = els.selectedPanel.querySelector(".entries-search-wrap");
+  const header = els.selectedPanel.querySelector(".panel-header");
+  const firstCard = els.entriesList.querySelector(".entry-card");
+
+  const panelPaddingTop = Number.parseFloat(panelStyles.paddingTop || "0") || 0;
+  const panelPaddingBottom = Number.parseFloat(panelStyles.paddingBottom || "0") || 0;
+  const searchMarginBottom = searchWrap
+    ? (Number.parseFloat(getComputedStyle(searchWrap).marginBottom || "0") || 0)
+    : 0;
+  const rowGap = Number.parseFloat(listStyles.rowGap || "0") || 0;
+
+  const headerHeight = header?.offsetHeight ?? 42;
+  const searchHeight = searchWrap?.offsetHeight ?? 40;
+  const cardHeight = firstCard?.offsetHeight ?? 68;
+  const visibleCards = 5;
+  const listVisibleHeight = cardHeight * visibleCards + rowGap * Math.max(0, visibleCards - 1);
+
+  const panelHeight = panelPaddingTop
+    + panelPaddingBottom
+    + headerHeight
+    + searchHeight
+    + searchMarginBottom
+    + listVisibleHeight;
+
+  els.entriesList.style.maxHeight = `${Math.max(120, Math.floor(listVisibleHeight))}px`;
+  els.selectedPanel.style.height = `${Math.max(220, Math.floor(panelHeight))}px`;
+  els.selectedPanel.style.maxHeight = `${Math.max(220, Math.floor(panelHeight))}px`;
+}
 
 function clampInteger(value, min, max) {
   const parsed = Number.parseInt(value, 10);
@@ -337,6 +385,8 @@ function renderEntries(state) {
     summaryNode: els.chartSummary,
     entries: computedEntries.filter((entry) => entry.visible),
   });
+
+  syncLeftColumnHeight();
 }
 
 function bindForm() {
@@ -429,6 +479,8 @@ async function init() {
 
   store.subscribe(renderEntries);
   renderEntries(store.getState());
+  window.addEventListener("resize", syncLeftColumnHeight);
+  requestAnimationFrame(syncLeftColumnHeight);
 }
 
 init();
