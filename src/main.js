@@ -437,6 +437,7 @@ function renderEntries(state) {
     const card = document.createElement("article");
     card.className = "entry-card";
     card.dataset.entryId = String(entry.id);
+    card.height = 68
 
     const head = document.createElement("div");
     head.className = "entry-head";
@@ -444,13 +445,10 @@ function renderEntries(state) {
     const titleWrap = document.createElement("div");
     const title = document.createElement("h3");
     title.className = "entry-title";
-    title.textContent = entry.displayName;
+    title.textContent = ` ${entry.displayName} | ${entry.finalSpeed}`;
     titleWrap.appendChild(title);
 
-    const subtitle = document.createElement("p");
-    subtitle.className = "entry-subtitle";
-    subtitle.textContent = `Base ${entry.baseSpeed} | Final ${entry.finalSpeed}`;
-    titleWrap.appendChild(subtitle);
+
     head.appendChild(titleWrap);
 
     const headActions = document.createElement("div");
