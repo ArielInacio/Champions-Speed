@@ -67,11 +67,11 @@ def scrape():
 
             if pname == "ig":
                 # "Mega X" -> "Mega-X"
-                if any(item in pvalue for  item in ["Mega" ]):
+                if any(pvalue for  item in ["-Mega", "-Mega X", "-Mega Y", "-Mega Z" ]):
                     ig = pvalue.replace(" ", "-")
             if pname == "form":
                 # "Mega X" -> "Mega-X"
-                if any(item in pvalue for  item in [ "-Alola", "-Galar", "-Hisui", "-Paldea", "-Female", "-Male" ]):
+                if any(item in pvalue for  item in [ "-Alola", "-Galar", "-Hisui", "-Paldea", "-Female", "-Male", "-Mega X", "-Mega Y", "-Mega Z" ]):
                     ig = pvalue.replace(" ", "-")        
             #elif pname == "form":
             #    form = pvalue
@@ -145,7 +145,8 @@ if __name__ == "__main__":
     data = scrape()
     diff_and_save(data)
     print(f"Saved {len(data)} Pokémon")
-    #print(fetch_wikitext()[:5000])
+    #print(fetch_wikitext()[10000:])
+
 
 
 

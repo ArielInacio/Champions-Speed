@@ -1,6 +1,6 @@
 {
-  "last_updated": "2026-04-13T20:12:59.190474",
-  "count": 261,
+  "last_updated": "2026-04-13T20:55:36.406930",
+  "count": 268,
   "pokemon": [
     {
       "ndex": 3,
@@ -16,6 +16,16 @@
       "ndex": 6,
       "name": "Charizard",
       "ig": null
+    },
+    {
+      "ndex": 6,
+      "name": "Charizard",
+      "ig": "-Mega-X"
+    },
+    {
+      "ndex": 6,
+      "name": "Charizard",
+      "ig": "-Mega-Y"
     },
     {
       "ndex": 9,
@@ -185,17 +195,17 @@
     {
       "ndex": 128,
       "name": "Tauros",
-      "ig": "-Paldea-Aqua"
+      "ig": "-Paldea-Aqua-Breed"
     },
     {
       "ndex": 128,
       "name": "Tauros",
-      "ig": "-Paldea-Blaze"
+      "ig": "-Paldea-Blaze-Breed"
     },
     {
       "ndex": 128,
       "name": "Tauros",
-      "ig": "-Paldea-Combat"
+      "ig": "-Paldea-Combat-Breed"
     },
     {
       "ndex": 130,
@@ -890,7 +900,7 @@
     {
       "ndex": 670,
       "name": "Floette",
-      "ig": null
+      "ig": "-Eternal"
     },
     {
       "ndex": 670,
@@ -915,7 +925,7 @@
     {
       "ndex": 678,
       "name": "Meowstic",
-      "ig": null
+      "ig": "-Male"
     },
     {
       "ndex": 678,
@@ -931,6 +941,11 @@
       "ndex": 681,
       "name": "Aegislash",
       "ig": null
+    },
+    {
+      "ndex": 681,
+      "name": "Aegislash",
+      "ig": "-Blade"
     },
     {
       "ndex": 683,
@@ -1168,6 +1183,11 @@
       "ig": null
     },
     {
+      "ndex": 877,
+      "name": "Morpeko",
+      "ig": "-Hangry"
+    },
+    {
       "ndex": 887,
       "name": "Dragapult",
       "ig": null
@@ -1185,7 +1205,7 @@
     {
       "ndex": 902,
       "name": "Basculegion",
-      "ig": null
+      "ig": "-Male"
     },
     {
       "ndex": 902,
@@ -1221,6 +1241,11 @@
       "ndex": 925,
       "name": "Maushold",
       "ig": null
+    },
+    {
+      "ndex": 925,
+      "name": "Maushold",
+      "ig": "-Three"
     },
     {
       "ndex": 934,
@@ -1266,6 +1291,11 @@
       "ndex": 964,
       "name": "Palafin",
       "ig": null
+    },
+    {
+      "ndex": 964,
+      "name": "Palafin",
+      "ig": "-Hero"
     },
     {
       "ndex": 968,

@@ -1,0 +1,1871 @@
+[
+    {
+        "ndex": 3,
+        "name": "Venusaur",
+        "ig": null,
+        "speed": 80,
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/3.png"
+    },
+    {
+        "ndex": 3,
+        "name": "Venusaur",
+        "ig": "-Mega",
+        "speed": 80,
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10033.png"
+    },
+    {
+        "ndex": 6,
+        "name": "Charizard",
+        "ig": null,
+        "speed": 100,
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/6.png"
+    },
+    {
+        "ndex": 6,
+        "name": "Charizard",
+        "ig": "-Mega-X",
+        "speed": 100,
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10034.png"
+    },
+    {
+        "ndex": 6,
+        "name": "Charizard",
+        "ig": "-Mega-Y",
+        "speed": 100,
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10035.png"
+    },
+    {
+        "ndex": 9,
+        "name": "Blastoise",
+        "ig": null,
+        "speed": 78,
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/9.png"
+    },
+    {
+        "ndex": 9,
+        "name": "Blastoise",
+        "ig": "-Mega",
+        "speed": 78,
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10036.png"
+    },
+    {
+        "ndex": 15,
+        "name": "Beedrill",
+        "ig": null,
+        "speed": 75,
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/15.png"
+    },
+    {
+        "ndex": 15,
+        "name": "Beedrill",
+        "ig": "-Mega",
+        "speed": 145,
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10090.png"
+    },
+    {
+        "ndex": 18,
+        "name": "Pidgeot",
+        "ig": null,
+        "speed": 101,
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/18.png"
+    },
+    {
+        "ndex": 18,
+        "name": "Pidgeot",
+        "ig": "-Mega",
+        "speed": 121,
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10073.png"
+    },
+    {
+        "ndex": 24,
+        "name": "Arbok",
+        "ig": null,
+        "speed": 80,
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/24.png"
+    },
+    {
+        "ndex": 25,
+        "name": "Pikachu",
+        "ig": null,
+        "speed": 90,
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png"
+    },
+    {
+        "ndex": 26,
+        "name": "Raichu",
+        "ig": null,
+        "speed": 110,
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/26.png"
+    },
+    {
+        "ndex": 26,
+        "name": "Raichu",
+        "ig": "-Alola",
+        "speed": 110,
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10100.png"
+    },
+    {
+        "ndex": 36,
+        "name": "Clefable",
+        "ig": null,
+        "speed": 60,
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/36.png"
+    },
+    {
+        "ndex": 36,
+        "name": "Clefable",
+        "ig": "-Mega",
+        "speed": 70,
+        "front_default": null
+    },
+    {
+        "ndex": 38,
+        "name": "Ninetales",
+        "ig": null,
+        "speed": 100,
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/38.png"
+    },
+    {
+        "ndex": 38,
+        "name": "Ninetales",
+        "ig": "-Alola",
+        "speed": 109,
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10104.png"
+    },
+    {
+        "ndex": 59,
+        "name": "Arcanine",
+        "ig": null,
+        "speed": 95,
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/59.png"
+    },
+    {
+        "ndex": 59,
+        "name": "Arcanine",
+        "ig": "-Hisui",
+        "speed": 90,
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10230.png"
+    },
+    {
+        "ndex": 65,
+        "name": "Alakazam",
+        "ig": null,
+        "speed": 120,
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/65.png"
+    },
+    {
+        "ndex": 65,
+        "name": "Alakazam",
+        "ig": "-Mega",
+        "speed": 150,
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10037.png"
+    },
+    {
+        "ndex": 68,
+        "name": "Machamp",
+        "ig": null,
+        "speed": 55,
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/68.png"
+    },
+    {
+        "ndex": 71,
+        "name": "Victreebel",
+        "ig": null,
+        "speed": 70,
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/71.png"
+    },
+    {
+        "ndex": 71,
+        "name": "Victreebel",
+        "ig": "-Mega",
+        "speed": 70,
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10279.png"
+    },
+    {
+        "ndex": 80,
+        "name": "Slowbro",
+        "ig": null,
+        "speed": 30,
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/80.png"
+    },
+    {
+        "ndex": 80,
+        "name": "Slowbro",
+        "ig": "-Galar",
+        "speed": 30,
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10165.png"
+    },
+    {
+        "ndex": 80,
+        "name": "Slowbro",
+        "ig": "-Mega",
+        "speed": 30,
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10071.png"
+    },
+    {
+        "ndex": 94,
+        "name": "Gengar",
+        "ig": null,
+        "speed": 110,
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/94.png"
+    },
+    {
+        "ndex": 94,
+        "name": "Gengar",
+        "ig": "-Mega",
+        "speed": 130,
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10038.png"
+    },
+    {
+        "ndex": 115,
+        "name": "Kangaskhan",
+        "ig": null,
+        "speed": 90,
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/115.png"
+    },
+    {
+        "ndex": 115,
+        "name": "Kangaskhan",
+        "ig": "-Mega",
+        "speed": 100,
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10039.png"
+    },
+    {
+        "ndex": 121,
+        "name": "Starmie",
+        "ig": null,
+        "speed": 115,
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/121.png"
+    },
+    {
+        "ndex": 121,
+        "name": "Starmie",
+        "ig": "-Mega",
+        "speed": 120,
+        "front_default": null
+    },
+    {
+        "ndex": 127,
+        "name": "Pinsir",
+        "ig": null,
+        "speed": 85,
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/127.png"
+    },
+    {
+        "ndex": 127,
+        "name": "Pinsir",
+        "ig": "-Mega",
+        "speed": 105,
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10040.png"
+    },
+    {
+        "ndex": 128,
+        "name": "Tauros",
+        "ig": null,
+        "speed": 110,
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/128.png"
+    },
+    {
+        "ndex": 128,
+        "name": "Tauros",
+        "ig": "-Paldea-Aqua-Breed",
+        "speed": 100,
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10252.png"
+    },
+    {
+        "ndex": 128,
+        "name": "Tauros",
+        "ig": "-Paldea-Blaze-Breed",
+        "speed": 100,
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10251.png"
+    },
+    {
+        "ndex": 128,
+        "name": "Tauros",
+        "ig": "-Paldea-Combat-Breed",
+        "speed": 100,
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10250.png"
+    },
+    {
+        "ndex": 130,
+        "name": "Gyarados",
+        "ig": null,
+        "speed": 81,
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/130.png"
+    },
+    {
+        "ndex": 130,
+        "name": "Gyarados",
+        "ig": "-Mega",
+        "speed": 81,
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10041.png"
+    },
+    {
+        "ndex": 132,
+        "name": "Ditto",
+        "ig": null,
+        "speed": 48,
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/132.png"
+    },
+    {
+        "ndex": 134,
+        "name": "Vaporeon",
+        "ig": null,
+        "speed": 65,
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/134.png"
+    },
+    {
+        "ndex": 135,
+        "name": "Jolteon",
+        "ig": null,
+        "speed": 130,
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/135.png"
+    },
+    {
+        "ndex": 136,
+        "name": "Flareon",
+        "ig": null,
+        "speed": 65,
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/136.png"
+    },
+    {
+        "ndex": 142,
+        "name": "Aerodactyl",
+        "ig": null,
+        "speed": 130,
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/142.png"
+    },
+    {
+        "ndex": 142,
+        "name": "Aerodactyl",
+        "ig": "-Mega",
+        "speed": 150,
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10042.png"
+    },
+    {
+        "ndex": 143,
+        "name": "Snorlax",
+        "ig": null,
+        "speed": 30,
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/143.png"
+    },
+    {
+        "ndex": 149,
+        "name": "Dragonite",
+        "ig": null,
+        "speed": 80,
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/149.png"
+    },
+    {
+        "ndex": 149,
+        "name": "Dragonite",
+        "ig": "-Mega",
+        "speed": 100,
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10281.png"
+    },
+    {
+        "ndex": 154,
+        "name": "Meganium",
+        "ig": null,
+        "speed": 80,
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/154.png"
+    },
+    {
+        "ndex": 154,
+        "name": "Meganium",
+        "ig": "-Mega",
+        "speed": 80,
+        "front_default": null
+    },
+    {
+        "ndex": 157,
+        "name": "Typhlosion",
+        "ig": null,
+        "speed": 100,
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/157.png"
+    },
+    {
+        "ndex": 157,
+        "name": "Typhlosion",
+        "ig": "-Hisui",
+        "speed": 95,
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10233.png"
+    },
+    {
+        "ndex": 160,
+        "name": "Feraligatr",
+        "ig": null,
+        "speed": 78,
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/160.png"
+    },
+    {
+        "ndex": 160,
+        "name": "Feraligatr",
+        "ig": "-Mega",
+        "speed": 78,
+        "front_default": null
+    },
+    {
+        "ndex": 168,
+        "name": "Ariados",
+        "ig": null,
+        "speed": 40,
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/168.png"
+    },
+    {
+        "ndex": 181,
+        "name": "Ampharos",
+        "ig": null,
+        "speed": 55,
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/181.png"
+    },
+    {
+        "ndex": 181,
+        "name": "Ampharos",
+        "ig": "-Mega",
+        "speed": 45,
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10045.png"
+    },
+    {
+        "ndex": 184,
+        "name": "Azumarill",
+        "ig": null,
+        "speed": 50,
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/184.png"
+    },
+    {
+        "ndex": 186,
+        "name": "Politoed",
+        "ig": null,
+        "speed": 70,
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/186.png"
+    },
+    {
+        "ndex": 196,
+        "name": "Espeon",
+        "ig": null,
+        "speed": 110,
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/196.png"
+    },
+    {
+        "ndex": 197,
+        "name": "Umbreon",
+        "ig": null,
+        "speed": 65,
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/197.png"
+    },
+    {
+        "ndex": 199,
+        "name": "Slowking",
+        "ig": null,
+        "speed": 30,
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/199.png"
+    },
+    {
+        "ndex": 199,
+        "name": "Slowking",
+        "ig": "-Galar",
+        "speed": 30,
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10172.png"
+    },
+    {
+        "ndex": 205,
+        "name": "Forretress",
+        "ig": null,
+        "speed": 40,
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/205.png"
+    },
+    {
+        "ndex": 208,
+        "name": "Steelix",
+        "ig": null,
+        "speed": 30,
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/208.png"
+    },
+    {
+        "ndex": 208,
+        "name": "Steelix",
+        "ig": "-Mega",
+        "speed": 30,
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10072.png"
+    },
+    {
+        "ndex": 212,
+        "name": "Scizor",
+        "ig": null,
+        "speed": 65,
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/212.png"
+    },
+    {
+        "ndex": 212,
+        "name": "Scizor",
+        "ig": "-Mega",
+        "speed": 75,
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10046.png"
+    },
+    {
+        "ndex": 214,
+        "name": "Heracross",
+        "ig": null,
+        "speed": 85,
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/214.png"
+    },
+    {
+        "ndex": 214,
+        "name": "Heracross",
+        "ig": "-Mega",
+        "speed": 75,
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10047.png"
+    },
+    {
+        "ndex": 227,
+        "name": "Skarmory",
+        "ig": null,
+        "speed": 70,
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/227.png"
+    },
+    {
+        "ndex": 227,
+        "name": "Skarmory",
+        "ig": "-Mega",
+        "speed": 110,
+        "front_default": null
+    },
+    {
+        "ndex": 229,
+        "name": "Houndoom",
+        "ig": null,
+        "speed": 95,
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/229.png"
+    },
+    {
+        "ndex": 229,
+        "name": "Houndoom",
+        "ig": "-Mega",
+        "speed": 115,
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10048.png"
+    },
+    {
+        "ndex": 248,
+        "name": "Tyranitar",
+        "ig": null,
+        "speed": 61,
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/248.png"
+    },
+    {
+        "ndex": 248,
+        "name": "Tyranitar",
+        "ig": "-Mega",
+        "speed": 71,
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10049.png"
+    },
+    {
+        "ndex": 279,
+        "name": "Pelipper",
+        "ig": null,
+        "speed": 65,
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/279.png"
+    },
+    {
+        "ndex": 282,
+        "name": "Gardevoir",
+        "ig": null,
+        "speed": 80,
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/282.png"
+    },
+    {
+        "ndex": 282,
+        "name": "Gardevoir",
+        "ig": "-Mega",
+        "speed": 100,
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10051.png"
+    },
+    {
+        "ndex": 302,
+        "name": "Sableye",
+        "ig": null,
+        "speed": 50,
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/302.png"
+    },
+    {
+        "ndex": 302,
+        "name": "Sableye",
+        "ig": "-Mega",
+        "speed": 20,
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10066.png"
+    },
+    {
+        "ndex": 306,
+        "name": "Aggron",
+        "ig": null,
+        "speed": 50,
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/306.png"
+    },
+    {
+        "ndex": 306,
+        "name": "Aggron",
+        "ig": "-Mega",
+        "speed": 50,
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10053.png"
+    },
+    {
+        "ndex": 308,
+        "name": "Medicham",
+        "ig": null,
+        "speed": 80,
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/308.png"
+    },
+    {
+        "ndex": 308,
+        "name": "Medicham",
+        "ig": "-Mega",
+        "speed": 100,
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10054.png"
+    },
+    {
+        "ndex": 310,
+        "name": "Manectric",
+        "ig": null,
+        "speed": 105,
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/310.png"
+    },
+    {
+        "ndex": 310,
+        "name": "Manectric",
+        "ig": "-Mega",
+        "speed": 135,
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10055.png"
+    },
+    {
+        "ndex": 319,
+        "name": "Sharpedo",
+        "ig": null,
+        "speed": 95,
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/319.png"
+    },
+    {
+        "ndex": 319,
+        "name": "Sharpedo",
+        "ig": "-Mega",
+        "speed": 105,
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10070.png"
+    },
+    {
+        "ndex": 323,
+        "name": "Camerupt",
+        "ig": null,
+        "speed": 40,
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/323.png"
+    },
+    {
+        "ndex": 323,
+        "name": "Camerupt",
+        "ig": "-Mega",
+        "speed": 20,
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10087.png"
+    },
+    {
+        "ndex": 324,
+        "name": "Torkoal",
+        "ig": null,
+        "speed": 20,
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/324.png"
+    },
+    {
+        "ndex": 334,
+        "name": "Altaria",
+        "ig": null,
+        "speed": 80,
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/334.png"
+    },
+    {
+        "ndex": 334,
+        "name": "Altaria",
+        "ig": "-Mega",
+        "speed": 80,
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10067.png"
+    },
+    {
+        "ndex": 350,
+        "name": "Milotic",
+        "ig": null,
+        "speed": 81,
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/350.png"
+    },
+    {
+        "ndex": 351,
+        "name": "Castform",
+        "ig": null,
+        "speed": 70,
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/351.png"
+    },
+    {
+        "ndex": 354,
+        "name": "Banette",
+        "ig": null,
+        "speed": 65,
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/354.png"
+    },
+    {
+        "ndex": 354,
+        "name": "Banette",
+        "ig": "-Mega",
+        "speed": 75,
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10056.png"
+    },
+    {
+        "ndex": 358,
+        "name": "Chimecho",
+        "ig": null,
+        "speed": 65,
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/358.png"
+    },
+    {
+        "ndex": 358,
+        "name": "Chimecho",
+        "ig": "-Mega",
+        "speed": 65,
+        "front_default": null
+    },
+    {
+        "ndex": 359,
+        "name": "Absol",
+        "ig": null,
+        "speed": 75,
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/359.png"
+    },
+    {
+        "ndex": 359,
+        "name": "Absol",
+        "ig": "-Mega",
+        "speed": 115,
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10057.png"
+    },
+    {
+        "ndex": 362,
+        "name": "Glalie",
+        "ig": null,
+        "speed": 80,
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/362.png"
+    },
+    {
+        "ndex": 362,
+        "name": "Glalie",
+        "ig": "-Mega",
+        "speed": 100,
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10074.png"
+    },
+    {
+        "ndex": 389,
+        "name": "Torterra",
+        "ig": null,
+        "speed": 56,
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/389.png"
+    },
+    {
+        "ndex": 392,
+        "name": "Infernape",
+        "ig": null,
+        "speed": 108,
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/392.png"
+    },
+    {
+        "ndex": 395,
+        "name": "Empoleon",
+        "ig": null,
+        "speed": 60,
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/395.png"
+    },
+    {
+        "ndex": 405,
+        "name": "Luxray",
+        "ig": null,
+        "speed": 70,
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/405.png"
+    },
+    {
+        "ndex": 407,
+        "name": "Roserade",
+        "ig": null,
+        "speed": 90,
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/407.png"
+    },
+    {
+        "ndex": 409,
+        "name": "Rampardos",
+        "ig": null,
+        "speed": 58,
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/409.png"
+    },
+    {
+        "ndex": 411,
+        "name": "Bastiodon",
+        "ig": null,
+        "speed": 30,
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/411.png"
+    },
+    {
+        "ndex": 428,
+        "name": "Lopunny",
+        "ig": null,
+        "speed": 105,
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/428.png"
+    },
+    {
+        "ndex": 428,
+        "name": "Lopunny",
+        "ig": "-Mega",
+        "speed": 135,
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10088.png"
+    },
+    {
+        "ndex": 442,
+        "name": "Spiritomb",
+        "ig": null,
+        "speed": 35,
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/442.png"
+    },
+    {
+        "ndex": 445,
+        "name": "Garchomp",
+        "ig": null,
+        "speed": 102,
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/445.png"
+    },
+    {
+        "ndex": 445,
+        "name": "Garchomp",
+        "ig": "-Mega",
+        "speed": 92,
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10058.png"
+    },
+    {
+        "ndex": 448,
+        "name": "Lucario",
+        "ig": null,
+        "speed": 90,
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/448.png"
+    },
+    {
+        "ndex": 448,
+        "name": "Lucario",
+        "ig": "-Mega",
+        "speed": 112,
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10059.png"
+    },
+    {
+        "ndex": 450,
+        "name": "Hippowdon",
+        "ig": null,
+        "speed": 47,
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/450.png"
+    },
+    {
+        "ndex": 454,
+        "name": "Toxicroak",
+        "ig": null,
+        "speed": 85,
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/454.png"
+    },
+    {
+        "ndex": 460,
+        "name": "Abomasnow",
+        "ig": null,
+        "speed": 60,
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/460.png"
+    },
+    {
+        "ndex": 460,
+        "name": "Abomasnow",
+        "ig": "-Mega",
+        "speed": 30,
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10060.png"
+    },
+    {
+        "ndex": 461,
+        "name": "Weavile",
+        "ig": null,
+        "speed": 125,
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/461.png"
+    },
+    {
+        "ndex": 464,
+        "name": "Rhyperior",
+        "ig": null,
+        "speed": 40,
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/464.png"
+    },
+    {
+        "ndex": 470,
+        "name": "Leafeon",
+        "ig": null,
+        "speed": 95,
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/470.png"
+    },
+    {
+        "ndex": 471,
+        "name": "Glaceon",
+        "ig": null,
+        "speed": 65,
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/471.png"
+    },
+    {
+        "ndex": 472,
+        "name": "Gliscor",
+        "ig": null,
+        "speed": 95,
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/472.png"
+    },
+    {
+        "ndex": 473,
+        "name": "Mamoswine",
+        "ig": null,
+        "speed": 80,
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/473.png"
+    },
+    {
+        "ndex": 475,
+        "name": "Gallade",
+        "ig": null,
+        "speed": 80,
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/475.png"
+    },
+    {
+        "ndex": 475,
+        "name": "Gallade",
+        "ig": "-Mega",
+        "speed": 110,
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10068.png"
+    },
+    {
+        "ndex": 478,
+        "name": "Froslass",
+        "ig": null,
+        "speed": 110,
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/478.png"
+    },
+    {
+        "ndex": 478,
+        "name": "Froslass",
+        "ig": "-Mega",
+        "speed": 120,
+        "front_default": null
+    },
+    {
+        "ndex": 479,
+        "name": "Rotom",
+        "ig": null,
+        "speed": 91,
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/479.png"
+    },
+    {
+        "ndex": 497,
+        "name": "Serperior",
+        "ig": null,
+        "speed": 113,
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/497.png"
+    },
+    {
+        "ndex": 500,
+        "name": "Emboar",
+        "ig": null,
+        "speed": 65,
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/500.png"
+    },
+    {
+        "ndex": 500,
+        "name": "Emboar",
+        "ig": "-Mega",
+        "speed": 75,
+        "front_default": null
+    },
+    {
+        "ndex": 503,
+        "name": "Samurott",
+        "ig": null,
+        "speed": 70,
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/503.png"
+    },
+    {
+        "ndex": 503,
+        "name": "Samurott",
+        "ig": "-Hisui",
+        "speed": 85,
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10236.png"
+    },
+    {
+        "ndex": 505,
+        "name": "Watchog",
+        "ig": null,
+        "speed": 77,
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/505.png"
+    },
+    {
+        "ndex": 510,
+        "name": "Liepard",
+        "ig": null,
+        "speed": 106,
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/510.png"
+    },
+    {
+        "ndex": 512,
+        "name": "Simisage",
+        "ig": null,
+        "speed": 101,
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/512.png"
+    },
+    {
+        "ndex": 514,
+        "name": "Simisear",
+        "ig": null,
+        "speed": 101,
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/514.png"
+    },
+    {
+        "ndex": 516,
+        "name": "Simipour",
+        "ig": null,
+        "speed": 101,
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/516.png"
+    },
+    {
+        "ndex": 530,
+        "name": "Excadrill",
+        "ig": null,
+        "speed": 88,
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/530.png"
+    },
+    {
+        "ndex": 530,
+        "name": "Excadrill",
+        "ig": "-Mega",
+        "speed": 103,
+        "front_default": null
+    },
+    {
+        "ndex": 531,
+        "name": "Audino",
+        "ig": null,
+        "speed": 50,
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/531.png"
+    },
+    {
+        "ndex": 531,
+        "name": "Audino",
+        "ig": "-Mega",
+        "speed": 50,
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10069.png"
+    },
+    {
+        "ndex": 534,
+        "name": "Conkeldurr",
+        "ig": null,
+        "speed": 45,
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/534.png"
+    },
+    {
+        "ndex": 547,
+        "name": "Whimsicott",
+        "ig": null,
+        "speed": 116,
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/547.png"
+    },
+    {
+        "ndex": 553,
+        "name": "Krookodile",
+        "ig": null,
+        "speed": 92,
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/553.png"
+    },
+    {
+        "ndex": 563,
+        "name": "Cofagrigus",
+        "ig": null,
+        "speed": 30,
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/563.png"
+    },
+    {
+        "ndex": 569,
+        "name": "Garbodor",
+        "ig": null,
+        "speed": 75,
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/569.png"
+    },
+    {
+        "ndex": 571,
+        "name": "Zoroark",
+        "ig": null,
+        "speed": 105,
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/571.png"
+    },
+    {
+        "ndex": 571,
+        "name": "Zoroark",
+        "ig": "-Hisui",
+        "speed": 110,
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10239.png"
+    },
+    {
+        "ndex": 579,
+        "name": "Reuniclus",
+        "ig": null,
+        "speed": 30,
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/579.png"
+    },
+    {
+        "ndex": 584,
+        "name": "Vanilluxe",
+        "ig": null,
+        "speed": 79,
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/584.png"
+    },
+    {
+        "ndex": 587,
+        "name": "Emolga",
+        "ig": null,
+        "speed": 103,
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/587.png"
+    },
+    {
+        "ndex": 609,
+        "name": "Chandelure",
+        "ig": null,
+        "speed": 80,
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/609.png"
+    },
+    {
+        "ndex": 609,
+        "name": "Chandelure",
+        "ig": "-Mega",
+        "speed": 90,
+        "front_default": null
+    },
+    {
+        "ndex": 614,
+        "name": "Beartic",
+        "ig": null,
+        "speed": 50,
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/614.png"
+    },
+    {
+        "ndex": 618,
+        "name": "Stunfisk",
+        "ig": null,
+        "speed": 32,
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/618.png"
+    },
+    {
+        "ndex": 618,
+        "name": "Stunfisk",
+        "ig": "-Galar",
+        "speed": 32,
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10180.png"
+    },
+    {
+        "ndex": 623,
+        "name": "Golurk",
+        "ig": null,
+        "speed": 55,
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/623.png"
+    },
+    {
+        "ndex": 623,
+        "name": "Golurk",
+        "ig": "-Mega",
+        "speed": 55,
+        "front_default": null
+    },
+    {
+        "ndex": 635,
+        "name": "Hydreigon",
+        "ig": null,
+        "speed": 98,
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/635.png"
+    },
+    {
+        "ndex": 637,
+        "name": "Volcarona",
+        "ig": null,
+        "speed": 100,
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/637.png"
+    },
+    {
+        "ndex": 652,
+        "name": "Chesnaught",
+        "ig": null,
+        "speed": 64,
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/652.png"
+    },
+    {
+        "ndex": 652,
+        "name": "Chesnaught",
+        "ig": "-Mega",
+        "speed": 44,
+        "front_default": null
+    },
+    {
+        "ndex": 655,
+        "name": "Delphox",
+        "ig": null,
+        "speed": 104,
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/655.png"
+    },
+    {
+        "ndex": 655,
+        "name": "Delphox",
+        "ig": "-Mega",
+        "speed": 134,
+        "front_default": null
+    },
+    {
+        "ndex": 658,
+        "name": "Greninja",
+        "ig": null,
+        "speed": 122,
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/658.png"
+    },
+    {
+        "ndex": 658,
+        "name": "Greninja",
+        "ig": "-Mega",
+        "speed": 142,
+        "front_default": null
+    },
+    {
+        "ndex": 660,
+        "name": "Diggersby",
+        "ig": null,
+        "speed": 78,
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/660.png"
+    },
+    {
+        "ndex": 663,
+        "name": "Talonflame",
+        "ig": null,
+        "speed": 126,
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/663.png"
+    },
+    {
+        "ndex": 666,
+        "name": "Vivillon",
+        "ig": null,
+        "speed": 89,
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/666.png"
+    },
+    {
+        "ndex": 670,
+        "name": "Floette",
+        "ig": "-Eternal",
+        "speed": 92,
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10061.png"
+    },
+    {
+        "ndex": 670,
+        "name": "Floette",
+        "ig": "-Mega",
+        "speed": 102,
+        "front_default": null
+    },
+    {
+        "ndex": 671,
+        "name": "Florges",
+        "ig": null,
+        "speed": 75,
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/671.png"
+    },
+    {
+        "ndex": 675,
+        "name": "Pangoro",
+        "ig": null,
+        "speed": 58,
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/675.png"
+    },
+    {
+        "ndex": 676,
+        "name": "Furfrou",
+        "ig": null,
+        "speed": 102,
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/676.png"
+    },
+    {
+        "ndex": 678,
+        "name": "Meowstic",
+        "ig": "-Male",
+        "speed": 104,
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/678.png"
+    },
+    {
+        "ndex": 678,
+        "name": "Meowstic",
+        "ig": "-Female",
+        "speed": 104,
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10025.png"
+    },
+    {
+        "ndex": 678,
+        "name": "Meowstic",
+        "ig": "-Mega",
+        "speed": 124,
+        "front_default": null
+    },
+    {
+        "ndex": 681,
+        "name": "Aegislash",
+        "ig": null,
+        "speed": 60,
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/681.png"
+    },
+    {
+        "ndex": 681,
+        "name": "Aegislash",
+        "ig": "-Blade",
+        "speed": 60,
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10026.png"
+    },
+    {
+        "ndex": 683,
+        "name": "Aromatisse",
+        "ig": null,
+        "speed": 29,
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/683.png"
+    },
+    {
+        "ndex": 685,
+        "name": "Slurpuff",
+        "ig": null,
+        "speed": 72,
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/685.png"
+    },
+    {
+        "ndex": 693,
+        "name": "Clawitzer",
+        "ig": null,
+        "speed": 59,
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/693.png"
+    },
+    {
+        "ndex": 695,
+        "name": "Heliolisk",
+        "ig": null,
+        "speed": 109,
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/695.png"
+    },
+    {
+        "ndex": 697,
+        "name": "Tyrantrum",
+        "ig": null,
+        "speed": 71,
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/697.png"
+    },
+    {
+        "ndex": 699,
+        "name": "Aurorus",
+        "ig": null,
+        "speed": 58,
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/699.png"
+    },
+    {
+        "ndex": 700,
+        "name": "Sylveon",
+        "ig": null,
+        "speed": 60,
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/700.png"
+    },
+    {
+        "ndex": 701,
+        "name": "Hawlucha",
+        "ig": null,
+        "speed": 118,
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/701.png"
+    },
+    {
+        "ndex": 701,
+        "name": "Hawlucha",
+        "ig": "-Mega",
+        "speed": 118,
+        "front_default": null
+    },
+    {
+        "ndex": 702,
+        "name": "Dedenne",
+        "ig": null,
+        "speed": 101,
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/702.png"
+    },
+    {
+        "ndex": 706,
+        "name": "Goodra",
+        "ig": null,
+        "speed": 80,
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/706.png"
+    },
+    {
+        "ndex": 706,
+        "name": "Goodra",
+        "ig": "-Hisui",
+        "speed": 60,
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10242.png"
+    },
+    {
+        "ndex": 707,
+        "name": "Klefki",
+        "ig": null,
+        "speed": 75,
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/707.png"
+    },
+    {
+        "ndex": 709,
+        "name": "Trevenant",
+        "ig": null,
+        "speed": 56,
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/709.png"
+    },
+    {
+        "ndex": 711,
+        "name": "Gourgeist",
+        "ig": null,
+        "speed": 84,
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/711.png"
+    },
+    {
+        "ndex": 713,
+        "name": "Avalugg",
+        "ig": null,
+        "speed": 28,
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/713.png"
+    },
+    {
+        "ndex": 713,
+        "name": "Avalugg",
+        "ig": "-Hisui",
+        "speed": 38,
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10243.png"
+    },
+    {
+        "ndex": 715,
+        "name": "Noivern",
+        "ig": null,
+        "speed": 123,
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/715.png"
+    },
+    {
+        "ndex": 724,
+        "name": "Decidueye",
+        "ig": null,
+        "speed": 70,
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/724.png"
+    },
+    {
+        "ndex": 724,
+        "name": "Decidueye",
+        "ig": "-Hisui",
+        "speed": 60,
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10244.png"
+    },
+    {
+        "ndex": 727,
+        "name": "Incineroar",
+        "ig": null,
+        "speed": 60,
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/727.png"
+    },
+    {
+        "ndex": 730,
+        "name": "Primarina",
+        "ig": null,
+        "speed": 60,
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/730.png"
+    },
+    {
+        "ndex": 733,
+        "name": "Toucannon",
+        "ig": null,
+        "speed": 60,
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/733.png"
+    },
+    {
+        "ndex": 740,
+        "name": "Crabominable",
+        "ig": null,
+        "speed": 43,
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/740.png"
+    },
+    {
+        "ndex": 740,
+        "name": "Crabominable",
+        "ig": "-Mega",
+        "speed": 33,
+        "front_default": null
+    },
+    {
+        "ndex": 745,
+        "name": "Lycanroc",
+        "ig": null,
+        "speed": 112,
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/745.png"
+    },
+    {
+        "ndex": 748,
+        "name": "Toxapex",
+        "ig": null,
+        "speed": 35,
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/748.png"
+    },
+    {
+        "ndex": 750,
+        "name": "Mudsdale",
+        "ig": null,
+        "speed": 35,
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/750.png"
+    },
+    {
+        "ndex": 752,
+        "name": "Araquanid",
+        "ig": null,
+        "speed": 42,
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/752.png"
+    },
+    {
+        "ndex": 758,
+        "name": "Salazzle",
+        "ig": null,
+        "speed": 117,
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/758.png"
+    },
+    {
+        "ndex": 763,
+        "name": "Tsareena",
+        "ig": null,
+        "speed": 72,
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/763.png"
+    },
+    {
+        "ndex": 765,
+        "name": "Oranguru",
+        "ig": null,
+        "speed": 60,
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/765.png"
+    },
+    {
+        "ndex": 766,
+        "name": "Passimian",
+        "ig": null,
+        "speed": 80,
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/766.png"
+    },
+    {
+        "ndex": 778,
+        "name": "Mimikyu",
+        "ig": null,
+        "speed": 96,
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/778.png"
+    },
+    {
+        "ndex": 780,
+        "name": "Drampa",
+        "ig": null,
+        "speed": 36,
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/780.png"
+    },
+    {
+        "ndex": 780,
+        "name": "Drampa",
+        "ig": "-Mega",
+        "speed": 36,
+        "front_default": null
+    },
+    {
+        "ndex": 784,
+        "name": "Kommo-o",
+        "ig": null,
+        "speed": 85,
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/784.png"
+    },
+    {
+        "ndex": 823,
+        "name": "Corviknight",
+        "ig": null,
+        "speed": 67,
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/823.png"
+    },
+    {
+        "ndex": 841,
+        "name": "Flapple",
+        "ig": null,
+        "speed": 70,
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/841.png"
+    },
+    {
+        "ndex": 842,
+        "name": "Appletun",
+        "ig": null,
+        "speed": 30,
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/842.png"
+    },
+    {
+        "ndex": 844,
+        "name": "Sandaconda",
+        "ig": null,
+        "speed": 71,
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/844.png"
+    },
+    {
+        "ndex": 855,
+        "name": "Polteageist",
+        "ig": null,
+        "speed": 70,
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/855.png"
+    },
+    {
+        "ndex": 858,
+        "name": "Hatterene",
+        "ig": null,
+        "speed": 29,
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/858.png"
+    },
+    {
+        "ndex": 866,
+        "name": "Mr. Rime",
+        "ig": null,
+        "speed": 70,
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/866.png"
+    },
+    {
+        "ndex": 867,
+        "name": "Runerigus",
+        "ig": null,
+        "speed": 30,
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/867.png"
+    },
+    {
+        "ndex": 869,
+        "name": "Alcremie",
+        "ig": null,
+        "speed": 64,
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/869.png"
+    },
+    {
+        "ndex": 877,
+        "name": "Morpeko",
+        "ig": null,
+        "speed": 97,
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/877.png"
+    },
+    {
+        "ndex": 877,
+        "name": "Morpeko",
+        "ig": "-Hangry",
+        "speed": 97,
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10187.png"
+    },
+    {
+        "ndex": 887,
+        "name": "Dragapult",
+        "ig": null,
+        "speed": 142,
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/887.png"
+    },
+    {
+        "ndex": 899,
+        "name": "Wyrdeer",
+        "ig": null,
+        "speed": 65,
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/899.png"
+    },
+    {
+        "ndex": 900,
+        "name": "Kleavor",
+        "ig": null,
+        "speed": 85,
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/900.png"
+    },
+    {
+        "ndex": 902,
+        "name": "Basculegion",
+        "ig": "-Male",
+        "speed": 78,
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/902.png"
+    },
+    {
+        "ndex": 902,
+        "name": "Basculegion",
+        "ig": "-Female",
+        "speed": 78,
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10248.png"
+    },
+    {
+        "ndex": 903,
+        "name": "Sneasler",
+        "ig": null,
+        "speed": 120,
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/903.png"
+    },
+    {
+        "ndex": 908,
+        "name": "Meowscarada",
+        "ig": null,
+        "speed": 123,
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/908.png"
+    },
+    {
+        "ndex": 911,
+        "name": "Skeledirge",
+        "ig": null,
+        "speed": 66,
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/911.png"
+    },
+    {
+        "ndex": 914,
+        "name": "Quaquaval",
+        "ig": null,
+        "speed": 85,
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/914.png"
+    },
+    {
+        "ndex": 923,
+        "name": "Pawmot",
+        "ig": null,
+        "speed": 105,
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/923.png"
+    },
+    {
+        "ndex": 925,
+        "name": "Maushold",
+        "ig": null,
+        "speed": 111,
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/925.png"
+    },
+    {
+        "ndex": 925,
+        "name": "Maushold",
+        "ig": "-Three",
+        "speed": 111,
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/925.png"
+    },
+    {
+        "ndex": 934,
+        "name": "Garganacl",
+        "ig": null,
+        "speed": 35,
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/934.png"
+    },
+    {
+        "ndex": 936,
+        "name": "Armarouge",
+        "ig": null,
+        "speed": 75,
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/936.png"
+    },
+    {
+        "ndex": 937,
+        "name": "Ceruledge",
+        "ig": null,
+        "speed": 85,
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/937.png"
+    },
+    {
+        "ndex": 939,
+        "name": "Bellibolt",
+        "ig": null,
+        "speed": 45,
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/939.png"
+    },
+    {
+        "ndex": 952,
+        "name": "Scovillain",
+        "ig": null,
+        "speed": 75,
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/952.png"
+    },
+    {
+        "ndex": 952,
+        "name": "Scovillain",
+        "ig": "-Mega",
+        "speed": 75,
+        "front_default": null
+    },
+    {
+        "ndex": 956,
+        "name": "Espathra",
+        "ig": null,
+        "speed": 105,
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/956.png"
+    },
+    {
+        "ndex": 959,
+        "name": "Tinkaton",
+        "ig": null,
+        "speed": 94,
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/959.png"
+    },
+    {
+        "ndex": 964,
+        "name": "Palafin",
+        "ig": null,
+        "speed": 100,
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/964.png"
+    },
+    {
+        "ndex": 964,
+        "name": "Palafin",
+        "ig": "-Hero",
+        "speed": 100,
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10256.png"
+    },
+    {
+        "ndex": 968,
+        "name": "Orthworm",
+        "ig": null,
+        "speed": 65,
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/968.png"
+    },
+    {
+        "ndex": 970,
+        "name": "Glimmora",
+        "ig": null,
+        "speed": 86,
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/970.png"
+    },
+    {
+        "ndex": 970,
+        "name": "Glimmora",
+        "ig": "-Mega",
+        "speed": 101,
+        "front_default": null
+    },
+    {
+        "ndex": 981,
+        "name": "Farigiraf",
+        "ig": null,
+        "speed": 60,
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/981.png"
+    },
+    {
+        "ndex": 983,
+        "name": "Kingambit",
+        "ig": null,
+        "speed": 50,
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/983.png"
+    },
+    {
+        "ndex": 1013,
+        "name": "Sinistcha",
+        "ig": null,
+        "speed": 70,
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1013.png"
+    },
+    {
+        "ndex": 1018,
+        "name": "Archaludon",
+        "ig": null,
+        "speed": 85,
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1018.png"
+    },
+    {
+        "ndex": 1019,
+        "name": "Hydrapple",
+        "ig": null,
+        "speed": 44,
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1019.png"
+    }
+]

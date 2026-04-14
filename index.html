@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Champions Speed Explorer</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <main class="app-shell">
+    <header class="app-header">
+      <h1>Champions Speed Explorer</h1>
+      <p>Build speed scenarios by Pokemon, nature, Speed Points, and stage.</p>
+    </header>
+
+    <section class="panel">
+      <h2>Add Pokemon Configuration</h2>
+      <form id="add-entry-form" class="entry-form">
+        <label>
+          Pokemon
+          <input id="pokemon-input" name="pokemon" list="pokemon-list" placeholder="Type to search..." required>
+        </label>
+        <datalist id="pokemon-list"></datalist>
+
+        <label>
+          Nature
+          <select id="nature-input" name="nature">
+            <option value="neutral">Neutral (1.0)</option>
+            <option value="positive">Positive (1.1)</option>
+            <option value="negative">Negative (0.9)</option>
+          </select>
+        </label>
+
+        <label>
+          Speed Points
+          <input id="sp-input" name="speedPoints" type="number" min="0" max="32" step="1" value="0">
+        </label>
+
+        <label>
+          Stage
+          <input id="stage-input" name="stage" type="number" min="-6" max="6" step="1" value="0">
+        </label>
+
+        <button type="submit">Add</button>
+      </form>
+      <p id="form-feedback" class="feedback" aria-live="polite"></p>
+    </section>
+
+    <section class="panel">
+      <h2>Selected Configurations</h2>
+      <div id="entries-empty">No Pokemon selected yet.</div>
+      <div id="entries-list" class="entries-list"></div>
+    </section>
+
+    <section class="panel panel-muted">
+      <h2>Chart (next milestone)</h2>
+      <p>The speed chart visualization will be added in Milestone B.</p>
+    </section>
+  </main>
+
+  <script type="module" src="./src/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,166 @@
+:root {
+  --bg: #f8fafc;
+  --panel: #ffffff;
+  --text: #0f172a;
+  --muted: #475569;
+  --line: #cbd5e1;
+  --accent: #0f766e;
+  --danger: #b91c1c;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(160deg, #f8fafc 0%, #e2e8f0 100%);
+  color: var(--text);
+}
+
+.app-shell {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 1.25rem;
+  display: grid;
+  gap: 1rem;
+}
+
+.app-header h1 {
+  margin: 0;
+}
+
+.app-header p {
+  margin: 0.4rem 0 0;
+  color: var(--muted);
+}
+
+.panel {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 1rem;
+}
+
+.panel h2 {
+  margin: 0 0 0.85rem;
+}
+
+.panel-muted {
+  background: #f1f5f9;
+}
+
+.entry-form {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(120px, 1fr));
+  gap: 0.75rem;
+  align-items: end;
+}
+
+.entry-form label {
+  display: grid;
+  gap: 0.35rem;
+  font-size: 0.92rem;
+}
+
+input,
+select,
+button {
+  padding: 0.5rem 0.6rem;
+  border-radius: 8px;
+  border: 1px solid var(--line);
+  font-size: 0.95rem;
+}
+
+button {
+  cursor: pointer;
+  border-color: var(--accent);
+  background: var(--accent);
+  color: #ffffff;
+}
+
+button.secondary {
+  background: #ffffff;
+  color: var(--text);
+  border-color: var(--line);
+}
+
+button.danger {
+  background: #ffffff;
+  color: var(--danger);
+  border-color: #fecaca;
+}
+
+.feedback {
+  min-height: 1.25rem;
+  margin: 0.6rem 0 0;
+  color: var(--danger);
+}
+
+#entries-empty {
+  color: var(--muted);
+}
+
+.entries-list {
+  display: grid;
+  gap: 0.8rem;
+}
+
+.entry-card {
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 0.75rem;
+  display: grid;
+  gap: 0.65rem;
+}
+
+.entry-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.entry-title {
+  margin: 0;
+  font-size: 1rem;
+}
+
+.entry-subtitle {
+  margin: 0.2rem 0 0;
+  color: var(--muted);
+  font-size: 0.88rem;
+}
+
+.entry-controls {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(110px, 1fr));
+  gap: 0.55rem;
+  align-items: end;
+}
+
+.entry-controls label {
+  display: grid;
+  gap: 0.35rem;
+  font-size: 0.86rem;
+}
+
+.entry-actions {
+  display: flex;
+  gap: 0.4rem;
+}
+
+@media (max-width: 900px) {
+  .entry-form,
+  .entry-controls {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 560px) {
+  .entry-form,
+  .entry-controls {
+    grid-template-columns: 1fr;
+  }
+}
