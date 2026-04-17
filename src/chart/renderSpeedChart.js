@@ -61,46 +61,27 @@ function createStackGroup(markers, baseLeftPx, topPercent) {
   stack.className = "speed-marker-stack collapsed";
   stack.style.top = `${topPercent}%`;
   stack.style.left = `${baseLeftPx}px`;
+  stack.dataset.stackCount = String(markers.length);
 
   if (markers.length > 1) {
-    const badge = document.createElement("span");
-    badge.className = "stack-count-badge";
-    badge.textContent = String(markers.length);
-    stack.appendChild(badge);
+    markers[0].setAttribute("data-stack-count", String(markers.length));
   }
 
-  markers.forEach((marker) => {
+  markers.forEach((marker, index) => {
+    marker.style.position = index === 0 ? "relative" : "absolute";
+    marker.style.left = "0";
+    marker.style.top = "0";
     stack.appendChild(marker);
   });
 
-  let isLocked = false;
-
   stack.addEventListener("mouseenter", () => {
-    if (!isLocked) {
-      stack.classList.remove("collapsed");
-      stack.classList.add("expanded");
-    }
+    stack.classList.remove("collapsed");
+    stack.classList.add("expanded");
   });
 
   stack.addEventListener("mouseleave", () => {
-    if (!isLocked) {
-      stack.classList.remove("expanded");
-      stack.classList.add("collapsed");
-    }
-  });
-
-  stack.addEventListener("click", (e) => {
-    if (markers.length > 1) {
-      isLocked = !isLocked;
-      if (isLocked) {
-        stack.classList.remove("collapsed", "expanded");
-        stack.classList.add("locked");
-      } else {
-        stack.classList.remove("locked");
-        stack.classList.add("collapsed");
-      }
-      e.stopPropagation();
-    }
+    stack.classList.remove("expanded");
+    stack.classList.add("collapsed");
   });
 
   return stack;
