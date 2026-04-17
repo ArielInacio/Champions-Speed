@@ -30,8 +30,11 @@ function createTick(value, topPercent, chartWidth, laneLeftPx) {
 function createMarker(entry, topPercent, markerLeftPx) {
   const marker = document.createElement("div");
   marker.className = "speed-marker";
-  marker.style.top = `${topPercent}%`;
-  marker.style.left = `${markerLeftPx}px`;
+  marker.dataset.entryId = String(entry.id);
+  marker.dataset.pokemonKey = entry.pokemonKey;
+  marker.dataset.finalSpeed = entry.finalSpeed;
+  marker.dataset.nature = entry.nature;
+  marker.dataset.speedPoints = entry.speedPoints;
 
   const sprite = document.createElement("img");
   sprite.className = "speed-marker-sprite";
@@ -52,6 +55,12 @@ function createMarker(entry, topPercent, markerLeftPx) {
     stage: entry.stage,
   });
   marker.appendChild(spriteWrap);
+
+  marker.addEventListener("click", () => {
+    const entryId = entry.id;
+    const event = new CustomEvent("highlightEntry", { detail: { entryId } });
+    document.dispatchEvent(event);
+  });
 
   return marker;
 }

@@ -438,7 +438,16 @@ function renderEntries(state) {
     const card = document.createElement("article");
     card.className = "entry-card";
     card.dataset.entryId = String(entry.id);
-    card.height = 68
+    card.dataset.pokemonKey = entry.pokemonKey;
+    card.dataset.finalSpeed = entry.finalSpeed;
+    card.height = 68;
+
+    card.addEventListener("click", (e) => {
+      if (e.target.closest("button, input, select")) {
+        return;
+      }
+      highlightMarkerForEntry(entry.id);
+    });
 
     const head = document.createElement("div");
     head.className = "entry-head";
@@ -627,6 +636,30 @@ function bindEntriesSearch() {
   els.entriesSearch.addEventListener("keyup", applySearch);
 }
 
+function clearHighlights() {
+  document.querySelectorAll(".entry-card.highlighted, .speed-marker.highlighted").forEach((el) => {
+    el.classList.remove("highlighted");
+  });
+}
+
+function highlightMarkerForEntry(entryId) {
+  clearHighlights();
+  const marker = document.querySelector(`.speed-marker[data-entry-id="${entryId}"]`);
+  if (marker) {
+    marker.classList.add("highlighted");
+    marker.scrollIntoView({ behavior: "smooth", block: "center", inline: "center" });
+  }
+}
+
+function highlightEntryForMarker(entryId) {
+  clearHighlights();
+  const card = document.querySelector(`.entry-card[data-entry-id="${entryId}"]`);
+  if (card) {
+    card.classList.add("highlighted");
+    card.scrollIntoView({ behavior: "smooth", block: "start" });
+  }
+}
+
 function applyImportedEntries(mode) {
   const state = store.getState();
   const text = els.importText?.value ?? "";
@@ -723,6 +756,16 @@ async function init() {
   bindEntriesSearch();
   bindImportConfig();
   bindExportConfig();
+
+  document.addEventListener("highlightEntry", (e) => {
+    highlightEntryForMarker(e.detail.entryId);
+  });
+
+  document.addEventListener("click", (e) => {
+    if (!e.target.closest(".entry-card, .speed-marker")) {
+      clearHighlights();
+    }
+  });
 
   try {
     const [pokemonRows, defaultConfigEntries] = await Promise.all([
