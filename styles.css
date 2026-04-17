@@ -201,13 +201,24 @@ button.secondary:hover {
 }
 
 button.danger {
-  background: rgba(239, 68, 68, 0.1);
-  color: var(--danger);
+  background: rgba(239, 68, 68, 0.2);
+  color: #fca5a5;
   border-color: var(--danger);
 }
 
 button.danger:hover {
-  background: rgba(239, 68, 68, 0.2);
+  background: rgba(239, 68, 68, 0.35);
+  color: #fecaca;
+}
+
+.panel-actions button.danger {
+  background: rgba(239, 68, 68, 0.25);
+  color: #fecaca;
+  border-color: rgba(239, 68, 68, 0.6);
+}
+
+.panel-actions button.danger:hover {
+  background: rgba(239, 68, 68, 0.4);
 }
 
 .feedback {
