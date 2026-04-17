@@ -438,6 +438,12 @@ button.danger:hover {
   border-radius: 6px;
 }
 
+.entry-actions .icon-button svg {
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+}
+
 .entry-actions .icon-delete {
   font-size: 0.9rem;
   background: rgba(239, 68, 68, 0.15);
