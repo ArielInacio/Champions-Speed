@@ -30,6 +30,8 @@ function createTick(value, topPercent) {
 function createMarker(entry, topPercent, markerLeftPx) {
   const marker = document.createElement("div");
   marker.className = "speed-marker";
+  marker.style.top = `${topPercent}%`;
+  marker.style.left = `${markerLeftPx}px`;
   marker.dataset.entryId = String(entry.id);
   marker.dataset.pokemonKey = entry.pokemonKey;
   marker.dataset.finalSpeed = entry.finalSpeed;
