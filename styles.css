@@ -211,6 +211,55 @@ button.danger {
   display: grid;
   gap: 0.35rem;
   height: 95px;
+  cursor: pointer;
+  transition: box-shadow 0.2s ease, border-color 0.2s ease, transform 0.15s ease;
+}
+
+.entry-card:hover {
+  box-shadow: 0 2px 8px rgba(15, 118, 110, 0.15);
+}
+
+.entry-card.highlighted {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 2px rgba(15, 118, 110, 0.3), 0 4px 12px rgba(15, 118, 110, 0.2);
+  transform: scale(1.02);
+  z-index: 10;
+}
+
+.speed-marker {
+  position: absolute;
+  transform: translateY(-50%);
+  display: grid;
+  justify-items: center;
+  cursor: pointer;
+  transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+.speed-marker:hover {
+  transform: translateY(-50%) scale(1.1);
+  z-index: 100;
+}
+
+.speed-marker.highlighted {
+  transform: translateY(-50%) scale(1.15);
+  z-index: 100;
+  filter: drop-shadow(0 0 8px rgba(15, 118, 110, 0.6));
+}
+
+.speed-marker-sprite-wrap {
+  position: relative;
+  width: 65px;
+  height: 65px;
+  border: 1px solid rgba(15, 23, 42, 0.28);
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.92);
+  font-size: 0.50;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.speed-marker.highlighted .speed-marker-sprite-wrap {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(15, 118, 110, 0.4);
 }
 
 .entry-head {
@@ -347,27 +396,10 @@ button.danger {
   border-radius: 4px;
 }
 
-.speed-marker {
-  position: absolute;
-  transform: translateY(-50%);
-  display: grid;
-  justify-items: center;
-}
-
 .speed-marker-sprite {
   width: 65px;
   height: 65px;
   image-rendering: pixelated;
-}
-
-.speed-marker-sprite-wrap {
-  position: relative;
-  width: 65px;
-  height: 65px;
-  border: 1px solid rgba(15, 23, 42, 0.28);
-  border-radius: 6px;
-  background: rgba(255, 255, 255, 0.92);
-  font-size: 0.50;
 }
 
 .sprite-overlay {
