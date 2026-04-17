@@ -39,6 +39,7 @@ const els = {
   chartSummary: document.getElementById("chart-summary"),
   resetDefaults: document.getElementById("reset-defaults"),
   clearSaved: document.getElementById("clear-saved"),
+  exportConfig: document.getElementById("export-config"),
   importConfig: document.getElementById("import-config"),
   importDialog: document.getElementById("import-dialog"),
   importText: document.getElementById("import-text"),
@@ -654,6 +655,28 @@ function applyImportedEntries(mode) {
   alert(message);
 }
 
+function exportEntriesToText(entries, pokemonRows) {
+  const pokemonMap = byKey(pokemonRows);
+  const lines = entries.map((entry) => {
+    const pokemon = pokemonMap.get(entry.pokemonKey);
+    const displayName = pokemon ? pokemon.displayName : entry.pokemonKey;
+    return `${entry.pokemonKey},${entry.nature},${entry.speedPoints},${entry.stage},${entry.visible}`;
+  });
+  return lines.join("\n");
+}
+
+function downloadTextFile(content, filename) {
+  const blob = new Blob([content], { type: "text/plain" });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement("a");
+  a.href = url;
+  a.download = filename;
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  URL.revokeObjectURL(url);
+}
+
 function bindImportConfig() {
   if (!els.importConfig || !els.importDialog || !els.importText) {
     return;
@@ -671,6 +694,23 @@ function bindImportConfig() {
   });
 }
 
+function bindExportConfig() {
+  if (!els.exportConfig) {
+    return;
+  }
+
+  els.exportConfig.addEventListener("click", () => {
+    const state = store.getState();
+    if (!state.entries.length) {
+      alert("No entries to export.");
+      return;
+    }
+    const content = exportEntriesToText(state.entries, state.pokemonRows);
+    const timestamp = new Date().toISOString().slice(0, 19).replace(/:/g, "-");
+    downloadTextFile(content, `champions-speed-config-${timestamp}.txt`);
+  });
+}
+
 async function init() {
   registerServiceWorker();
   bindForm();
@@ -678,6 +718,7 @@ async function init() {
   bindClearSaved();
   bindEntriesSearch();
   bindImportConfig();
+  bindExportConfig();
 
   try {
     const [pokemonRows, defaultConfigEntries] = await Promise.all([
