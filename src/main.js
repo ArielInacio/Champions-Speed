@@ -482,14 +482,14 @@ function renderEntries(state) {
     cloneBtn.type = "button";
     cloneBtn.className = "secondary mini icon-button";
     cloneBtn.textContent = "⧉";
-    cloneBtn.title = "Clone entry";
-    cloneBtn.setAttribute("aria-label", "Clone entry");
+    cloneBtn.title = "Duplicate entry";
+    cloneBtn.setAttribute("aria-label", "Duplicate entry");
     cloneBtn.addEventListener("click", () => cloneEntry(entry.id));
 
     const removeBtn = document.createElement("button");
     removeBtn.type = "button";
     removeBtn.className = "danger mini icon-button icon-delete";
-    removeBtn.textContent = "⛔";
+    removeBtn.textContent = "✕";
     removeBtn.title = "Remove entry";
     removeBtn.setAttribute("aria-label", "Remove entry");
     removeBtn.addEventListener("click", () => removeEntry(entry.id));
