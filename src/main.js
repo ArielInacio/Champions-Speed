@@ -611,6 +611,10 @@ function bindClearSaved() {
 
   els.clearSaved.addEventListener("click", () => {
     clearSavedEntriesFromStorage();
+    store.setState((prev) => ({
+      ...prev,
+      entries: [],
+    }));
   });
 }
 
