@@ -14,7 +14,7 @@ function clearNode(node) {
   }
 }
 
-function createTick(value, topPercent) {
+function createTick(value, topPercent, chartWidth, laneLeftPx) {
   const tick = document.createElement("div");
   tick.className = "chart-tick";
   tick.style.top = `${topPercent}%`;
@@ -139,7 +139,7 @@ export function renderSpeedChart({ chartRoot, summaryNode, entries }) {
   const uniqueSpeeds = Array.from(new Set(entries.map((entry) => entry.finalSpeed))).sort((a, b) => a - b);
   for (const tickValue of uniqueSpeeds) {
     const topPercent = speedToTopPercent(tickValue, minSpeed, range, hasSpread);
-    chartRoot.appendChild(createTick(tickValue, topPercent));
+    chartRoot.appendChild(createTick(tickValue, topPercent, chartWidth, laneLeftPx));
   }
 
   const rawItems = entries
