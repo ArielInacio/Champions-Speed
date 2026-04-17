@@ -316,18 +316,12 @@ button.danger:hover {
   z-index: 10;
 }
 
-.speed-marker-stack:hover {
+.speed-marker-stack:hover,
+.speed-marker-stack.locked {
   z-index: 100;
 }
 
-.speed-marker-stack.collapsed .speed-marker:not(:first-child) {
-  position: absolute;
-  opacity: 0;
-  pointer-events: none;
-}
-
-.speed-marker-stack.collapsed .speed-marker:first-child::after {
-  content: attr(data-stack-count);
+.speed-marker-stack .stack-count-badge {
   position: absolute;
   top: -6px;
   right: -6px;
@@ -343,15 +337,44 @@ button.danger:hover {
   justify-content: center;
   border: 2px solid var(--panel);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  z-index: 5;
+  pointer-events: none;
 }
 
-.speed-marker-stack.expanded {
+.speed-marker-stack.collapsed .speed-marker {
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.speed-marker-stack.collapsed .speed-marker:nth-child(2) {
+  position: absolute;
+  opacity: 0.6;
+  transform: translateX(4px) translateY(4px);
+  z-index: -1;
+}
+
+.speed-marker-stack.collapsed .speed-marker:nth-child(3) {
+  position: absolute;
+  opacity: 0.4;
+  transform: translateX(8px) translateY(8px);
+  z-index: -2;
+}
+
+.speed-marker-stack.collapsed .speed-marker:nth-child(n+4) {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.speed-marker-stack.expanded,
+.speed-marker-stack.locked {
   gap: 8px;
 }
 
-.speed-marker-stack.expanded .speed-marker {
+.speed-marker-stack.expanded .speed-marker,
+.speed-marker-stack.locked .speed-marker {
   position: relative;
   opacity: 1;
+  transform: none;
   pointer-events: auto;
 }
 

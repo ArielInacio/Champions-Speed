@@ -70,27 +70,46 @@ function createStackGroup(markers, baseLeftPx, topPercent) {
   stack.className = "speed-marker-stack collapsed";
   stack.style.top = `${topPercent}%`;
   stack.style.left = `${baseLeftPx}px`;
-  stack.dataset.stackCount = String(markers.length);
 
   if (markers.length > 1) {
-    markers[0].setAttribute("data-stack-count", String(markers.length));
+    const badge = document.createElement("span");
+    badge.className = "stack-count-badge";
+    badge.textContent = String(markers.length);
+    stack.appendChild(badge);
   }
 
-  markers.forEach((marker, index) => {
-    marker.style.position = index === 0 ? "relative" : "absolute";
-    marker.style.left = "0";
-    marker.style.top = "0";
+  markers.forEach((marker) => {
     stack.appendChild(marker);
   });
 
+  let isLocked = false;
+
   stack.addEventListener("mouseenter", () => {
-    stack.classList.remove("collapsed");
-    stack.classList.add("expanded");
+    if (!isLocked) {
+      stack.classList.remove("collapsed");
+      stack.classList.add("expanded");
+    }
   });
 
   stack.addEventListener("mouseleave", () => {
-    stack.classList.remove("expanded");
-    stack.classList.add("collapsed");
+    if (!isLocked) {
+      stack.classList.remove("expanded");
+      stack.classList.add("collapsed");
+    }
+  });
+
+  stack.addEventListener("click", (e) => {
+    if (markers.length > 1) {
+      isLocked = !isLocked;
+      if (isLocked) {
+        stack.classList.remove("collapsed", "expanded");
+        stack.classList.add("locked");
+      } else {
+        stack.classList.remove("locked");
+        stack.classList.add("collapsed");
+      }
+      e.stopPropagation();
+    }
   });
 
   return stack;
