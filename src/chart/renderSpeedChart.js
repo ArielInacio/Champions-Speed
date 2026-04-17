@@ -27,14 +27,14 @@ function createTick(value, topPercent, chartWidth, laneLeftPx) {
   return tick;
 }
 
-function createMarker(entry, topPercent, markerLeftPx) {
+function createMarker(entry, topPercent) {
   const marker = document.createElement("div");
   marker.className = "speed-marker";
-  marker.style.top = `${topPercent}%`;
-  marker.style.left = `${markerLeftPx}px`;
   marker.dataset.entryId = String(entry.id);
   marker.dataset.pokemonKey = entry.pokemonKey;
   marker.dataset.finalSpeed = entry.finalSpeed;
+  marker.dataset.nature = entry.nature;
+  marker.dataset.speedPoints = entry.speedPoints;
 
   const sprite = document.createElement("img");
   sprite.className = "speed-marker-sprite";
@@ -63,6 +63,37 @@ function createMarker(entry, topPercent, markerLeftPx) {
   });
 
   return marker;
+}
+
+function createStackGroup(markers, baseLeftPx, topPercent) {
+  const stack = document.createElement("div");
+  stack.className = "speed-marker-stack collapsed";
+  stack.style.top = `${topPercent}%`;
+  stack.style.left = `${baseLeftPx}px`;
+  stack.dataset.stackCount = String(markers.length);
+
+  if (markers.length > 1) {
+    markers[0].setAttribute("data-stack-count", String(markers.length));
+  }
+
+  markers.forEach((marker, index) => {
+    marker.style.position = index === 0 ? "relative" : "absolute";
+    marker.style.left = "0";
+    marker.style.top = "0";
+    stack.appendChild(marker);
+  });
+
+  stack.addEventListener("mouseenter", () => {
+    stack.classList.remove("collapsed");
+    stack.classList.add("expanded");
+  });
+
+  stack.addEventListener("mouseleave", () => {
+    stack.classList.remove("expanded");
+    stack.classList.add("collapsed");
+  });
+
+  return stack;
 }
 
 function speedToTopPercent(speed, minSpeed, range, hasSpread) {
@@ -173,19 +204,28 @@ export function renderSpeedChart({ chartRoot, summaryNode, entries }) {
 
   assignGroupBlocksByVerticalCollisions(groupedItems);
 
-  const placementItems = [];
-  for (const group of groupedItems) {
-    group.items.forEach((item, index) => {
-      placementItems.push({
-        ...item,
-        column: group.baseColumn + index,
-      });
-    });
-  }
-
   const columnWidth = MARKER_SIZE_PX + MARKER_GAP_PX;
-  for (const item of placementItems) {
-    const markerLeftPx = laneLeftPx + MARKER_LEFT_OFFSET_PX + item.column * columnWidth;
-    chartRoot.appendChild(createMarker(item.entry, item.topPercent, markerLeftPx));
+
+  for (const group of groupedItems) {
+    const baseLeftPx = laneLeftPx + MARKER_LEFT_OFFSET_PX + group.baseColumn * columnWidth;
+
+    const stackKey = (entry) => `${entry.nature}|${entry.speedPoints}`;
+    const stacksByConfig = new Map();
+
+    for (const item of group.items) {
+      const key = stackKey(item.entry);
+      if (!stacksByConfig.has(key)) {
+        stacksByConfig.set(key, []);
+      }
+      stacksByConfig.get(key).push(item);
+    }
+
+    const stackGroups = Array.from(stacksByConfig.values());
+    stackGroups.forEach((stackItems, stackIndex) => {
+      const markers = stackItems.map((item) => createMarker(item.entry, group.topPercent));
+      const stackLeftPx = baseLeftPx + stackIndex * columnWidth;
+      const stack = createStackGroup(markers, stackLeftPx, group.topPercent);
+      chartRoot.appendChild(stack);
+    });
   }
 }

@@ -293,7 +293,55 @@ button.danger:hover {
 
 .speed-marker.highlighted .speed-marker-sprite-wrap {
   border-color: var(--accent);
-  box-shadow: 0 0 0 3px rgba(15, 118, 110, 0.4);
+  box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.4);
+}
+
+.speed-marker-stack {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  transition: all 0.3s ease;
+  z-index: 10;
+}
+
+.speed-marker-stack:hover {
+  z-index: 100;
+}
+
+.speed-marker-stack.collapsed .speed-marker:not(:first-child) {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.speed-marker-stack.collapsed .speed-marker:first-child::after {
+  content: attr(data-stack-count);
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  background: var(--accent);
+  color: #0f172a;
+  font-size: 0.65rem;
+  font-weight: 700;
+  min-width: 18px;
+  height: 18px;
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid var(--panel);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.speed-marker-stack.expanded {
+  gap: 8px;
+}
+
+.speed-marker-stack.expanded .speed-marker {
+  position: relative;
+  opacity: 1;
+  pointer-events: auto;
 }
 
 .entry-head {
