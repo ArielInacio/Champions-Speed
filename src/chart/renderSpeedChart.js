@@ -14,7 +14,7 @@ function clearNode(node) {
   }
 }
 
-function createTick(value, topPercent) {
+function createTick(value, topPercent, chartWidth, laneLeftPx) {
   const tick = document.createElement("div");
   tick.className = "chart-tick";
   tick.style.top = `${topPercent}%`;
@@ -128,9 +128,7 @@ function assignGroupBlocksByVerticalCollisions(groups) {
   const lastYByColumn = [];
 
   for (const group of groups) {
-    const stackKey = (entry) => `${entry.nature}|${entry.speedPoints}`;
-    const uniqueConfigs = new Set(group.items.map((item) => stackKey(item.entry)));
-    const requiredColumns = uniqueConfigs.size;
+    const requiredColumns = group.items.length;
     let baseColumn = 0;
 
     while (true) {
@@ -191,7 +189,7 @@ export function renderSpeedChart({ chartRoot, summaryNode, entries }) {
   const uniqueSpeeds = Array.from(new Set(entries.map((entry) => entry.finalSpeed))).sort((a, b) => a - b);
   for (const tickValue of uniqueSpeeds) {
     const topPercent = speedToTopPercent(tickValue, minSpeed, range, hasSpread);
-    chartRoot.appendChild(createTick(tickValue, topPercent));
+    chartRoot.appendChild(createTick(tickValue, topPercent, chartWidth, laneLeftPx));
   }
 
   const rawItems = entries
