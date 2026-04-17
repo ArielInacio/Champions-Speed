@@ -1,7 +1,7 @@
 import { applySpriteConfigOverlays } from "../sprites/resolveSpriteForConfig.js";
 
-const MIN_POSITION_PERCENT = 7;
-const MAX_POSITION_PERCENT = 93;
+const MIN_POSITION_PERCENT = 3;
+const MAX_POSITION_PERCENT = 97;
 const MARKER_LEFT_OFFSET_PX = 34;
 const MARKER_SIZE_PX = 65;
 const MARKER_GAP_PX = 1;
@@ -75,35 +75,24 @@ function speedToTopPercent(speed, minSpeed, range, hasSpread) {
   return MAX_POSITION_PERCENT - normalized * (MAX_POSITION_PERCENT - MIN_POSITION_PERCENT);
 }
 
-function assignGroupBlocksByVerticalCollisions(groups) {
+function assignColumnsByVerticalCollisions(items) {
   const minVerticalDistance = MARKER_SIZE_PX + MARKER_GAP_PX;
-  const lastYByColumn = [];
+  const occupiedYByColumn = [];
 
-  for (const group of groups) {
-    const stackKey = (entry) => `${entry.nature}|${entry.speedPoints}`;
-    const uniqueConfigs = new Set(group.items.map((item) => stackKey(item.entry)));
-    const requiredColumns = uniqueConfigs.size;
-    let baseColumn = 0;
-
+  for (const item of items) {
+    let column = 0;
     while (true) {
-      let fits = true;
-      for (let c = baseColumn; c < baseColumn + requiredColumns; c += 1) {
-        if (lastYByColumn[c] !== undefined && Math.abs(group.topPx - lastYByColumn[c]) < minVerticalDistance) {
-          fits = false;
-          break;
-        }
-      }
-
-      if (fits) {
+      const occupied = occupiedYByColumn[column];
+      if (!occupied || occupied.every((y) => Math.abs(item.topPx - y) >= minVerticalDistance)) {
         break;
       }
-      baseColumn += 1;
+      column += 1;
     }
-
-    group.baseColumn = baseColumn;
-    for (let c = baseColumn; c < baseColumn + requiredColumns; c += 1) {
-      lastYByColumn[c] = group.topPx;
+    item.column = column;
+    if (!occupiedYByColumn[column]) {
+      occupiedYByColumn[column] = [];
     }
+    occupiedYByColumn[column].push(item.topPx);
   }
 }
 
@@ -156,39 +145,13 @@ export function renderSpeedChart({ chartRoot, summaryNode, entries }) {
       };
     });
 
-  const groupsBySpeed = new Map();
-  for (const item of rawItems) {
-    const speedKey = item.entry.finalSpeed;
-    if (!groupsBySpeed.has(speedKey)) {
-      groupsBySpeed.set(speedKey, []);
-    }
-    groupsBySpeed.get(speedKey).push(item);
-  }
+  const sortedItems = rawItems
+    .sort((a, b) => a.topPx - b.topPx || a.entry.id - b.entry.id);
 
-  const groupedItems = Array.from(groupsBySpeed.entries())
-    .map(([speed, items]) => ({
-      speed,
-      items: items.sort((a, b) => a.entry.id - b.entry.id),
-      topPercent: items[0].topPercent,
-      topPx: items[0].topPx,
-      baseColumn: 0,
-    }))
-    .sort((a, b) => a.topPx - b.topPx);
-
-  assignGroupBlocksByVerticalCollisions(groupedItems);
-
-  const placementItems = [];
-  for (const group of groupedItems) {
-    group.items.forEach((item, index) => {
-      placementItems.push({
-        ...item,
-        column: group.baseColumn + index,
-      });
-    });
-  }
+  assignColumnsByVerticalCollisions(sortedItems);
 
   const columnWidth = MARKER_SIZE_PX + MARKER_GAP_PX;
-  for (const item of placementItems) {
+  for (const item of sortedItems) {
     const markerLeftPx = laneLeftPx + MARKER_LEFT_OFFSET_PX + item.column * columnWidth;
     chartRoot.appendChild(createMarker(item.entry, item.topPercent, markerLeftPx));
   }

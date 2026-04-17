@@ -541,7 +541,7 @@ button.danger:hover {
 .speed-marker-sprite {
   width: 65px;
   height: 65px;
-  image-rendering: pixelated;
+
 }
 
 .sprite-overlay {
@@ -619,7 +619,7 @@ button.danger:hover {
   font-size: 0.65rem;
   font-weight: 700;
   letter-spacing: -0.02em;
-  padding: 3px 5px;
+  padding: 4px 7px;
   color: #38bdf8;
   background: rgba(15, 23, 42, 0.95);
   border: 1px solid rgba(56, 189, 248, 0.4);
