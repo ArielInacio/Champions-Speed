@@ -80,6 +80,8 @@
 
     { "pokemonKey": "Aerodactyl:-Mega", "nature": "positive", "speedPoints": 32, "stage": 0, "visible": true },
     { "pokemonKey": "Aerodactyl:base", "nature": "positive", "speedPoints": 32, "stage": 0, "visible": true },
+    { "pokemonKey": "Aerodactyl:base", "nature": "positive", "speedPoints": 32, "stage": 2, "visible": true },
+
 
     { "pokemonKey": "Alakazam:-Mega", "nature": "positive", "speedPoints": 32, "stage": 0, "visible": true },
     { "pokemonKey": "Alakazam:base", "nature": "positive", "speedPoints": 32, "stage": 0, "visible": true },
@@ -135,14 +137,20 @@
 
     { "pokemonKey": "Drampa:-Mega", "nature": "negative", "speedPoints": 0, "stage": 0, "visible": true },
     
-    { "pokemonKey": "Torkoal", "nature": "negative", "speedPoints": 0, "stage": 0, "visible": true },
+    { "pokemonKey": "Torkoal:base", "nature": "negative", "speedPoints": 0, "stage": 0, "visible": true },
 
-    { "pokemonKey": "Hatterene", "nature": "negative", "speedPoints": 0, "stage": 0, "visible": true },
+    { "pokemonKey": "Hatterene:base", "nature": "negative", "speedPoints": 0, "stage": 0, "visible": true },
 
-    { "pokemonKey": "Sinistcha", "nature": "negative", "speedPoints": 0, "stage": 0, "visible": true },
-    { "pokemonKey": "Sinistcha", "nature": "neutral", "speedPoints": 0, "stage": 0, "visible": true },
+    { "pokemonKey": "Sinistcha:base", "nature": "negative", "speedPoints": 0, "stage": 0, "visible": true },
+    { "pokemonKey": "Sinistcha:base", "nature": "neutral", "speedPoints": 0, "stage": 0, "visible": true },
 
-    { "pokemonKey": "Snorlax", "nature": "negative", "speedPoints": 0, "stage": 0, "visible": true },
-    { "pokemonKey": "Snorlax", "nature": "neutral", "speedPoints": 0, "stage": 0, "visible": true }
+    { "pokemonKey": "Snorlax:base", "nature": "negative", "speedPoints": 0, "stage": 0, "visible": true },
+    { "pokemonKey": "Snorlax:base", "nature": "neutral", "speedPoints": 0, "stage": 0, "visible": true },
+
+    { "pokemonKey": "Floette:Mega", "nature": "neutral", "speedPoints": 0, "stage": 0, "visible": true },
+    { "pokemonKey": "Floette:Mega", "nature": "neutral", "speedPoints": 32, "stage": 0, "visible": true },
+    { "pokemonKey": "Floette:Mega", "nature": "positive", "speedPoints": 32, "stage": 0, "visible": true }
+
+    
   ]
 }
