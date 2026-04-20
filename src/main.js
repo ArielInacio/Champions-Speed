@@ -1062,7 +1062,8 @@ async function init() {
   setTimeout(() => {
     const chart = els.chartRoot;
     if (!chart) return;
-    if (window.matchMedia("(hover: none) and (pointer: coarse)").matches) return;
+    const isTouch = window.matchMedia("(hover: none) and (pointer: coarse)").matches || navigator.maxTouchPoints > 0;
+    if (isTouch) return;
     const chartTop = chart.getBoundingClientRect().top + window.scrollY;
     const target = Math.round(chartTop + chart.offsetHeight * 0.4);
     const start = window.scrollY;
