@@ -207,8 +207,8 @@
 - [x] Ensure the Add button is full-width and visually prominent.
 
 ### TODO-14: Mobile — info-tooltip overflow fix
-- [ ] `.info-tooltip` is `position: fixed` with a fixed width of 320px; clips on screens narrower than ~340px.
-- [ ] Cap tooltip width with `min(320px, 90vw)` and add horizontal padding so text does not touch screen edges.
+- [x] `.info-tooltip` is `position: fixed` with a fixed width of 320px; clips on screens narrower than ~340px.
+- [x] Cap tooltip width with `min(320px, 90vw)` and add horizontal padding so text does not touch screen edges.
 
 ### TODO-15: Mobile — footer wraps instead of truncating
 - [ ] On mobile the footer tagline is `white-space: nowrap` and gets cut off.
