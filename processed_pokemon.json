@@ -333,7 +333,7 @@
         "name": "Aerodactyl",
         "ig": null,
         "speed": 130,
-        "front_default": "https://play.pokemonshowdown.com/sprites/dex/aerodactyl.png"
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/142.png"
     },
     {
         "ndex": 142,
