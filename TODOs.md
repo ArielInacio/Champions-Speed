@@ -202,9 +202,9 @@
 - [x] Verify overlays (SP, nature, stage) remain legible at the new size.
 
 ### TODO-13: Mobile — make Add-Pokémon form stack gracefully
-- [ ] The five-column `.entry-form` grid collapses to 1 col at ≤900px but the inputs still feel cramped on phone.
-- [ ] Group SP and Stages side-by-side (2-col row) and keep Pokémon + Nature as full-width rows.
-- [ ] Ensure the Add button is full-width and visually prominent.
+- [x] The five-column `.entry-form` grid collapses to 1 col at ≤900px but the inputs still feel cramped on phone.
+- [x] Group SP and Stages side-by-side (2-col row) and keep Pokémon + Nature as full-width rows.
+- [x] Ensure the Add button is full-width and visually prominent.
 
 ### TODO-14: Mobile — info-tooltip overflow fix
 - [ ] `.info-tooltip` is `position: fixed` with a fixed width of 320px; clips on screens narrower than ~340px.
