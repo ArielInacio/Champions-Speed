@@ -155,11 +155,13 @@ body {
 
 .panel-actions {
   display: flex;
+  flex-wrap: wrap;
   gap: 0.35rem;
 }
 
 .panel-actions button {
   white-space: nowrap;
+  min-height: 44px;
 }
 
 .entry-selector-wrap {
@@ -933,6 +935,17 @@ button.danger:hover {
 }
 
 @media (max-width: 560px) {
+  .panel-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .panel-actions {
+    width: 100%;
+    justify-content: flex-start;
+  }
+
   .speed-chart {
     --lane-left: 52px;
     min-height: 360px;

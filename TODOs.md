@@ -188,3 +188,28 @@
 ### TODO-10: Scroll hint — smooth scroll chart to mid on load
 - [x] After the initial render, smooth-scroll the chart column to its vertical midpoint so the user sees it is scrollable.
 - [x] Only trigger once on first load; do not re-trigger on subsequent state updates.
+
+### TODO-11: Mobile — fix panel-actions button overflow
+- [x] On narrow screens the Export/Import/Clear/Reset buttons in `.panel-actions` overflow or wrap badly.
+- [x] Wrap `.panel-actions` so buttons wrap cleanly instead of overflowing the panel.
+- [x] Ensure `.panel-header` stacks vertically (title above actions) on very small screens.
+- [x] Buttons should remain fully readable and tappable (min touch target 44px tall).
+
+### TODO-12: Mobile — increase chart badge (speed-marker) size on mobile
+- [ ] On small screens badges shrink to 34×34 px — too small for fat-finger tapping.
+- [ ] Raise mobile sprite size from 34px to at least 48px (≤560px breakpoint).
+- [ ] Adjust `.speed-marker-sprite-wrap` accordingly.
+- [ ] Verify overlays (SP, nature, stage) remain legible at the new size.
+
+### TODO-13: Mobile — make Add-Pokémon form stack gracefully
+- [ ] The five-column `.entry-form` grid collapses to 1 col at ≤900px but the inputs still feel cramped on phone.
+- [ ] Group SP and Stages side-by-side (2-col row) and keep Pokémon + Nature as full-width rows.
+- [ ] Ensure the Add button is full-width and visually prominent.
+
+### TODO-14: Mobile — info-tooltip overflow fix
+- [ ] `.info-tooltip` is `position: fixed` with a fixed width of 320px; clips on screens narrower than ~340px.
+- [ ] Cap tooltip width with `min(320px, 90vw)` and add horizontal padding so text does not touch screen edges.
+
+### TODO-15: Mobile — footer wraps instead of truncating
+- [ ] On mobile the footer tagline is `white-space: nowrap` and gets cut off.
+- [ ] Allow it to wrap on small screens (`white-space: normal`) and stack the GitHub link below it.
