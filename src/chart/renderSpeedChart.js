@@ -36,9 +36,12 @@ function showMarkerTooltip(chartRoot, marker, entry) {
   tip.innerHTML = `
     <span class="mt-name">${entry.displayName}</span>
     <span class="mt-speed">${entry.finalSpeed}</span>
+    <br>
     <span class="mt-meta">Nature: ${natureName}</span>
+    <br>
     <span class="mt-meta">SP: ${entry.speedPoints}</span>
-    <span class="mt-meta">Stage: ${stageText}</span>
+    <br>
+    <span class="mt-meta">Stages: ${stageText}</span>
   `;
   tip.style.display = "block";
 
