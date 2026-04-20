@@ -1050,6 +1050,15 @@ async function init() {
   window.addEventListener("resize", syncLeftColumnHeight);
   requestAnimationFrame(syncLeftColumnHeight);
 
+  const scrollHint = document.getElementById("chart-scroll-hint");
+  if (scrollHint) {
+    const onScroll = () => {
+      scrollHint.classList.add("hidden");
+      window.removeEventListener("scroll", onScroll, { passive: true });
+    };
+    window.addEventListener("scroll", onScroll, { passive: true });
+  }
+
   setTimeout(() => {
     const chart = els.chartRoot;
     if (!chart) return;

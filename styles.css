@@ -832,6 +832,36 @@ button.danger:hover {
 
 .chart-column {
   min-width: 0;
+  position: relative;
+}
+
+.chart-scroll-hint {
+  display: none;
+  position: sticky;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 3rem;
+  background: linear-gradient(to bottom, transparent, rgba(15, 23, 42, 0.85));
+  pointer-events: none;
+  z-index: 20;
+  border-radius: 0 0 12px 12px;
+  align-items: flex-end;
+  justify-content: center;
+  padding-bottom: 0.4rem;
+  font-size: 0.7rem;
+  color: var(--muted);
+  letter-spacing: 0.04em;
+}
+
+@media (hover: none) and (pointer: coarse) {
+  .chart-scroll-hint {
+    display: flex;
+  }
+
+  .chart-scroll-hint.hidden {
+    display: none;
+  }
 }
 
 .import-dialog {

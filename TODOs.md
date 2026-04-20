@@ -228,6 +228,6 @@
 - [x] Ensure tooltip does not get clipped by chart bounds on small screens (already partially handled, verify on mobile widths).
 
 ### TODO-18: Mobile — chart height / scroll UX hint
-- [ ] On mobile the chart is tall and scrolls vertically inside the page; it is not obvious it is scrollable.
-- [ ] Add a subtle "scroll to explore" fade overlay at the bottom of the chart column on mobile that disappears once the user scrolls.
-- [ ] Only show on touch devices and only on first load.
+- [x] On mobile the chart is tall and scrolls vertically inside the page; it is not obvious it is scrollable.
+- [x] Add a subtle "scroll to explore" fade overlay at the bottom of the chart column on mobile that disappears once the user scrolls.
+- [x] Only show on touch devices and only on first load.
