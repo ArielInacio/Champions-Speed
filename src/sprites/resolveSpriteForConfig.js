@@ -18,20 +18,19 @@ function createNatureIndicator(nature) {
   const node = document.createElement("span");
   node.className = "sprite-overlay sprite-overlay-nature";
 
+  let svgInner;
   if (nature === "positive") {
-    node.textContent = "+";
     node.classList.add("nature-positive");
-    return node;
-  }
-
-  if (nature === "negative") {
-    node.textContent = "-";
+    svgInner = `<svg width="8" height="8" viewBox="0 0 10 10" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><polygon points="5,1 9,9 1,9"/></svg>`;
+  } else if (nature === "negative") {
     node.classList.add("nature-negative");
-    return node;
+    svgInner = `<svg width="8" height="8" viewBox="0 0 10 10" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><polygon points="5,9 9,1 1,1"/></svg>`;
+  } else {
+    node.classList.add("nature-neutral");
+    svgInner = `<svg width="8" height="8" viewBox="0 0 10 10" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><circle cx="5" cy="5" r="4"/></svg>`;
   }
 
-  node.textContent = "o";
-  node.classList.add("nature-neutral");
+  node.innerHTML = svgInner;
   return node;
 }
 
@@ -67,12 +66,19 @@ function createStageIndicator(stage) {
   node.className = "sprite-overlay sprite-overlay-stage";
 
   const isPositive = safeStage > 0;
-  const stageIndicatorTextNegative = ["⯯⯯⯯", "⯯⯯↓", "⯯⯯", "⯯↓", "⯯", "↓"]
-  const stageIndicatorTextPositive = ["↑", "⯭", "⯭↑", "⯭⯭", "⯭⯭↑", "⯭⯭⯭"]
-  const arrow = isPositive ? stageIndicatorTextPositive[safeStage -1] : stageIndicatorTextNegative[safeStage + 6];
-  node.textContent = arrow;
+  const count = Math.abs(safeStage);
   node.classList.add(isPositive ? "stage-positive" : "stage-negative");
 
+  const arrowPath = isPositive
+    ? `<polygon points="5,1 9,8 1,8"/>`
+    : `<polygon points="5,9 9,2 1,2"/>`;
+
+  let svgContent = "";
+  for (let i = 0; i < count; i++) {
+    svgContent += `<svg width="7" height="7" viewBox="0 0 10 10" fill="currentColor" xmlns="http://www.w3.org/2000/svg" style="display:block">${arrowPath}</svg>`;
+  }
+
+  node.innerHTML = svgContent;
   return node;
 }
 

@@ -153,10 +153,10 @@
 - [x] Maintain all existing functionality (add, remove, clone, visibility, nature/SP/stage editing).
 
 ### TODO-4: Improve overlay readability — cleaner SVG for stages and nature
-- [ ] Replace text/emoji overlays on pokemon badges with clean inline SVGs.
-- [ ] Stage indicator: SVG arrows (up/down) stacked by absolute stage value, colored green/red.
-- [ ] Nature indicator: SVG icon (e.g. upward triangle = positive, downward = negative, circle = neutral).
-- [ ] Ensure overlays remain legible at small sprite sizes.
+- [x] Replace text/emoji overlays on pokemon badges with clean inline SVGs.
+- [x] Stage indicator: SVG arrows (up/down) stacked by absolute stage value, colored green/red.
+- [x] Nature indicator: SVG icon (e.g. upward triangle = positive, downward = negative, circle = neutral).
+- [x] Ensure overlays remain legible at small sprite sizes.
 
 ### TODO-5: Rewrite README.md for open-source audience
 - [ ] Remove internal implementation-plan prose.
