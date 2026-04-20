@@ -324,7 +324,7 @@ function parseShowdownText(text, pokemonRows) {
   const errors = [];
 
   const blocks = String(text ?? "")
-    .split(/\n(?=\S)/);
+    .split(/\r?\n\s*\r?\n/);
 
   blocks.forEach((block, blockIndex) => {
     const lines = block.split(/\r?\n/).map((l) => l.trim()).filter(Boolean);
