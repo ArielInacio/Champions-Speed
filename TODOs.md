@@ -159,9 +159,9 @@
 - [x] Ensure overlays remain legible at small sprite sizes.
 
 ### TODO-5: Rewrite README.md for open-source audience
-- [ ] Remove internal implementation-plan prose.
-- [ ] Add clear sections: What is this, How to use the web app, How to run locally, Data pipeline explanation, Contributing notes.
-- [ ] Keep it accurate to current actual state of the project.
+- [x] Remove internal implementation-plan prose.
+- [x] Add clear sections: What is this, How to use the web app, How to run locally, Data pipeline explanation, Contributing notes.
+- [x] Keep it accurate to current actual state of the project.
 
 ### TODO-6: Add footer with custom text and GitHub repo link
 - [ ] Add a `<footer>` element below the main app shell.

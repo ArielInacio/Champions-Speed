@@ -1,22 +1,58 @@
-# Pokemon Champions Speed Explorer
-## Overview
-This is a web application designed to explore the speed tiers of Pokémon present in the game **Pokemon Champions**.
-### JSON File Structure
-- The `pokemon_champions.json` file contains an array of Pokémon, including their id and name.
-  
-### Steps to Set Up
-1. Fetch the current list of all Pokémon with their base speeds from [pokeapi](https://pokeapi.co).
-2. Store the fetched data locally for usage in the front-end application.
-3. Build a simple web app interface using HTML, CSS, and JavaScript to display this information.
-### Implementation Plan
-- Use `fetch` to retrieve the list of Pokémon and their speed attributes from **PokéAPI**.
-- Parse the JSON response to extract the necessary data (Pokémon id, name, and base speed).
-- Store this data locally for easy access in your frontend application without making repeated API calls.
-- Construct a basic HTML page using templates or string interpolation to display the Pokémon list alongside their speeds.
-- Style the interface with CSS for better visual presentation.
-## Getting Started
-1. Make sure you have Node.js and npm (Node Package Manager) installed, as this will use `npm install` commands.
-2. Run `npm install` in your project directory to set up any necessary dependencies mentioned by README.md.
-### Note on Styling
-- This initial version of the app uses inline styles or a CSS file to style elements.
-- Further enhancements can include using external CSS files for better organization, and leveraging frameworks/libraries like Bootstrap or TailwindCSS for easier styling.
+# Champions Speed Explorer
+
+A browser-based tool for visualising and comparing the final speed stats of Pokémon in **Pokémon Champions**, across different natures, Speed EVs (SP), and stat stages.
+
+## What is this?
+
+Pokémon Champions introduces custom Mega Evolutions and regional forms with unique base stats. This tool lets you:
+
+- Add any Pokémon (including Champions-specific forms) to a comparison chart.
+- Configure nature (`positive / neutral / negative`), Speed Points (`0–32`), and stat stage (`-6 to +6`) per entry.
+- See every entry placed on a vertical speed chart — faster Pokémon render higher, slower ones lower.
+- Add the same Pokémon multiple times with different configs to compare scenarios side by side.
+- Click any chart badge to jump to that entry's config card in the left panel.
+
+## How to use the web app
+
+1. **Add a Pokémon** — type in the search field under "Add Pokemon", pick a nature, SP, and stage, then click **Add**.
+2. **Configure entries** — use the "Selected Pokemon" dropdown to pick an entry; edit its nature/SP/stage in the card below.
+3. **Read the chart** — the right panel shows all visible entries positioned by final speed. Click a badge to highlight it.
+4. **Manage your list** — use **Export** to save a text config, **Import** to load one, **Reset** to restore defaults, and **Clear All** to start fresh.
+
+## How to run locally
+
+No build step required. The app is plain HTML/CSS/ES modules.
+
+```bash
+# Python 3
+python -m http.server 8000
+# then open http://localhost:8000
+```
+
+Any static file server works. The Service Worker caches assets for offline use after the first load.
+
+## Data pipeline
+
+Pokémon data is pre-processed into `processed_pokemon.json` via two Python scripts:
+
+| Script | Input | Output |
+|---|---|---|
+| `champions_list.py` | Manual list | `pokemon_champions.json` — Champions roster with custom forms |
+| `api_caller.py` | `pokemon_champions.json` + PokéAPI | `processed_pokemon.json` — base speed + sprite URL per entry |
+
+To regenerate data after roster changes:
+
+```bash
+python champions_list.py
+python api_caller.py
+```
+
+Bump the Service Worker cache version in `sw.js` after regenerating so clients pick up the new data.
+
+## Contributing
+
+- **No build toolchain** — plain ES modules, no bundler needed.
+- **Speed formula** is documented in `speed_calculation_formula.md`.
+- **Sprite overlay spec** is in `sprite_overlay_spec.md`.
+- Default chart entries live in `default_chart_config.json`.
+- Open an issue or PR for new Champions forms, formula corrections, or UI improvements.
