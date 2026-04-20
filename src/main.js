@@ -971,6 +971,7 @@ function bindInfoTooltip() {
   const wrap = document.querySelector(".info-icon-wrap");
   const tip = wrap?.querySelector(".info-tooltip");
   if (!wrap || !tip) return;
+  document.body.appendChild(tip);
 
   function showTip() {
     const rect = wrap.getBoundingClientRect();
