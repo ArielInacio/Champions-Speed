@@ -100,16 +100,120 @@ body {
   white-space: nowrap;
 }
 
-.entries-search-wrap {
-  display: grid;
-  gap: 0.25rem;
-  font-size: 0.82rem;
-  margin-bottom: 0.5rem;
+.entry-selector-wrap {
+  position: relative;
+  margin-bottom: 0.6rem;
 }
 
-.entries-search-wrap input {
-  padding: 0.4rem 0.5rem;
-  font-size: 0.85rem;
+.entry-combobox {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.entry-combobox-input {
+  width: 100%;
+  padding: 0.45rem 2rem 0.45rem 0.6rem;
+  font-size: 0.88rem;
+  border-radius: 8px;
+  border: 1px solid var(--line);
+  background: #0f172a;
+  color: var(--text);
+  cursor: pointer;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.entry-combobox-input:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 2px rgba(56, 189, 248, 0.2);
+  cursor: text;
+}
+
+.entry-combobox.open .entry-combobox-input {
+  border-color: var(--accent);
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.entry-combobox-chevron {
+  position: absolute;
+  right: 0.55rem;
+  color: var(--muted);
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  transition: transform 0.15s ease;
+}
+
+.entry-combobox.open .entry-combobox-chevron {
+  transform: rotate(180deg);
+}
+
+.entry-listbox {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: 200;
+  list-style: none;
+  margin: 0;
+  padding: 0.3rem 0;
+  background: #1e293b;
+  border: 1px solid var(--accent);
+  border-top: none;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+  max-height: 220px;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+}
+
+.entry-listbox[hidden] {
+  display: none;
+}
+
+.entry-listbox-option {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.38rem 0.7rem;
+  font-size: 0.84rem;
+  cursor: pointer;
+  user-select: none;
+  transition: background 0.1s ease;
+}
+
+.entry-listbox-option:hover,
+.entry-listbox-option.focused {
+  background: rgba(56, 189, 248, 0.12);
+}
+
+.lbo-name {
+  flex: 1;
+  min-width: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: var(--text);
+}
+
+.lbo-meta {
+  font-size: 0.75rem;
+  color: var(--muted);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.lbo-speed {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--accent);
+  white-space: nowrap;
+  flex-shrink: 0;
+  min-width: 28px;
+  text-align: right;
 }
 
 .panel-muted {
@@ -227,7 +331,8 @@ button.danger:hover {
   color: var(--danger);
 }
 
-#entries-empty {
+#entries-empty,
+.entries-empty-state {
   color: var(--muted);
 }
 
@@ -239,6 +344,10 @@ button.danger:hover {
   min-height: 0;
   overflow: auto;
   padding-right: 0.2rem;
+}
+
+.entries-list.single-entry-view {
+  overflow: visible;
 }
 
 .selected-panel {
@@ -254,7 +363,6 @@ button.danger:hover {
   padding: 0.45rem 0.5rem;
   display: grid;
   gap: 0.35rem;
-  height: 95px;
   cursor: pointer;
   transition: box-shadow 0.2s ease, border-color 0.2s ease, transform 0.15s ease;
 }

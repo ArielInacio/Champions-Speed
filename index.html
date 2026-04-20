@@ -57,12 +57,28 @@
             <button type="button" id="reset-defaults" class="danger">Reset</button>
           </div>
         </div>
-        <label class="entries-search-wrap">
-          Search
-          <input id="entries-search" type="search" placeholder="Find selected entries...">
-        </label>
-        <div id="entries-empty">No Pokemon selected yet.</div>
-        <div id="entries-list" class="entries-list"></div>
+
+        <div class="entry-selector-wrap" id="entry-selector-wrap">
+          <div class="entry-combobox" id="entry-combobox" role="combobox" aria-haspopup="listbox" aria-expanded="false" aria-owns="entry-listbox">
+            <input
+              id="entry-combobox-input"
+              class="entry-combobox-input"
+              type="text"
+              placeholder="Search selected Pokemon…"
+              autocomplete="off"
+              aria-label="Select a Pokemon entry"
+              aria-autocomplete="list"
+              aria-controls="entry-listbox"
+            >
+            <span class="entry-combobox-chevron" aria-hidden="true">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </span>
+          </div>
+          <ul id="entry-listbox" class="entry-listbox" role="listbox" aria-label="Selected Pokemon entries" hidden></ul>
+        </div>
+
+        <div id="entries-empty" class="entries-empty-state">No Pokemon selected yet.</div>
+        <div id="entries-list" class="entries-list single-entry-view"></div>
       </section>
     </aside>
 

@@ -132,3 +132,59 @@
 - [ ] Chart positions match computed final speed.
 - [ ] Default configuration loads on first render.
 - [ ] Sprite module is integrated with chart render path and ready for rule expansion.
+
+---
+
+## New Feature Backlog
+
+### TODO-1: Searchable dropdown for Selected Pokemon (one visible at a time)
+- [ ] Replace the entries list (which shows all cards simultaneously) with a single-entry view controlled by a searchable dropdown.
+- [ ] The dropdown lists all selected entries (by name + final speed); selecting one shows that entry's card below.
+- [ ] Keyboard-accessible: type to filter entries in the dropdown.
+- [ ] Only one entry card rendered/visible at a time in the left panel.
+
+### TODO-2: Clicking chart badge scrolls/shows its entry in the left panel
+- [ ] When a pokemon badge (speed-marker) in the chart is clicked, the "Manage Pokemon" selected section should switch to show that entry's card (i.e., set the dropdown selection to that entry).
+- [ ] Extends existing `highlightEntryForMarker` to also update the dropdown selection.
+
+### TODO-3: Unify "Add Pokemon" + "Selected Pokemon" into "Manage Pokemon"
+- [ ] Merge the two left-panel sections into a single "Manage Pokemon" panel.
+- [ ] Add-form and selected-entry view/controls coexist within this unified section.
+- [ ] Maintain all existing functionality (add, remove, clone, visibility, nature/SP/stage editing).
+
+### TODO-4: Improve overlay readability — cleaner SVG for stages and nature
+- [ ] Replace text/emoji overlays on pokemon badges with clean inline SVGs.
+- [ ] Stage indicator: SVG arrows (up/down) stacked by absolute stage value, colored green/red.
+- [ ] Nature indicator: SVG icon (e.g. upward triangle = positive, downward = negative, circle = neutral).
+- [ ] Ensure overlays remain legible at small sprite sizes.
+
+### TODO-5: Rewrite README.md for open-source audience
+- [ ] Remove internal implementation-plan prose.
+- [ ] Add clear sections: What is this, How to use the web app, How to run locally, Data pipeline explanation, Contributing notes.
+- [ ] Keep it accurate to current actual state of the project.
+
+### TODO-6: Add footer with custom text and GitHub repo link
+- [ ] Add a `<footer>` element below the main app shell.
+- [ ] Footer includes a short tagline/text and a clickable GitHub repo link.
+- [ ] Styled consistently with the existing dark theme.
+
+### TODO-7: Info icon on title with usage tooltip/popover
+- [ ] Add an info icon (SVG) next to the app title in the header.
+- [ ] On hover (and focus for a11y), show a popover/tooltip explaining how to use the tool.
+- [ ] Popover content: brief step-by-step usage guide (add pokemon, configure, read chart).
+- [ ] No external libraries; pure CSS + HTML for the tooltip.
+
+### TODO-8: Increase entry card height — fix input overflow
+- [ ] The entry card is currently too short; nature/SP/stage inputs overflow the bottom edge.
+- [ ] Increase `.entry-card` height (or remove fixed height and let it size to content).
+- [ ] Verify card fits cleanly at all panel widths without double-scrollbar issues.
+
+### TODO-9: Pokemon badge hover tooltip with full info
+- [ ] When hovering over a speed-marker badge in the chart, show a tooltip with: Pokémon name, final speed, nature, SP, stage.
+- [ ] Tooltip should be styled consistently (dark panel, accent border), appear above the badge, and not overflow chart bounds.
+- [ ] Disappears on mouse-out; does not interfere with click-to-highlight.
+
+### TODO-10: Import/export — `:base` form suffix is optional
+- [ ] In the export format, omit the `:base` suffix so base-form Pokémon export as plain names (e.g. `Venusaur` instead of `Venusaur:base`).
+- [ ] In the import parser, if a token has no `:` separator, try resolving it first as a plain key, then append `:base` as fallback — already partially handled in `resolvePokemonKeyFromToken`, verify and tighten.
+- [ ] Ensure round-trip: export then re-import produces identical entries.

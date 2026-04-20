@@ -9,6 +9,7 @@ const store = createStore({
   entries: [],
   defaultConfigEntries: [],
   entriesSearchQuery: "",
+  activeEntryId: null,
 });
 
 const STAGE_MIN = -6;
@@ -34,7 +35,10 @@ const els = {
   feedback: document.getElementById("form-feedback"),
   emptyState: document.getElementById("entries-empty"),
   entriesList: document.getElementById("entries-list"),
-  entriesSearch: document.getElementById("entries-search"),
+  entryCombobox: document.getElementById("entry-combobox"),
+  entryComboboxInput: document.getElementById("entry-combobox-input"),
+  entryListbox: document.getElementById("entry-listbox"),
+  entrySelectorWrap: document.getElementById("entry-selector-wrap"),
   chartRoot: document.getElementById("speed-chart"),
   chartSummary: document.getElementById("chart-summary"),
   resetDefaults: document.getElementById("reset-defaults"),
@@ -102,32 +106,29 @@ function syncLeftColumnHeight() {
   }
 
   const panelStyles = getComputedStyle(els.selectedPanel);
-  const listStyles = getComputedStyle(els.entriesList);
-  const searchWrap = els.selectedPanel.querySelector(".entries-search-wrap");
   const header = els.selectedPanel.querySelector(".panel-header");
+  const selectorWrap = els.selectedPanel.querySelector(".entry-selector-wrap");
   const firstCard = els.entriesList.querySelector(".entry-card");
 
   const panelPaddingTop = Number.parseFloat(panelStyles.paddingTop || "0") || 0;
   const panelPaddingBottom = Number.parseFloat(panelStyles.paddingBottom || "0") || 0;
-  const searchMarginBottom = searchWrap
-    ? (Number.parseFloat(getComputedStyle(searchWrap).marginBottom || "0") || 0)
+  const selectorMarginBottom = selectorWrap
+    ? (Number.parseFloat(getComputedStyle(selectorWrap).marginBottom || "0") || 0)
     : 0;
-  const rowGap = Number.parseFloat(listStyles.rowGap || "0") || 0;
 
   const headerHeight = header?.offsetHeight ?? 42;
-  const searchHeight = searchWrap?.offsetHeight ?? 40;
-  const cardHeight = firstCard?.offsetHeight ?? 68;
-  const visibleCards = 5;
-  const listVisibleHeight = cardHeight * visibleCards + rowGap * Math.max(0, visibleCards - 1);
+  const selectorHeight = selectorWrap?.offsetHeight ?? 40;
+  const cardHeight = firstCard?.offsetHeight ?? 95;
 
   const panelHeight = panelPaddingTop
     + panelPaddingBottom
     + headerHeight
-    + searchHeight
-    + searchMarginBottom
-    + listVisibleHeight;
+    + selectorHeight
+    + selectorMarginBottom
+    + cardHeight
+    + 16;
 
-  els.entriesList.style.maxHeight = `${Math.max(120, Math.floor(listVisibleHeight))}px`;
+  els.entriesList.style.maxHeight = "";
   els.selectedPanel.style.height = `${Math.max(220, Math.floor(panelHeight))}px`;
   els.selectedPanel.style.maxHeight = `${Math.max(220, Math.floor(panelHeight))}px`;
 }
@@ -410,144 +411,238 @@ function matchesEntrySearch(entry, rawQuery) {
   return haystack.includes(query);
 }
 
+function setActiveEntry(entryId) {
+  store.setState((prev) => ({ ...prev, activeEntryId: entryId ?? null }));
+}
+
+function buildEntryCard(entry) {
+  const card = document.createElement("article");
+  card.className = "entry-card";
+  card.dataset.entryId = String(entry.id);
+  card.dataset.pokemonKey = entry.pokemonKey;
+  card.dataset.finalSpeed = entry.finalSpeed;
+
+  card.addEventListener("click", (e) => {
+    if (e.target.closest("button, input, select")) {
+      return;
+    }
+    highlightMarkerForEntry(entry.id);
+  });
+
+  const head = document.createElement("div");
+  head.className = "entry-head";
+
+  const titleWrap = document.createElement("div");
+  const title = document.createElement("h3");
+  title.className = "entry-title";
+  title.textContent = ` ${entry.displayName} | ${entry.finalSpeed}`;
+  titleWrap.appendChild(title);
+  head.appendChild(titleWrap);
+
+  const headActions = document.createElement("div");
+  headActions.className = "entry-head-actions";
+
+  const visibilityLabel = document.createElement("label");
+  visibilityLabel.className = "entry-visible";
+  visibilityLabel.textContent = "Visible";
+  const visibility = document.createElement("input");
+  visibility.type = "checkbox";
+  visibility.checked = entry.visible;
+  visibility.addEventListener("change", () => {
+    updateEntry(entry.id, () => ({ visible: visibility.checked }));
+  });
+  visibilityLabel.prepend(visibility);
+  headActions.appendChild(visibilityLabel);
+
+  const actions = document.createElement("div");
+  actions.className = "entry-actions";
+  const cloneBtn = document.createElement("button");
+  cloneBtn.type = "button";
+  cloneBtn.className = "secondary mini icon-button";
+  cloneBtn.innerHTML = `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>`;
+  cloneBtn.title = "Duplicate entry";
+  cloneBtn.setAttribute("aria-label", "Duplicate entry");
+  cloneBtn.addEventListener("click", () => cloneEntry(entry.id));
+
+  const removeBtn = document.createElement("button");
+  removeBtn.type = "button";
+  removeBtn.className = "danger mini icon-button icon-delete";
+  removeBtn.textContent = "✕";
+  removeBtn.title = "Remove entry";
+  removeBtn.setAttribute("aria-label", "Remove entry");
+  removeBtn.addEventListener("click", () => removeEntry(entry.id));
+  actions.append(cloneBtn, removeBtn);
+  headActions.appendChild(actions);
+  head.appendChild(headActions);
+  card.appendChild(head);
+
+  const controls = document.createElement("div");
+  controls.className = "entry-controls";
+
+  const natureWrap = document.createElement("label");
+  natureWrap.textContent = "Nature";
+  const natureSelect = document.createElement("select");
+  natureSelect.innerHTML = [
+    '<option value="neutral">Neutral</option>',
+    '<option value="positive">Positive</option>',
+    '<option value="negative">Negative</option>',
+  ].join("");
+  natureSelect.value = entry.nature;
+  natureSelect.addEventListener("change", () => {
+    updateEntry(entry.id, () => ({ nature: natureSelect.value }));
+  });
+  natureWrap.appendChild(natureSelect);
+
+  const spWrap = document.createElement("label");
+  spWrap.textContent = "SP";
+  const spInput = document.createElement("input");
+  spInput.type = "number";
+  spInput.min = String(SP_MIN);
+  spInput.max = String(SP_MAX);
+  spInput.step = "1";
+  spInput.value = String(entry.speedPoints);
+  spInput.addEventListener("change", () => {
+    updateEntry(entry.id, () => ({
+      speedPoints: clampInteger(spInput.value, SP_MIN, SP_MAX),
+    }));
+  });
+  spWrap.appendChild(spInput);
+
+  const stageWrap = document.createElement("label");
+  stageWrap.textContent = "Stage";
+  const stageInput = document.createElement("input");
+  stageInput.type = "number";
+  stageInput.min = String(STAGE_MIN);
+  stageInput.max = String(STAGE_MAX);
+  stageInput.step = "1";
+  stageInput.value = String(entry.stage);
+  stageInput.addEventListener("change", () => {
+    updateEntry(entry.id, () => ({
+      stage: clampInteger(stageInput.value, STAGE_MIN, STAGE_MAX),
+    }));
+  });
+  stageWrap.appendChild(stageInput);
+
+  controls.append(natureWrap, spWrap, stageWrap);
+  card.appendChild(controls);
+  return card;
+}
+
+function renderComboboxOptions(computedEntries, filterText) {
+  if (!els.entryListbox) return;
+  const query = normalizeSearchText(filterText);
+  els.entryListbox.innerHTML = "";
+  const fragment = document.createDocumentFragment();
+
+  const filtered = query
+    ? computedEntries.filter((e) => matchesEntrySearch(e, filterText))
+    : computedEntries;
+
+  for (const entry of filtered) {
+    const li = document.createElement("li");
+    li.className = "entry-listbox-option";
+    li.setAttribute("role", "option");
+    li.dataset.entryId = String(entry.id);
+
+    const stageText = entry.stage !== 0 ? `${entry.stage > 0 ? `+${entry.stage}` : entry.stage} ` : "";
+    const spText = entry.speedPoints > 0 ? `${entry.speedPoints}SP ` : "";
+    const natureName = entry.nature === "positive" ? "positive" : entry.nature === "negative" ? "negative" : "neutral";
+    li.innerHTML = `<span class="lbo-name">${entry.displayName}</span><span class="lbo-meta">${stageText}${spText}${natureName}</span><span class="lbo-speed">${entry.finalSpeed}</span>`;
+
+    li.addEventListener("mousedown", (e) => {
+      e.preventDefault();
+      selectComboboxEntry(entry.id, computedEntries);
+    });
+    fragment.appendChild(li);
+  }
+
+  els.entryListbox.appendChild(fragment);
+
+  els.entryListbox.addEventListener("wheel", (e) => {
+    const atTop = els.entryListbox.scrollTop === 0;
+    const atBottom = els.entryListbox.scrollTop + els.entryListbox.clientHeight >= els.entryListbox.scrollHeight;
+    if (!(atTop && e.deltaY < 0) && !(atBottom && e.deltaY > 0)) {
+      e.stopPropagation();
+    }
+  }, { passive: true });
+}
+
+function selectComboboxEntry(entryId, computedEntries) {
+  const entry = computedEntries.find((e) => e.id === entryId);
+  if (!entry) return;
+
+  if (els.entryComboboxInput) {
+    els.entryComboboxInput.value = entry.displayName;
+  }
+  closeEntryDropdown();
+  setActiveEntry(entryId);
+}
+
+function openEntryDropdown() {
+  if (!els.entryCombobox || !els.entryListbox) return;
+  els.entryCombobox.setAttribute("aria-expanded", "true");
+  els.entryCombobox.classList.add("open");
+  els.entryListbox.hidden = false;
+}
+
+function closeEntryDropdown() {
+  if (!els.entryCombobox || !els.entryListbox) return;
+  els.entryCombobox.setAttribute("aria-expanded", "false");
+  els.entryCombobox.classList.remove("open");
+  els.entryListbox.hidden = true;
+}
+
 function renderEntries(state) {
   const computedEntries = buildComputedEntries(state).sort((a, b) => {
-    if (b.finalSpeed !== a.finalSpeed) {
-      return b.finalSpeed - a.finalSpeed;
-    }
-    if (a.displayName !== b.displayName) {
-      return a.displayName.localeCompare(b.displayName);
-    }
+    if (b.finalSpeed !== a.finalSpeed) return b.finalSpeed - a.finalSpeed;
+    if (a.displayName !== b.displayName) return a.displayName.localeCompare(b.displayName);
     return a.id - b.id;
   });
-  const filteredEntries = computedEntries.filter((entry) => matchesEntrySearch(entry, state.entriesSearchQuery));
 
-  els.entriesList.innerHTML = "";
+  const hasEntries = state.entries.length > 0;
+  const showSelector = hasEntries;
 
-  if (!state.entries.length) {
+  if (els.entrySelectorWrap) {
+    els.entrySelectorWrap.style.display = showSelector ? "" : "none";
+  }
+
+  if (!hasEntries) {
     els.emptyState.style.display = "block";
     els.emptyState.textContent = "No Pokemon selected yet.";
-  } else if (!filteredEntries.length) {
-    els.emptyState.style.display = "block";
-    els.emptyState.textContent = "No selected Pokemon matches your search.";
+    els.entriesList.innerHTML = "";
   } else {
     els.emptyState.style.display = "none";
   }
 
-  for (const entry of filteredEntries) {
-    const card = document.createElement("article");
-    card.className = "entry-card";
-    card.dataset.entryId = String(entry.id);
-    card.dataset.pokemonKey = entry.pokemonKey;
-    card.dataset.finalSpeed = entry.finalSpeed;
-    card.height = 68;
+  let activeId = state.activeEntryId;
+  if (hasEntries && (activeId === null || !computedEntries.find((e) => e.id === activeId))) {
+    activeId = computedEntries[0].id;
+    if (activeId !== state.activeEntryId) {
+      store.setState((prev) => ({ ...prev, activeEntryId: activeId }));
+      return;
+    }
+  }
 
-    card.addEventListener("click", (e) => {
-      if (e.target.closest("button, input, select")) {
-        return;
-      }
-      highlightMarkerForEntry(entry.id);
-    });
+  const currentFilterText = els.entryComboboxInput?.value ?? "";
+  renderComboboxOptions(computedEntries, currentFilterText);
 
-    const head = document.createElement("div");
-    head.className = "entry-head";
+  const activeEntry = computedEntries.find((e) => e.id === activeId);
+  if (activeEntry && els.entryComboboxInput) {
+    const isDropdownOpen = els.entryCombobox?.classList.contains("open");
+    if (!isDropdownOpen) {
+      els.entryComboboxInput.value = activeEntry.displayName;
+    }
+  }
 
-    const titleWrap = document.createElement("div");
-    const title = document.createElement("h3");
-    title.className = "entry-title";
-    title.textContent = ` ${entry.displayName} | ${entry.finalSpeed}`;
-    titleWrap.appendChild(title);
-
-
-    head.appendChild(titleWrap);
-
-    const headActions = document.createElement("div");
-    headActions.className = "entry-head-actions";
-
-    const visibilityLabel = document.createElement("label");
-    visibilityLabel.className = "entry-visible";
-    visibilityLabel.textContent = "Visible";
-    const visibility = document.createElement("input");
-    visibility.type = "checkbox";
-    visibility.checked = entry.visible;
-    visibility.addEventListener("change", () => {
-      updateEntry(entry.id, () => ({ visible: visibility.checked }));
-    });
-    visibilityLabel.prepend(visibility);
-    headActions.appendChild(visibilityLabel);
-
-    const actions = document.createElement("div");
-    actions.className = "entry-actions";
-    const cloneBtn = document.createElement("button");
-    cloneBtn.type = "button";
-    cloneBtn.className = "secondary mini icon-button";
-    cloneBtn.innerHTML = `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>`;
-    cloneBtn.title = "Duplicate entry";
-    cloneBtn.setAttribute("aria-label", "Duplicate entry");
-    cloneBtn.addEventListener("click", () => cloneEntry(entry.id));
-
-    const removeBtn = document.createElement("button");
-    removeBtn.type = "button";
-    removeBtn.className = "danger mini icon-button icon-delete";
-    removeBtn.textContent = "✕";
-    removeBtn.title = "Remove entry";
-    removeBtn.setAttribute("aria-label", "Remove entry");
-    removeBtn.addEventListener("click", () => removeEntry(entry.id));
-    actions.append(cloneBtn, removeBtn);
-    headActions.appendChild(actions);
-    head.appendChild(headActions);
-    card.appendChild(head);
-
-    const controls = document.createElement("div");
-    controls.className = "entry-controls";
-
-    const natureWrap = document.createElement("label");
-    natureWrap.textContent = "Nature";
-    const natureSelect = document.createElement("select");
-    natureSelect.innerHTML = [
-      '<option value="neutral">Neutral</option>',
-      '<option value="positive">Positive</option>',
-      '<option value="negative">Negative</option>',
-    ].join("");
-    natureSelect.value = entry.nature;
-    natureSelect.addEventListener("change", () => {
-      updateEntry(entry.id, () => ({ nature: natureSelect.value }));
-    });
-    natureWrap.appendChild(natureSelect);
-
-    const spWrap = document.createElement("label");
-    spWrap.textContent = "SP";
-    const spInput = document.createElement("input");
-    spInput.type = "number";
-    spInput.min = String(SP_MIN);
-    spInput.max = String(SP_MAX);
-    spInput.step = "1";
-    spInput.value = String(entry.speedPoints);
-    spInput.addEventListener("change", () => {
-      updateEntry(entry.id, () => ({
-        speedPoints: clampInteger(spInput.value, SP_MIN, SP_MAX),
-      }));
-    });
-    spWrap.appendChild(spInput);
-
-    const stageWrap = document.createElement("label");
-    stageWrap.textContent = "Stage";
-    const stageInput = document.createElement("input");
-    stageInput.type = "number";
-    stageInput.min = String(STAGE_MIN);
-    stageInput.max = String(STAGE_MAX);
-    stageInput.step = "1";
-    stageInput.value = String(entry.stage);
-    stageInput.addEventListener("change", () => {
-      updateEntry(entry.id, () => ({
-        stage: clampInteger(stageInput.value, STAGE_MIN, STAGE_MAX),
-      }));
-    });
-    stageWrap.appendChild(stageInput);
-
-    controls.append(natureWrap, spWrap, stageWrap);
-    card.appendChild(controls);
+  els.entriesList.innerHTML = "";
+  if (activeEntry) {
+    const card = buildEntryCard(activeEntry);
     els.entriesList.appendChild(card);
+  }
+
+  const activeCardEl = els.entriesList.querySelector(".entry-card");
+  if (activeCardEl) {
+    activeCardEl.classList.add("highlighted");
   }
 
   renderSpeedChart({
@@ -619,21 +714,77 @@ function bindClearSaved() {
 }
 
 function bindEntriesSearch() {
-  if (!els.entriesSearch) {
-    return;
-  }
+  if (!els.entryComboboxInput) return;
 
-  const applySearch = () => {
-    const value = els.entriesSearch.value ?? "";
-    store.setState((prev) => ({
-      ...prev,
-      entriesSearchQuery: value,
-    }));
+  const onInput = () => {
+    const state = store.getState();
+    const computedEntries = buildComputedEntries(state).sort((a, b) => {
+      if (b.finalSpeed !== a.finalSpeed) return b.finalSpeed - a.finalSpeed;
+      if (a.displayName !== b.displayName) return a.displayName.localeCompare(b.displayName);
+      return a.id - b.id;
+    });
+    openEntryDropdown();
+    renderComboboxOptions(computedEntries, els.entryComboboxInput.value);
   };
 
-  els.entriesSearch.addEventListener("input", applySearch);
-  els.entriesSearch.addEventListener("search", applySearch);
-  els.entriesSearch.addEventListener("keyup", applySearch);
+  els.entryComboboxInput.addEventListener("input", onInput);
+
+  els.entryComboboxInput.addEventListener("focus", () => {
+    const state = store.getState();
+    if (!state.entries.length) return;
+    els.entryComboboxInput.select();
+    const computedEntries = buildComputedEntries(state).sort((a, b) => {
+      if (b.finalSpeed !== a.finalSpeed) return b.finalSpeed - a.finalSpeed;
+      if (a.displayName !== b.displayName) return a.displayName.localeCompare(b.displayName);
+      return a.id - b.id;
+    });
+    openEntryDropdown();
+    renderComboboxOptions(computedEntries, "");
+  });
+
+  els.entryComboboxInput.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") {
+      closeEntryDropdown();
+      const state = store.getState();
+      const activeEntry = buildComputedEntries(state).find((en) => en.id === state.activeEntryId);
+      if (activeEntry) els.entryComboboxInput.value = activeEntry.displayName;
+      return;
+    }
+    if (e.key === "ArrowDown" || e.key === "ArrowUp") {
+      e.preventDefault();
+      const items = els.entryListbox?.querySelectorAll(".entry-listbox-option") ?? [];
+      if (!items.length) return;
+      const focused = els.entryListbox?.querySelector(".entry-listbox-option.focused");
+      let nextIdx = 0;
+      if (focused) {
+        const arr = Array.from(items);
+        const cur = arr.indexOf(focused);
+        nextIdx = e.key === "ArrowDown" ? Math.min(cur + 1, arr.length - 1) : Math.max(cur - 1, 0);
+        focused.classList.remove("focused");
+      } else {
+        nextIdx = e.key === "ArrowDown" ? 0 : items.length - 1;
+      }
+      items[nextIdx].classList.add("focused");
+      items[nextIdx].scrollIntoView({ block: "nearest" });
+      return;
+    }
+    if (e.key === "Enter") {
+      const focused = els.entryListbox?.querySelector(".entry-listbox-option.focused");
+      if (focused) {
+        e.preventDefault();
+        const entryId = Number(focused.dataset.entryId);
+        const state = store.getState();
+        const computedEntries = buildComputedEntries(state);
+        selectComboboxEntry(entryId, computedEntries);
+      }
+    }
+  });
+
+  document.addEventListener("click", (e) => {
+    if (!e.target.closest("#entry-selector-wrap")) {
+      closeEntryDropdown();
+    }
+  });
 }
 
 function clearHighlights() {
@@ -653,11 +804,14 @@ function highlightMarkerForEntry(entryId) {
 
 function highlightEntryForMarker(entryId) {
   clearHighlights();
-  const card = document.querySelector(`.entry-card[data-entry-id="${entryId}"]`);
-  if (card) {
-    card.classList.add("highlighted");
-    card.scrollIntoView({ behavior: "smooth", block: "start" });
+  setActiveEntry(entryId);
+  const state = store.getState();
+  const computedEntries = buildComputedEntries(state);
+  const entry = computedEntries.find((e) => e.id === entryId);
+  if (entry && els.entryComboboxInput) {
+    els.entryComboboxInput.value = entry.displayName;
   }
+  closeEntryDropdown();
 }
 
 function applyImportedEntries(mode) {
@@ -753,7 +907,6 @@ async function init() {
   bindForm();
   bindResetDefaults();
   bindClearSaved();
-  bindEntriesSearch();
   bindImportConfig();
   bindExportConfig();
 
@@ -791,6 +944,8 @@ async function init() {
   } catch (error) {
     els.feedback.textContent = error.message;
   }
+
+  bindEntriesSearch();
 
   store.subscribe((state) => {
     renderEntries(state);
