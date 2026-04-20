@@ -181,6 +181,6 @@
 - [x] Disappears on mouse-out; does not interfere with click-to-highlight.
 
 ### TODO-9: Import/export — `:base` form suffix is optional
-- [ ] In the export format, omit the `:base` suffix so base-form Pokémon export as plain names (e.g. `Venusaur` instead of `Venusaur:base`).
-- [ ] In the import parser, if a token has no `:` separator, try resolving it first as a plain key, then append `:base` as fallback — already partially handled in `resolvePokemonKeyFromToken`, verify and tighten.
-- [ ] Ensure round-trip: export then re-import produces identical entries.
+- [x] In the export format, omit the `:base` suffix so base-form Pokémon export as plain names (e.g. `Venusaur` instead of `Venusaur:base`).
+- [x] In the import parser, if a token has no `:` separator, try resolving it first as a plain key, then append `:base` as fallback — already partially handled in `resolvePokemonKeyFromToken`, verify and tightened.
+- [x] Ensure round-trip: export then re-import produces identical entries.

@@ -820,12 +820,14 @@ function applyImportedEntries(mode) {
   alert(message);
 }
 
+function exportKeyToken(pokemonKey) {
+  return pokemonKey.endsWith(":base") ? pokemonKey.slice(0, -5) : pokemonKey;
+}
+
 function exportEntriesToText(entries, pokemonRows) {
-  const pokemonMap = byKey(pokemonRows);
   const lines = entries.map((entry) => {
-    const pokemon = pokemonMap.get(entry.pokemonKey);
-    const displayName = pokemon ? pokemon.displayName : entry.pokemonKey;
-    return `${entry.pokemonKey},${entry.nature},${entry.speedPoints},${entry.stage},${entry.visible}`;
+    const token = exportKeyToken(entry.pokemonKey);
+    return `${token},${entry.nature},${entry.speedPoints},${entry.stage},${entry.visible}`;
   });
   return lines.join("\n");
 }
