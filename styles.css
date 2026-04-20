@@ -1035,6 +1035,20 @@ button.danger:hover {
   text-overflow: ellipsis;
 }
 
+@media (max-width: 560px) {
+  .app-footer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .app-footer-tagline {
+    white-space: normal;
+    overflow: visible;
+    text-overflow: unset;
+  }
+}
+
 .app-footer-link {
   display: inline-flex;
   align-items: center;

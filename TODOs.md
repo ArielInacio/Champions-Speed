@@ -211,5 +211,5 @@
 - [x] Cap tooltip width with `min(320px, 90vw)` and add horizontal padding so text does not touch screen edges.
 
 ### TODO-15: Mobile — footer wraps instead of truncating
-- [ ] On mobile the footer tagline is `white-space: nowrap` and gets cut off.
-- [ ] Allow it to wrap on small screens (`white-space: normal`) and stack the GitHub link below it.
+- [x] On mobile the footer tagline is `white-space: nowrap` and gets cut off.
+- [x] Allow it to wrap on small screens (`white-space: normal`) and stack the GitHub link below it.
