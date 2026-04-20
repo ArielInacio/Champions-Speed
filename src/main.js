@@ -804,14 +804,12 @@ function highlightMarkerForEntry(entryId) {
 
 function highlightEntryForMarker(entryId) {
   clearHighlights();
-  setActiveEntry(entryId);
-  const state = store.getState();
-  const computedEntries = buildComputedEntries(state);
-  const entry = computedEntries.find((e) => e.id === entryId);
-  if (entry && els.entryComboboxInput) {
-    els.entryComboboxInput.value = entry.displayName;
-  }
   closeEntryDropdown();
+  setActiveEntry(entryId);
+  const marker = document.querySelector(`.speed-marker[data-entry-id="${entryId}"]`);
+  if (marker) {
+    marker.classList.add("highlighted");
+  }
 }
 
 function applyImportedEntries(mode) {

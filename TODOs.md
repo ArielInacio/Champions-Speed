@@ -138,14 +138,14 @@
 ## New Feature Backlog
 
 ### TODO-1: Searchable dropdown for Selected Pokemon (one visible at a time)
-- [ ] Replace the entries list (which shows all cards simultaneously) with a single-entry view controlled by a searchable dropdown.
-- [ ] The dropdown lists all selected entries (by name + final speed); selecting one shows that entry's card below.
-- [ ] Keyboard-accessible: type to filter entries in the dropdown.
-- [ ] Only one entry card rendered/visible at a time in the left panel.
+- [x] Replace the entries list (which shows all cards simultaneously) with a single-entry view controlled by a searchable dropdown.
+- [x] The dropdown lists all selected entries (by name + final speed); selecting one shows that entry's card below.
+- [x] Keyboard-accessible: type to filter entries in the dropdown.
+- [x] Only one entry card rendered/visible at a time in the left panel.
 
 ### TODO-2: Clicking chart badge scrolls/shows its entry in the left panel
-- [ ] When a pokemon badge (speed-marker) in the chart is clicked, the "Manage Pokemon" selected section should switch to show that entry's card (i.e., set the dropdown selection to that entry).
-- [ ] Extends existing `highlightEntryForMarker` to also update the dropdown selection.
+- [x] When a pokemon badge (speed-marker) in the chart is clicked, the "Manage Pokemon" selected section should switch to show that entry's card (i.e., set the dropdown selection to that entry).
+- [x] Extends existing `highlightEntryForMarker` to also update the dropdown selection.
 
 ### TODO-3: Unify "Add Pokemon" + "Selected Pokemon" into "Manage Pokemon"
 - [ ] Merge the two left-panel sections into a single "Manage Pokemon" panel.
@@ -178,6 +178,7 @@
 - [ ] The entry card is currently too short; nature/SP/stage inputs overflow the bottom edge.
 - [ ] Increase `.entry-card` height (or remove fixed height and let it size to content).
 - [ ] Verify card fits cleanly at all panel widths without double-scrollbar issues.
+- [ ] If necessary, increase the section height to accommodate the new card height.
 
 ### TODO-9: Pokemon badge hover tooltip with full info
 - [ ] When hovering over a speed-marker badge in the chart, show a tooltip with: Pokémon name, final speed, nature, SP, stage.
