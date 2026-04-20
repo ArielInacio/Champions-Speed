@@ -1021,16 +1021,31 @@ async function init() {
   requestAnimationFrame(syncLeftColumnHeight);
 
   setTimeout(() => {
-    requestAnimationFrame(() => {
-      const chart = els.chartRoot;
-      if (!chart) return;
-      const chartTop = chart.getBoundingClientRect().top + window.scrollY;
-      const target = chartTop + chart.offsetHeight * 0.4;
-      if (target > window.scrollY + 80) {
-        window.scrollTo({ top: target, behavior: "smooth" });
-      }
-    });
-  }, 1200);
+    const chart = els.chartRoot;
+    if (!chart) return;
+    const chartTop = chart.getBoundingClientRect().top + window.scrollY;
+    const target = Math.round(chartTop + chart.offsetHeight * 0.4);
+    const start = window.scrollY;
+    const distance = target - start;
+    if (distance <= 80) return;
+
+    const duration = 900;
+    let startTime = null;
+
+    function easeInOut(t) {
+      return t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t;
+    }
+
+    function step(timestamp) {
+      if (!startTime) startTime = timestamp;
+      const elapsed = timestamp - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+      window.scrollTo(0, start + distance * easeInOut(progress));
+      if (progress < 1) requestAnimationFrame(step);
+    }
+
+    requestAnimationFrame(step);
+  }, 600);
 }
 
 init();
