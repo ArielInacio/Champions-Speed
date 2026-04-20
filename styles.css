@@ -161,7 +161,8 @@ body {
 
 .panel-actions button {
   white-space: nowrap;
-  min-height: 44px;
+  padding: 0.35rem 0.55rem;
+  font-size: 0.82rem;
 }
 
 .entry-selector-wrap {
@@ -957,6 +958,12 @@ button.danger:hover {
   .panel-actions {
     width: 100%;
     justify-content: flex-start;
+  }
+
+  .panel-actions button {
+    min-height: 44px;
+    padding: 0.5rem 0.6rem;
+    font-size: 0.95rem;
   }
 
   .speed-chart {
