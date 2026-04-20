@@ -149,7 +149,13 @@
 
     { "pokemonKey": "Floette:Mega", "nature": "neutral", "speedPoints": 0, "stage": 0, "visible": true },
     { "pokemonKey": "Floette:Mega", "nature": "neutral", "speedPoints": 32, "stage": 0, "visible": true },
-    { "pokemonKey": "Floette:Mega", "nature": "positive", "speedPoints": 32, "stage": 0, "visible": true }
+    { "pokemonKey": "Floette:Mega", "nature": "positive", "speedPoints": 32, "stage": 0, "visible": true },
+
+    { "pokemonKey": "Kingambit:base", "nature": "positive", "speedPoints": 32, "stage": 0, "visible": true },
+    { "pokemonKey": "Kingambit:base", "nature": "neutral", "speedPoints": 32, "stage": 0, "visible": true },
+    { "pokemonKey": "Kingambit:base", "nature": "neutral", "speedPoints": 0, "stage": 0, "visible": true }
+
+
 
     
   ]

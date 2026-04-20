@@ -6,7 +6,7 @@ A browser-based tool for visualising and comparing the final speed stats of Pok�
 
 Pokémon Champions introduces custom Mega Evolutions and regional forms with unique base stats. This tool lets you:
 
-- Add any Pokémon (including Champions-specific forms) to a comparison chart.
+- Add any Pokémon (including Champions-specific relevant forms) to a comparison chart.
 - Configure nature (`positive / neutral / negative`), Speed Points (`0–32`), and stat stage (`-6 to +6`) per entry.
 - See every entry placed on a vertical speed chart — faster Pokémon render higher, slower ones lower.
 - Add the same Pokémon multiple times with different configs to compare scenarios side by side.
@@ -46,6 +46,7 @@ To regenerate data after roster changes:
 python champions_list.py
 python api_caller.py
 ```
+RECOMMENDED: Certain Pokemon may lack sprites in the PokéAPI, in which case you will need to manually add them to the `processed_pokemon.json` file.
 
 Bump the Service Worker cache version in `sw.js` after regenerating so clients pick up the new data.
 
