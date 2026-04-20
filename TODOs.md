@@ -148,9 +148,9 @@
 - [x] Extends existing `highlightEntryForMarker` to also update the dropdown selection.
 
 ### TODO-3: Unify "Add Pokemon" + "Selected Pokemon" into "Manage Pokemon"
-- [ ] Merge the two left-panel sections into a single "Manage Pokemon" panel.
-- [ ] Add-form and selected-entry view/controls coexist within this unified section.
-- [ ] Maintain all existing functionality (add, remove, clone, visibility, nature/SP/stage editing).
+- [x] Merge the two left-panel sections into a single "Manage Pokemon" panel.
+- [x] Add-form and selected-entry view/controls coexist within this unified section.
+- [x] Maintain all existing functionality (add, remove, clone, visibility, nature/SP/stage editing).
 
 ### TODO-4: Improve overlay readability — cleaner SVG for stages and nature
 - [ ] Replace text/emoji overlays on pokemon badges with clean inline SVGs.

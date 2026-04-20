@@ -24,8 +24,7 @@ const els = {
   leftColumn: document.querySelector(".left-column"),
   chartColumn: document.querySelector(".chart-column"),
   titlePanel: document.getElementById("title-panel"),
-  addPanel: document.getElementById("add-panel"),
-  selectedPanel: document.getElementById("selected-panel"),
+  managePanel: document.getElementById("manage-panel"),
   form: document.getElementById("add-entry-form"),
   pokemonInput: document.getElementById("pokemon-input"),
   pokemonList: document.getElementById("pokemon-list"),
@@ -94,43 +93,20 @@ async function registerServiceWorker() {
 }
 
 function syncLeftColumnHeight() {
-  if (!els.selectedPanel || !els.entriesList) {
+  if (!els.managePanel || !els.entriesList) {
     return;
   }
 
   if (window.matchMedia("(max-width: 1080px)").matches) {
-    els.selectedPanel.style.height = "";
-    els.selectedPanel.style.maxHeight = "";
+    els.managePanel.style.height = "";
+    els.managePanel.style.maxHeight = "";
     els.entriesList.style.maxHeight = "";
     return;
   }
 
-  const panelStyles = getComputedStyle(els.selectedPanel);
-  const header = els.selectedPanel.querySelector(".panel-header");
-  const selectorWrap = els.selectedPanel.querySelector(".entry-selector-wrap");
-  const firstCard = els.entriesList.querySelector(".entry-card");
-
-  const panelPaddingTop = Number.parseFloat(panelStyles.paddingTop || "0") || 0;
-  const panelPaddingBottom = Number.parseFloat(panelStyles.paddingBottom || "0") || 0;
-  const selectorMarginBottom = selectorWrap
-    ? (Number.parseFloat(getComputedStyle(selectorWrap).marginBottom || "0") || 0)
-    : 0;
-
-  const headerHeight = header?.offsetHeight ?? 42;
-  const selectorHeight = selectorWrap?.offsetHeight ?? 40;
-  const cardHeight = firstCard?.offsetHeight ?? 95;
-
-  const panelHeight = panelPaddingTop
-    + panelPaddingBottom
-    + headerHeight
-    + selectorHeight
-    + selectorMarginBottom
-    + cardHeight
-    + 16;
-
+  els.managePanel.style.height = "";
+  els.managePanel.style.maxHeight = "";
   els.entriesList.style.maxHeight = "";
-  els.selectedPanel.style.height = `${Math.max(220, Math.floor(panelHeight))}px`;
-  els.selectedPanel.style.maxHeight = `${Math.max(220, Math.floor(panelHeight))}px`;
 }
 
 function clampInteger(value, min, max) {

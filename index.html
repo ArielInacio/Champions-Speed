@@ -14,42 +14,9 @@
         <p>Build speed scenarios by Pokemon, Nature, SP and Stages.</p>
       </header>
 
-      <section id="add-panel" class="panel">
-        <h2>Add Pokemon</h2>
-        <form id="add-entry-form" class="entry-form">
-          <label>
-            Pokemon
-            <input id="pokemon-input" name="pokemon" list="pokemon-list" placeholder="Type to search..." required>
-          </label>
-          <datalist id="pokemon-list"></datalist>
-
-          <label>
-            Nature
-            <select id="nature-input" name="nature">
-              <option value="neutral">Neutral</option>
-              <option value="positive">Positive</option>
-              <option value="negative">Negative</option>
-            </select>
-          </label>
-
-          <label>
-            SP
-            <input id="sp-input" name="speedPoints" type="number" min="0" max="32" step="1" value="0">
-          </label>
-
-          <label>
-            Stages
-            <input id="stage-input" name="stage" type="number" min="-6" max="6" step="1" value="0">
-          </label>
-
-          <button type="submit">Add</button>
-        </form>
-        <p id="form-feedback" class="feedback" aria-live="polite"></p>
-      </section>
-
-      <section id="selected-panel" class="panel selected-panel">
+      <section id="manage-panel" class="panel manage-panel">
         <div class="panel-header">
-          <h2>Selected Pokemon</h2>
+          <h2>Manage Pokemon</h2>
           <div class="panel-actions">
             <button type="button" id="export-config" class="secondary">Export</button>
             <button type="button" id="import-config" class="secondary">Import</button>
@@ -58,27 +25,65 @@
           </div>
         </div>
 
-        <div class="entry-selector-wrap" id="entry-selector-wrap">
-          <div class="entry-combobox" id="entry-combobox" role="combobox" aria-haspopup="listbox" aria-expanded="false" aria-owns="entry-listbox">
-            <input
-              id="entry-combobox-input"
-              class="entry-combobox-input"
-              type="text"
-              placeholder="Search selected Pokemon…"
-              autocomplete="off"
-              aria-label="Select a Pokemon entry"
-              aria-autocomplete="list"
-              aria-controls="entry-listbox"
-            >
-            <span class="entry-combobox-chevron" aria-hidden="true">
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
-            </span>
-          </div>
-          <ul id="entry-listbox" class="entry-listbox" role="listbox" aria-label="Selected Pokemon entries" hidden></ul>
+        <div class="manage-add-section">
+          <h3 class="manage-subsection-title">Add Pokemon</h3>
+          <form id="add-entry-form" class="entry-form">
+            <label>
+              Pokemon
+              <input id="pokemon-input" name="pokemon" list="pokemon-list" placeholder="Type to search..." required>
+            </label>
+            <datalist id="pokemon-list"></datalist>
+
+            <label>
+              Nature
+              <select id="nature-input" name="nature">
+                <option value="neutral">Neutral</option>
+                <option value="positive">Positive</option>
+                <option value="negative">Negative</option>
+              </select>
+            </label>
+
+            <label>
+              SP
+              <input id="sp-input" name="speedPoints" type="number" min="0" max="32" step="1" value="0">
+            </label>
+
+            <label>
+              Stages
+              <input id="stage-input" name="stage" type="number" min="-6" max="6" step="1" value="0">
+            </label>
+
+            <button type="submit">Add</button>
+          </form>
+          <p id="form-feedback" class="feedback" aria-live="polite"></p>
         </div>
 
-        <div id="entries-empty" class="entries-empty-state">No Pokemon selected yet.</div>
-        <div id="entries-list" class="entries-list single-entry-view"></div>
+        <div class="manage-divider"></div>
+
+        <div class="manage-selected-section">
+          <h3 class="manage-subsection-title">Selected Pokemon</h3>
+          <div class="entry-selector-wrap" id="entry-selector-wrap">
+            <div class="entry-combobox" id="entry-combobox" role="combobox" aria-haspopup="listbox" aria-expanded="false" aria-owns="entry-listbox">
+              <input
+                id="entry-combobox-input"
+                class="entry-combobox-input"
+                type="text"
+                placeholder="Search selected Pokemon…"
+                autocomplete="off"
+                aria-label="Select a Pokemon entry"
+                aria-autocomplete="list"
+                aria-controls="entry-listbox"
+              >
+              <span class="entry-combobox-chevron" aria-hidden="true">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              </span>
+            </div>
+            <ul id="entry-listbox" class="entry-listbox" role="listbox" aria-label="Selected Pokemon entries" hidden></ul>
+          </div>
+
+          <div id="entries-empty" class="entries-empty-state">No Pokemon selected yet.</div>
+          <div id="entries-list" class="entries-list single-entry-view"></div>
+        </div>
       </section>
     </aside>
 
