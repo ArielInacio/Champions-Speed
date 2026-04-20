@@ -184,3 +184,7 @@
 - [x] In the export format, omit the `:base` suffix so base-form Pokémon export as plain names (e.g. `Venusaur` instead of `Venusaur:base`).
 - [x] In the import parser, if a token has no `:` separator, try resolving it first as a plain key, then append `:base` as fallback — already partially handled in `resolvePokemonKeyFromToken`, verify and tightened.
 - [x] Ensure round-trip: export then re-import produces identical entries.
+
+### TODO-10: Scroll hint — smooth scroll chart to mid on load
+- [x] After the initial render, smooth-scroll the chart column to its vertical midpoint so the user sees it is scrollable.
+- [x] Only trigger once on first load; do not re-trigger on subsequent state updates.

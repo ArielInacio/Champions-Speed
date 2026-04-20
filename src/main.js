@@ -1019,6 +1019,15 @@ async function init() {
   renderEntries(store.getState());
   window.addEventListener("resize", syncLeftColumnHeight);
   requestAnimationFrame(syncLeftColumnHeight);
+
+  setTimeout(() => {
+    const chart = els.chartRoot;
+    if (!chart) return;
+    const mid = chart.getBoundingClientRect().top + window.scrollY + chart.offsetHeight / 2 - window.innerHeight / 2;
+    if (mid > 0) {
+      window.scrollTo({ top: mid, behavior: "smooth" });
+    }
+  }, 600);
 }
 
 init();
