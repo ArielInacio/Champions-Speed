@@ -8,9 +8,63 @@ const MARKER_GAP_PX = 1;
 const BASE_CHART_HEIGHT_PX = 420;
 const CHART_VERTICAL_MARGINS_PX = 128;
 
+let activeTooltip = null;
+
 function clearNode(node) {
   while (node.firstChild) {
     node.removeChild(node.firstChild);
+  }
+}
+
+function getOrCreateTooltip(chartRoot) {
+  let tip = chartRoot.querySelector(".marker-tooltip");
+  if (!tip) {
+    tip = document.createElement("div");
+    tip.className = "marker-tooltip";
+    tip.setAttribute("role", "tooltip");
+    tip.setAttribute("aria-hidden", "true");
+    chartRoot.appendChild(tip);
+  }
+  return tip;
+}
+
+function showMarkerTooltip(chartRoot, marker, entry) {
+  const tip = getOrCreateTooltip(chartRoot);
+
+  const stageText = entry.stage > 0 ? `+${entry.stage}` : String(entry.stage);
+  const natureName = entry.nature.charAt(0).toUpperCase() + entry.nature.slice(1);
+  tip.innerHTML = `
+    <span class="mt-name">${entry.displayName}</span>
+    <span class="mt-speed">${entry.finalSpeed}</span>
+    <span class="mt-meta">Nature: ${natureName}</span>
+    <span class="mt-meta">SP: ${entry.speedPoints}</span>
+    <span class="mt-meta">Stage: ${stageText}</span>
+  `;
+  tip.style.display = "block";
+
+  const chartRect = chartRoot.getBoundingClientRect();
+  const markerRect = marker.getBoundingClientRect();
+  const tipW = tip.offsetWidth || 140;
+  const tipH = tip.offsetHeight || 90;
+  const GAP = 6;
+
+  let left = markerRect.left - chartRect.left + (markerRect.width / 2) - (tipW / 2);
+  let top = markerRect.top - chartRect.top - tipH - GAP;
+
+  if (top < GAP) {
+    top = markerRect.top - chartRect.top + markerRect.height + GAP;
+  }
+  left = Math.max(GAP, Math.min(left, chartRect.width - tipW - GAP));
+
+  tip.style.left = `${left}px`;
+  tip.style.top = `${top}px`;
+  activeTooltip = tip;
+}
+
+function hideMarkerTooltip() {
+  if (activeTooltip) {
+    activeTooltip.style.display = "none";
+    activeTooltip = null;
   }
 }
 
@@ -58,7 +112,15 @@ function createMarker(entry, topPercent, markerLeftPx) {
   });
   marker.appendChild(spriteWrap);
 
+  marker.addEventListener("mouseenter", () => {
+    const chartRoot = marker.closest(".speed-chart");
+    if (chartRoot) showMarkerTooltip(chartRoot, marker, entry);
+  });
+
+  marker.addEventListener("mouseleave", hideMarkerTooltip);
+
   marker.addEventListener("click", () => {
+    hideMarkerTooltip();
     const entryId = entry.id;
     const event = new CustomEvent("highlightEntry", { detail: { entryId } });
     document.dispatchEvent(event);
@@ -102,6 +164,7 @@ function computeChartHeightPx(range) {
 }
 
 export function renderSpeedChart({ chartRoot, summaryNode, entries }) {
+  hideMarkerTooltip();
   clearNode(chartRoot);
 
   if (!entries.length) {

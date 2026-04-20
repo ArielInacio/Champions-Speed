@@ -944,6 +944,41 @@ button.danger:hover {
   }
 }
 
+.marker-tooltip {
+  display: none;
+  position: absolute;
+  z-index: 300;
+  pointer-events: none;
+  background: var(--panel);
+  border: 1px solid var(--accent);
+  border-radius: 8px;
+  padding: 0.5rem 0.65rem;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+  min-width: 130px;
+  max-width: 180px;
+}
+
+.mt-name {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--text);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.mt-speed {
+  font-size: 1rem;
+  font-weight: 800;
+  color: var(--accent);
+  line-height: 1.1;
+}
+
+.mt-meta {
+  font-size: 0.74rem;
+  color: var(--muted);
+}
+
 .app-footer {
   max-width: 1600px;
   margin: 0.5rem auto 0;

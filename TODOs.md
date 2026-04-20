@@ -176,9 +176,9 @@
 
 
 ### TODO-8: Pokemon badge hover tooltip with full info
-- [ ] When hovering over a speed-marker badge in the chart, show a tooltip with: Pokémon name, final speed, nature, SP, stage.
-- [ ] Tooltip should be styled consistently (dark panel, accent border), appear above the badge, and not overflow chart bounds.
-- [ ] Disappears on mouse-out; does not interfere with click-to-highlight.
+- [x] When hovering over a speed-marker badge in the chart, show a tooltip with: Pokémon name, final speed, nature, SP, stage.
+- [x] Tooltip should be styled consistently (dark panel, accent border), appear above the badge, and not overflow chart bounds.
+- [x] Disappears on mouse-out; does not interfere with click-to-highlight.
 
 ### TODO-9: Import/export — `:base` form suffix is optional
 - [ ] In the export format, omit the `:base` suffix so base-form Pokémon export as plain names (e.g. `Venusaur` instead of `Venusaur:base`).
