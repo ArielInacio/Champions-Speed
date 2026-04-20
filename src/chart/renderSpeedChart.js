@@ -10,6 +10,11 @@ const CHART_VERTICAL_MARGINS_PX = 128;
 
 let activeTooltip = null;
 let pinnedTooltipEntry = null;
+let lastInputWasTouch = false;
+
+document.addEventListener("pointerdown", (e) => {
+  lastInputWasTouch = e.pointerType === "touch";
+}, { passive: true });
 
 function clearNode(node) {
   while (node.firstChild) {
@@ -38,9 +43,6 @@ function getOrCreateTooltip(chartRoot) {
   return tip;
 }
 
-function isTouchDevice() {
-  return window.matchMedia("(hover: none) and (pointer: coarse)").matches;
-}
 
 function unpinTooltip() {
   if (activeTooltip) {
@@ -156,18 +158,18 @@ function createMarker(entry, topPercent, markerLeftPx) {
   marker.appendChild(spriteWrap);
 
   marker.addEventListener("mouseenter", () => {
-    if (isTouchDevice()) return;
+    if (lastInputWasTouch) return;
     const chartRoot = marker.closest(".speed-chart");
     if (chartRoot) showMarkerTooltip(chartRoot, marker, entry);
   });
 
   marker.addEventListener("mouseleave", () => {
-    if (isTouchDevice()) return;
+    if (lastInputWasTouch) return;
     hideMarkerTooltip();
   });
 
   marker.addEventListener("click", (e) => {
-    if (isTouchDevice()) {
+    if (lastInputWasTouch) {
       e.stopPropagation();
       const chartRoot = marker.closest(".speed-chart");
       if (pinnedTooltipEntry?.id === entry.id) {
