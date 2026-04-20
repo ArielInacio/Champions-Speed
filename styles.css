@@ -56,6 +56,12 @@ body {
   padding: 1rem;
 }
 
+.app-header-title-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
 .app-header h1 {
   margin: 0;
   font-size: 1.35rem;
@@ -64,6 +70,68 @@ body {
 .app-header p {
   margin: 0.4rem 0 0;
   color: var(--muted);
+}
+
+.info-icon-wrap {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
+  cursor: pointer;
+  outline: none;
+}
+
+.info-icon {
+  color: var(--muted);
+  transition: color 0.15s ease;
+}
+
+.info-icon-wrap:hover .info-icon,
+.info-icon-wrap:focus .info-icon {
+  color: var(--accent);
+}
+
+.info-tooltip {
+  display: none;
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  z-index: 500;
+  width: 260px;
+  background: var(--panel);
+  border: 1px solid var(--accent);
+  border-radius: 10px;
+  padding: 0.75rem 0.9rem;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+  font-size: 0.8rem;
+  color: var(--text);
+  line-height: 1.55;
+  pointer-events: none;
+}
+
+.info-tooltip strong {
+  display: block;
+  margin-bottom: 0.4rem;
+  font-size: 0.85rem;
+  color: var(--accent);
+}
+
+.info-tooltip ol {
+  margin: 0;
+  padding-left: 1.1rem;
+}
+
+.info-tooltip li {
+  margin-bottom: 0.25rem;
+}
+
+.info-tooltip li:last-child {
+  margin-bottom: 0;
+}
+
+.info-icon-wrap:hover .info-tooltip,
+.info-icon-wrap:focus .info-tooltip {
+  display: block;
 }
 
 .panel {

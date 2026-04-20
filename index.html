@@ -10,7 +10,22 @@
   <main class="app-shell">
     <aside class="left-column">
       <header id="title-panel" class="app-header panel">
-        <h1>Champions Speed Explorer</h1>
+        <div class="app-header-title-row">
+          <h1>Champions Speed Explorer</h1>
+          <span class="info-icon-wrap" tabindex="0" aria-label="How to use" role="button">
+            <svg class="info-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+            <div class="info-tooltip" role="tooltip">
+              <strong>How to use</strong>
+              <ol>
+                <li>Type a Pokémon name in <em>Add Pokemon</em> and click <strong>Add</strong>.</li>
+                <li>Pick an entry from the <em>Selected Pokemon</em> dropdown to view its card.</li>
+                <li>Adjust <strong>Nature</strong>, <strong>SP</strong>, and <strong>Stage</strong> — the chart updates instantly.</li>
+                <li>Click any chart badge to jump to that entry's card.</li>
+                <li>Use <strong>Export</strong> / <strong>Import</strong> to save and reload configs.</li>
+              </ol>
+            </div>
+          </span>
+        </div>
         <p>Build speed scenarios by Pokemon, Nature, SP and Stages.</p>
       </header>
 

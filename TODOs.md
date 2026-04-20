@@ -169,23 +169,18 @@
 - [x] Styled consistently with the existing dark theme.
 
 ### TODO-7: Info icon on title with usage tooltip/popover
-- [ ] Add an info icon (SVG) next to the app title in the header.
-- [ ] On hover (and focus for a11y), show a popover/tooltip explaining how to use the tool.
-- [ ] Popover content: brief step-by-step usage guide (add pokemon, configure, read chart).
-- [ ] No external libraries; pure CSS + HTML for the tooltip.
+- [x] Add an info icon (SVG) next to the app title in the header.
+- [x] On hover (and focus for a11y), show a popover/tooltip explaining how to use the tool.
+- [x] Popover content: brief step-by-step usage guide (add pokemon, configure, read chart).
+- [x] No external libraries; pure CSS + HTML for the tooltip.
 
-### TODO-8: Increase entry card height — fix input overflow
-- [ ] The entry card is currently too short; nature/SP/stage inputs overflow the bottom edge.
-- [ ] Increase `.entry-card` height (or remove fixed height and let it size to content).
-- [ ] Verify card fits cleanly at all panel widths without double-scrollbar issues.
-- [ ] If necessary, increase the section height to accommodate the new card height.
 
-### TODO-9: Pokemon badge hover tooltip with full info
+### TODO-8: Pokemon badge hover tooltip with full info
 - [ ] When hovering over a speed-marker badge in the chart, show a tooltip with: Pokémon name, final speed, nature, SP, stage.
 - [ ] Tooltip should be styled consistently (dark panel, accent border), appear above the badge, and not overflow chart bounds.
 - [ ] Disappears on mouse-out; does not interfere with click-to-highlight.
 
-### TODO-10: Import/export — `:base` form suffix is optional
+### TODO-9: Import/export — `:base` form suffix is optional
 - [ ] In the export format, omit the `:base` suffix so base-form Pokémon export as plain names (e.g. `Venusaur` instead of `Venusaur:base`).
 - [ ] In the import parser, if a token has no `:` separator, try resolving it first as a plain key, then append `:base` as fallback — already partially handled in `resolvePokemonKeyFromToken`, verify and tighten.
 - [ ] Ensure round-trip: export then re-import produces identical entries.
