@@ -73,12 +73,24 @@ function createStageIndicator(stage) {
     ? `<polygon points="5,1 9,8 1,8"/>`
     : `<polygon points="5,9 9,2 1,2"/>`;
 
-  let svgContent = "";
-  for (let i = 0; i < count; i++) {
-    svgContent += `<svg width="7" height="7" viewBox="0 0 10 10" fill="currentColor" xmlns="http://www.w3.org/2000/svg" style="display:block">${arrowPath}</svg>`;
+  const arrow = `<svg width="7" height="7" viewBox="0 0 10 10" fill="currentColor" xmlns="http://www.w3.org/2000/svg" style="display:block">${arrowPath}</svg>`;
+
+  const col = (n) => {
+    const wrap = document.createElement("span");
+    wrap.style.cssText = "display:flex;flex-direction:column;align-items:center;gap:1px;";
+    wrap.innerHTML = arrow.repeat(n);
+    return wrap;
+  };
+
+  if (count <= 3) {
+    node.appendChild(col(count));
+  } else {
+    node.style.flexDirection = "row-reverse";
+    node.style.gap = "2px";
+    node.appendChild(col(3));
+    node.appendChild(col(count - 3));
   }
 
-  node.innerHTML = svgContent;
   return node;
 }
 
