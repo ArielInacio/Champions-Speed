@@ -46,6 +46,7 @@ const els = {
   importConfig: document.getElementById("import-config"),
   importDialog: document.getElementById("import-dialog"),
   importText: document.getElementById("import-text"),
+  importFormatShowdown: document.getElementById("import-format-showdown"),
   importAppend: document.getElementById("import-append"),
   importReplace: document.getElementById("import-replace"),
   importCancel: document.getElementById("import-cancel"),
@@ -296,7 +297,78 @@ function resolvePokemonKeyFromToken(token, pokemonRows) {
     }
   }
 
+  const dashIdx = normalized.indexOf("-");
+  if (dashIdx > 0) {
+    const withColon = normalized.slice(0, dashIdx) + ":" + normalized.slice(dashIdx);
+    const maybeColon = byKeyLower.get(withColon.toLowerCase());
+    if (maybeColon) {
+      return maybeColon;
+    }
+  }
+
   return null;
+}
+
+const POSITIVE_NATURES = new Set(["timid", "hasty", "jolly", "naive"]);
+const NEGATIVE_NATURES = new Set(["brave", "relaxed", "quiet", "sassy"]);
+
+function showdownNatureToAppNature(natureName) {
+  const lower = natureName.trim().toLowerCase();
+  if (POSITIVE_NATURES.has(lower)) return "positive";
+  if (NEGATIVE_NATURES.has(lower)) return "negative";
+  return "neutral";
+}
+
+function parseShowdownText(text, pokemonRows) {
+  const parsedEntries = [];
+  const errors = [];
+
+  const blocks = String(text ?? "")
+    .split(/\n(?=\S)/);
+
+  blocks.forEach((block, blockIndex) => {
+    const lines = block.split(/\r?\n/).map((l) => l.trim()).filter(Boolean);
+    if (!lines.length) return;
+
+    const headerLine = lines[0];
+    const nameMatch = headerLine.match(/^([^(@]+?)(?:\s*\([^)]*\))?(?:\s*@\s*(.+))?$/);
+    if (!nameMatch) {
+      errors.push(`Block ${blockIndex + 1}: could not parse name from '${headerLine}'.`);
+      return;
+    }
+
+    const rawName = nameMatch[1].trim();
+    const item = nameMatch[2]?.trim() ?? "";
+
+    const pokemonKey = resolvePokemonKeyFromToken(rawName, pokemonRows);
+    if (!pokemonKey) {
+      errors.push(`Block ${blockIndex + 1}: unknown Pokemon '${rawName}'.`);
+      return;
+    }
+
+    let nature = "neutral";
+    let sp = 0;
+    const stage = item.toLowerCase() === "choice scarf" ? 1 : 0;
+
+    for (const line of lines.slice(1)) {
+      const natureMatch = line.match(/^(\w+)\s+Nature$/i);
+      if (natureMatch) {
+        nature = showdownNatureToAppNature(natureMatch[1]);
+        continue;
+      }
+      const evMatch = line.match(/^EVs:\s*(.+)$/i);
+      if (evMatch) {
+        const speMatch = evMatch[1].match(/(\d+)\s*Spe/i);
+        if (speMatch) {
+          sp = clampInteger(Number.parseInt(speMatch[1], 10), SP_MIN, SP_MAX);
+        }
+      }
+    }
+
+    parsedEntries.push({ pokemonKey, nature, speedPoints: sp, stage, visible: true });
+  });
+
+  return { parsedEntries, errors };
 }
 
 function parseVisibleValue(raw) {
@@ -791,7 +863,10 @@ function highlightEntryForMarker(entryId) {
 function applyImportedEntries(mode) {
   const state = store.getState();
   const text = els.importText?.value ?? "";
-  const { parsedEntries, errors } = parseImportEntriesFromText(text, state.pokemonRows);
+  const isShowdown = els.importFormatShowdown?.checked;
+  const { parsedEntries, errors } = isShowdown
+    ? parseShowdownText(text, state.pokemonRows)
+    : parseImportEntriesFromText(text, state.pokemonRows);
 
   if (!parsedEntries.length) {
     const errorText = errors.length ? `\n\n${errors.slice(0, 8).join("\n")}` : "";
@@ -848,6 +923,20 @@ function bindImportConfig() {
   if (!els.importConfig || !els.importDialog || !els.importText) {
     return;
   }
+
+  const csvHint = els.importDialog.querySelector(".import-hint-csv");
+  const showdownHint = els.importDialog.querySelector(".import-hint-showdown");
+  const CSV_PLACEHOLDER = "Venusaur,neutral,0,0\nCharizard:-Mega-Y,positive,32,1,true";
+  const SHOWDOWN_PLACEHOLDER = "Froslass (F) @ Choice Scarf\nAbility: Snow Cloak\nLevel: 50\nEVs: 2 HP / 32 SpA / 32 Spe\nHasty Nature\n- Blizzard";
+
+  els.importDialog.querySelectorAll("input[name='import-format']").forEach((radio) => {
+    radio.addEventListener("change", () => {
+      const isShowdown = els.importFormatShowdown?.checked;
+      if (csvHint) csvHint.hidden = isShowdown;
+      if (showdownHint) showdownHint.hidden = !isShowdown;
+      els.importText.placeholder = isShowdown ? SHOWDOWN_PLACEHOLDER : CSV_PLACEHOLDER;
+    });
+  });
 
   els.importConfig.addEventListener("click", () => {
     els.importDialog.showModal();

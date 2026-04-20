@@ -111,12 +111,24 @@
 
   <dialog id="import-dialog" class="import-dialog">
     <form method="dialog" class="import-dialog-content">
-      <h3>Import Configuration Text</h3>
-      <p class="import-hint">
+      <h3>Import Configuration</h3>
+      <div class="import-format-toggle">
+        <label class="import-format-label">
+          <input type="radio" name="import-format" id="import-format-csv" value="csv" checked>
+          CSV format
+        </label>
+        <label class="import-format-label">
+          <input type="radio" name="import-format" id="import-format-showdown" value="showdown">
+          Showdown format
+        </label>
+      </div>
+      <p class="import-hint import-hint-csv">
         One entry per line:
-        <code>pokemonKey-or-name,nature,sp,stage[,visible]</code>
+        <code>name,nature,sp,stage[,visible]</code>
       </p>
-      <p class="import-hint">Example: <code>Charizard:-Mega-X,positive,32,1,true</code></p>
+      <p class="import-hint import-hint-showdown" hidden>
+        Paste one or more Pokémon Showdown export blocks. Nature, Spe EVs, and Choice Scarf are parsed automatically.
+      </p>
       <textarea id="import-text" rows="12" placeholder="Venusaur,neutral,0,0&#10;Charizard:-Mega-Y,positive,32,1,true"></textarea>
       <div class="import-actions">
         <button type="button" id="import-append" class="secondary">Append</button>
