@@ -675,6 +675,7 @@ button.danger:hover {
 
 .speed-chart {
   --lane-left: 68px;
+  --marker-size: 65px;
   position: relative;
   min-height: 420px;
   height: 420px;
@@ -998,6 +999,7 @@ button.danger:hover {
 
   .speed-chart {
     --lane-left: 60px;
+    --marker-size: 48px;
     min-height: 360px;
   }
 

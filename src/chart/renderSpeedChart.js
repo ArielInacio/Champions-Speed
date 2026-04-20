@@ -194,8 +194,8 @@ function speedToTopPercent(speed, minSpeed, range, hasSpread) {
   return MAX_POSITION_PERCENT - normalized * (MAX_POSITION_PERCENT - MIN_POSITION_PERCENT);
 }
 
-function assignColumnsByVerticalCollisions(items) {
-  const minVerticalDistance = MARKER_SIZE_PX + MARKER_GAP_PX;
+function assignColumnsByVerticalCollisions(items, markerSizePx = MARKER_SIZE_PX) {
+  const minVerticalDistance = markerSizePx + MARKER_GAP_PX;
   const occupiedYByColumn = [];
 
   for (const item of items) {
@@ -248,10 +248,9 @@ export function renderSpeedChart({ chartRoot, summaryNode, entries }) {
   chartRoot.style.height = `${dynamicChartHeight}px`;
 
   const chartHeight = chartRoot.clientHeight || dynamicChartHeight;
-  const laneLeftPx = Number.parseInt(
-    getComputedStyle(chartRoot).getPropertyValue("--lane-left"),
-    10,
-  ) || 68;
+  const chartStyle = getComputedStyle(chartRoot);
+  const laneLeftPx = Number.parseInt(chartStyle.getPropertyValue("--lane-left"), 10) || 68;
+  const markerSizePx = Number.parseInt(chartStyle.getPropertyValue("--marker-size"), 10) || MARKER_SIZE_PX;
 
   summaryNode.textContent = `Showing ${entries.length} entries from ${minSpeed} to ${maxSpeed} final speed.`;
 
@@ -278,9 +277,9 @@ export function renderSpeedChart({ chartRoot, summaryNode, entries }) {
   const sortedItems = rawItems
     .sort((a, b) => a.topPx - b.topPx || a.entry.id - b.entry.id);
 
-  assignColumnsByVerticalCollisions(sortedItems);
+  assignColumnsByVerticalCollisions(sortedItems, markerSizePx);
 
-  const columnWidth = MARKER_SIZE_PX + MARKER_GAP_PX;
+  const columnWidth = markerSizePx + MARKER_GAP_PX;
   for (const item of sortedItems) {
     const markerLeftPx = laneLeftPx + MARKER_LEFT_OFFSET_PX + item.column * columnWidth;
     chartRoot.appendChild(createMarker(item.entry, item.topPercent, markerLeftPx));
