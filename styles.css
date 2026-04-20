@@ -947,18 +947,18 @@ button.danger:hover {
   }
 
   .speed-chart {
-    --lane-left: 52px;
+    --lane-left: 60px;
     min-height: 360px;
   }
 
   .speed-marker-sprite {
-    width: 34px;
-    height: 34px;
+    width: 48px;
+    height: 48px;
   }
 
   .speed-marker-sprite-wrap {
-    width: 34px;
-    height: 34px;
+    width: 48px;
+    height: 48px;
   }
 
   .sprite-overlay-stage {

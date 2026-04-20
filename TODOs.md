@@ -196,10 +196,10 @@
 - [x] Buttons should remain fully readable and tappable (min touch target 44px tall).
 
 ### TODO-12: Mobile — increase chart badge (speed-marker) size on mobile
-- [ ] On small screens badges shrink to 34×34 px — too small for fat-finger tapping.
-- [ ] Raise mobile sprite size from 34px to at least 48px (≤560px breakpoint).
-- [ ] Adjust `.speed-marker-sprite-wrap` accordingly.
-- [ ] Verify overlays (SP, nature, stage) remain legible at the new size.
+- [x] On small screens badges shrink to 34×34 px — too small for fat-finger tapping.
+- [x] Raise mobile sprite size from 34px to at least 48px (≤560px breakpoint).
+- [x] Adjust `.speed-marker-sprite-wrap` accordingly.
+- [x] Verify overlays (SP, nature, stage) remain legible at the new size.
 
 ### TODO-13: Mobile — make Add-Pokémon form stack gracefully
 - [ ] The five-column `.entry-form` grid collapses to 1 col at ≤900px but the inputs still feel cramped on phone.
