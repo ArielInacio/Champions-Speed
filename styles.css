@@ -875,3 +875,40 @@ button.danger:hover {
     padding: 2px 3px;
   }
 }
+
+.app-footer {
+  max-width: 1600px;
+  margin: 0.5rem auto 0;
+  padding: 0.75rem 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 0.8rem;
+}
+
+.app-footer-tagline {
+  flex: 1;
+  min-width: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.app-footer-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  color: var(--muted);
+  text-decoration: none;
+  font-weight: 500;
+  white-space: nowrap;
+  transition: color 0.15s ease;
+  flex-shrink: 0;
+}
+
+.app-footer-link:hover {
+  color: var(--accent);
+}

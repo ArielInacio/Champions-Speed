@@ -164,9 +164,9 @@
 - [x] Keep it accurate to current actual state of the project.
 
 ### TODO-6: Add footer with custom text and GitHub repo link
-- [ ] Add a `<footer>` element below the main app shell.
-- [ ] Footer includes a short tagline/text and a clickable GitHub repo link.
-- [ ] Styled consistently with the existing dark theme.
+- [x] Add a `<footer>` element below the main app shell.
+- [x] Footer includes a short tagline/text and a clickable GitHub repo link.
+- [x] Styled consistently with the existing dark theme.
 
 ### TODO-7: Info icon on title with usage tooltip/popover
 - [ ] Add an info icon (SVG) next to the app title in the header.
