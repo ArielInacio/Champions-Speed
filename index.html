@@ -5,37 +5,41 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Champions Speed Explorer</title>
   <link rel="stylesheet" href="./styles.css">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
 </head>
 <body>
   <main class="app-shell">
     <aside class="left-column">
       <header id="title-panel" class="app-header panel">
         <div class="app-header-title-row">
-          <h1>Champions Speed Explorer</h1>
+          <h1>Pokémon Champions Speed Explorer</h1>
           <span class="info-icon-wrap" tabindex="0" aria-label="How to use" role="button">
             <svg class="info-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
             <div class="info-tooltip" role="tooltip">
               <strong>How to use</strong>
               <ul>
-                <li>This was made to facilitate visualizing speed tiers for Pokemon Champions.</li>
-                <li>It is not meant to be an exhaustive list of every single Pokemon, and it's best use is for a limited set of 'meta' Pokemon.</li>
-                <li>A default set of Pokemon is provided, but you can add or remove Pokemon as needed. Your changes will be saved in your browser cache.</li>
-                <li>Type a Pokémon name in <em>Add Pokemon</em> and click Add to insert another pokemon in the chart.</li>
-                <li>Pick an entry from the <em>Selected Pokemon</em> dropdown to view its card.</li>
+                <li>This was made to facilitate visualizing speed tiers for Pokémon Champions.</li>
+                <li>It is not meant to be an exhaustive list of every single Pokémon, and it's best use is for a limited set of 'meta' Pokémon.</li>
+                <li>A default set of Pokémon is provided, but you can add or remove Pokémon as needed. Your changes will be saved in your browser cache.</li>
+                <li>Type a Pokémon name in <em>Add Pokémon</em> and click Add to insert another Pokémon in the chart.</li>
+                <li>Pick an entry from the <em>Selected Pokémon</em> dropdown to view its card.</li>
                 <li>Adjust Nature, SP, and Stages — the chart updates instantly.</li>
-                <li>Click the entry box to jump to that Pokemon badge in the chart</li>
-                <li>Click any Pokemon badge in the chart to jump to that entry's card.</li>
+                <li>Click the entry box to jump to that Pokémon badge in the chart</li>
+                <li>Click any Pokémon badge in the chart to jump to that entry's card.</li>
                 <li>Use Export / Import to save and reload configs.</li>
               </ul>
             </div>
           </span>
         </div>
-        <p>Build speed scenarios by Pokemon, Nature, SP and Stages.</p>
+        <p>Build speed scenarios by Pokémon, Nature, SP and Stages.</p>
       </header>
 
       <section id="manage-panel" class="panel manage-panel">
         <div class="panel-header">
-          <h2>Manage Pokemon</h2>
+          <h2>Manage Pokémon</h2>
           <div class="panel-actions">
             <button type="button" id="export-config" class="secondary">Export</button>
             <button type="button" id="import-config" class="secondary">Import</button>
@@ -45,10 +49,10 @@
         </div>
 
         <div class="manage-add-section">
-          <h3 class="manage-subsection-title">Add Pokemon</h3>
+          <h3 class="manage-subsection-title">Add Pokémon</h3>
           <form id="add-entry-form" class="entry-form">
             <label>
-              Pokemon
+              Pokémon
               <input id="pokemon-input" name="pokemon" list="pokemon-list" placeholder="Type to search..." required>
             </label>
             <datalist id="pokemon-list"></datalist>
