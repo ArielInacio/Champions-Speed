@@ -213,3 +213,21 @@
 ### TODO-15: Mobile — footer wraps instead of truncating
 - [x] On mobile the footer tagline is `white-space: nowrap` and gets cut off.
 - [x] Allow it to wrap on small screens (`white-space: normal`) and stack the GitHub link below it.
+
+### TODO-16: Mobile — badge tap shows inline info panel instead of scrolling
+- [x] On touch devices, tapping a badge currently fires `highlightEntry` which scrolls/jumps to the left panel — disorienting on mobile where the panel is above the chart.
+- [x] Detect touch context: if the device is touch-only (no hover capability), suppress the `highlightEntry` dispatch on first tap.
+- [x] On first tap, show the marker tooltip (same content as the hover tooltip) in a pinned/persistent state instead.
+- [x] A second tap (or tapping elsewhere) dismisses it.
+- [x] Use CSS `@media (hover: none)` or a `pointer: coarse` media query to scope this behavior.
+
+### TODO-17: Mobile — persistent tooltip survives touch scroll and is dismissible
+- [x] The existing `.marker-tooltip` is positioned absolutely inside `.speed-chart` and disappears on `mouseleave` — on touch there is no `mouseleave`.
+- [x] For touch: keep tooltip visible until user taps outside the badge or taps a different badge.
+- [x] Add a close affordance (small ✕ button or tap-outside listener) so user can dismiss it.
+- [x] Ensure tooltip does not get clipped by chart bounds on small screens (already partially handled, verify on mobile widths).
+
+### TODO-18: Mobile — chart height / scroll UX hint
+- [ ] On mobile the chart is tall and scrolls vertically inside the page; it is not obvious it is scrollable.
+- [ ] Add a subtle "scroll to explore" fade overlay at the bottom of the chart column on mobile that disappears once the user scrolls.
+- [ ] Only show on touch devices and only on first load.

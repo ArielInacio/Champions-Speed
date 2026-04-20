@@ -9,6 +9,7 @@ const BASE_CHART_HEIGHT_PX = 420;
 const CHART_VERTICAL_MARGINS_PX = 128;
 
 let activeTooltip = null;
+let pinnedTooltipEntry = null;
 
 function clearNode(node) {
   while (node.firstChild) {
@@ -23,9 +24,31 @@ function getOrCreateTooltip(chartRoot) {
     tip.className = "marker-tooltip";
     tip.setAttribute("role", "tooltip");
     tip.setAttribute("aria-hidden", "true");
+    const dismiss = document.createElement("button");
+    dismiss.className = "mt-dismiss";
+    dismiss.setAttribute("aria-label", "Dismiss");
+    dismiss.textContent = "✕";
+    dismiss.addEventListener("click", (e) => {
+      e.stopPropagation();
+      unpinTooltip();
+    });
+    tip.appendChild(dismiss);
     chartRoot.appendChild(tip);
   }
   return tip;
+}
+
+function isTouchDevice() {
+  return window.matchMedia("(hover: none) and (pointer: coarse)").matches;
+}
+
+function unpinTooltip() {
+  if (activeTooltip) {
+    activeTooltip.style.display = "none";
+    activeTooltip.classList.remove("marker-tooltip--pinned");
+    activeTooltip = null;
+  }
+  pinnedTooltipEntry = null;
 }
 
 function showMarkerTooltip(chartRoot, marker, entry) {
@@ -33,16 +56,24 @@ function showMarkerTooltip(chartRoot, marker, entry) {
 
   const stageText = entry.stage > 0 ? `+${entry.stage}` : String(entry.stage);
   const natureName = entry.nature.charAt(0).toUpperCase() + entry.nature.slice(1);
-  tip.innerHTML = `
-    <span class="mt-name">${entry.displayName}</span>
-    <span class="mt-speed">${entry.finalSpeed}</span>
-    <br>
-    <span class="mt-meta">Nature: ${natureName}</span>
-    <br>
-    <span class="mt-meta">SP: ${entry.speedPoints}</span>
-    <br>
-    <span class="mt-meta">Stages: ${stageText}</span>
-  `;
+
+  const dismissBtn = tip.querySelector(".mt-dismiss");
+  Array.from(tip.childNodes).forEach((n) => {
+    if (n !== dismissBtn) tip.removeChild(n);
+  });
+
+  const mkSpan = (cls, text) => {
+    const s = document.createElement("span");
+    s.className = cls;
+    s.textContent = text;
+    return s;
+  };
+  tip.insertBefore(mkSpan("mt-name", entry.displayName), dismissBtn);
+  tip.insertBefore(mkSpan("mt-speed", String(entry.finalSpeed)), dismissBtn);
+  tip.insertBefore(mkSpan("mt-meta", `Nature: ${natureName}`), dismissBtn);
+  tip.insertBefore(mkSpan("mt-meta", `SP: ${entry.speedPoints}`), dismissBtn);
+  tip.insertBefore(mkSpan("mt-meta", `Stages: ${stageText}`), dismissBtn);
+
   tip.style.display = "block";
 
   const chartRect = chartRoot.getBoundingClientRect();
@@ -65,9 +96,18 @@ function showMarkerTooltip(chartRoot, marker, entry) {
 }
 
 function hideMarkerTooltip() {
-  if (activeTooltip) {
+  if (activeTooltip && !activeTooltip.classList.contains("marker-tooltip--pinned")) {
     activeTooltip.style.display = "none";
     activeTooltip = null;
+  }
+}
+
+function pinTooltip(chartRoot, marker, entry) {
+  unpinTooltip();
+  showMarkerTooltip(chartRoot, marker, entry);
+  if (activeTooltip) {
+    activeTooltip.classList.add("marker-tooltip--pinned");
+    pinnedTooltipEntry = entry;
   }
 }
 
@@ -116,13 +156,27 @@ function createMarker(entry, topPercent, markerLeftPx) {
   marker.appendChild(spriteWrap);
 
   marker.addEventListener("mouseenter", () => {
+    if (isTouchDevice()) return;
     const chartRoot = marker.closest(".speed-chart");
     if (chartRoot) showMarkerTooltip(chartRoot, marker, entry);
   });
 
-  marker.addEventListener("mouseleave", hideMarkerTooltip);
+  marker.addEventListener("mouseleave", () => {
+    if (isTouchDevice()) return;
+    hideMarkerTooltip();
+  });
 
-  marker.addEventListener("click", () => {
+  marker.addEventListener("click", (e) => {
+    if (isTouchDevice()) {
+      e.stopPropagation();
+      const chartRoot = marker.closest(".speed-chart");
+      if (pinnedTooltipEntry?.id === entry.id) {
+        unpinTooltip();
+      } else {
+        if (chartRoot) pinTooltip(chartRoot, marker, entry);
+      }
+      return;
+    }
     hideMarkerTooltip();
     const entryId = entry.id;
     const event = new CustomEvent("highlightEntry", { detail: { entryId } });
@@ -168,7 +222,17 @@ function computeChartHeightPx(range) {
 
 export function renderSpeedChart({ chartRoot, summaryNode, entries }) {
   hideMarkerTooltip();
+  unpinTooltip();
   clearNode(chartRoot);
+
+  if (!chartRoot.dataset.tapOutsideBound) {
+    chartRoot.dataset.tapOutsideBound = "1";
+    chartRoot.addEventListener("click", (e) => {
+      if (!e.target.closest(".speed-marker") && !e.target.closest(".marker-tooltip")) {
+        unpinTooltip();
+      }
+    });
+  }
 
   if (!entries.length) {
     chartRoot.style.height = `${BASE_CHART_HEIGHT_PX}px`;

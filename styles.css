@@ -1000,7 +1000,37 @@ button.danger:hover {
   max-width: 180px;
 }
 
+.marker-tooltip--pinned {
+  pointer-events: auto;
+}
+
+.mt-dismiss {
+  display: none;
+  position: absolute;
+  top: 0.25rem;
+  right: 0.3rem;
+  background: none;
+  border: none;
+  color: var(--muted);
+  font-size: 0.85rem;
+  line-height: 1;
+  padding: 0.1rem 0.2rem;
+  cursor: pointer;
+  min-height: unset;
+}
+
+.mt-dismiss:hover {
+  color: var(--text);
+  background: none;
+  transform: none;
+}
+
+.marker-tooltip--pinned .mt-dismiss {
+  display: block;
+}
+
 .mt-name {
+  display: block;
   font-size: 0.82rem;
   font-weight: 700;
   color: var(--text);
@@ -1010,6 +1040,7 @@ button.danger:hover {
 }
 
 .mt-speed {
+  display: block;
   font-size: 1rem;
   font-weight: 800;
   color: var(--accent);
@@ -1017,6 +1048,7 @@ button.danger:hover {
 }
 
 .mt-meta {
+  display: block;
   font-size: 0.74rem;
   color: var(--muted);
 }
