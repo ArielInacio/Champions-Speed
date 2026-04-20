@@ -967,6 +967,34 @@ function bindExportConfig() {
   });
 }
 
+function bindInfoTooltip() {
+  const wrap = document.querySelector(".info-icon-wrap");
+  const tip = wrap?.querySelector(".info-tooltip");
+  if (!wrap || !tip) return;
+
+  function showTip() {
+    const rect = wrap.getBoundingClientRect();
+    const GAP = 8;
+    tip.style.display = "block";
+    const tipW = tip.offsetWidth;
+    let left = rect.left;
+    if (left + tipW > window.innerWidth - GAP) {
+      left = window.innerWidth - tipW - GAP;
+    }
+    tip.style.left = `${Math.max(GAP, left)}px`;
+    tip.style.top = `${rect.bottom + GAP}px`;
+  }
+
+  function hideTip() {
+    tip.style.display = "none";
+  }
+
+  wrap.addEventListener("mouseenter", showTip);
+  wrap.addEventListener("mouseleave", hideTip);
+  wrap.addEventListener("focus", showTip);
+  wrap.addEventListener("blur", hideTip);
+}
+
 async function init() {
   registerServiceWorker();
   bindForm();
@@ -974,6 +1002,7 @@ async function init() {
   bindClearSaved();
   bindImportConfig();
   bindExportConfig();
+  bindInfoTooltip();
 
   document.addEventListener("highlightEntry", (e) => {
     highlightEntryForMarker(e.detail.entryId);

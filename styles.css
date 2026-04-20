@@ -93,10 +93,8 @@ body {
 
 .info-tooltip {
   display: none;
-  position: absolute;
-  top: calc(100% + 8px);
-  left: 0;
-  z-index: 500;
+  position: fixed;
+  z-index: 9999;
   width: 260px;
   background: var(--panel);
   border: 1px solid var(--accent);
@@ -129,10 +127,6 @@ body {
   margin-bottom: 0;
 }
 
-.info-icon-wrap:hover .info-tooltip,
-.info-icon-wrap:focus .info-tooltip {
-  display: block;
-}
 
 .panel {
   background: var(--panel);
